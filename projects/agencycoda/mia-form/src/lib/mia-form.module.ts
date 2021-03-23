@@ -1,7 +1,7 @@
+/** ANGULAR */
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { MiaFormComponent } from './mia-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 /** FIELDS */
 import { StringFieldComponent } from './fields/string-field/string-field.component';
@@ -15,13 +15,15 @@ import { FilesFieldComponent } from './fields/files-field/files-field.component'
 import { ImagesFieldComponent } from './fields/images-field/images-field.component';
 import { ListStringFieldComponent } from './fields/list-string-field/list-string-field.component';
 
+/** COMPONENTS */
+import { MiaFormComponent } from './components/mia-form/mia-form.component';
+import { MiaPrintFieldsComponent } from './components/mia-print-fields/mia-print-fields.component';
 
 
 
 @NgModule({
   declarations: [
     MiaFormComponent,
-
     /** FIELDS */
     StringFieldComponent,
     DateFieldComponent,
@@ -32,11 +34,16 @@ import { ListStringFieldComponent } from './fields/list-string-field/list-string
     HtmlFieldComponent,
     FilesFieldComponent,
     ImagesFieldComponent,
-    ListStringFieldComponent
+    ListStringFieldComponent,
+    MiaPrintFieldsComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  exports: [MiaFormComponent]
+  exports: [
+    MiaFormComponent
+  ]
 })
 export class MiaFormModule { }

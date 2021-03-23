@@ -12,7 +12,4 @@ export class StringFieldComponent extends MiaBaseFieldComponent implements OnIni
     super();
   }
 
-  ngOnInit(): void {
-  }
-
 }
