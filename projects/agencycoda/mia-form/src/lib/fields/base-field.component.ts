@@ -24,8 +24,13 @@ export class MiaBaseFieldComponent implements OnInit {
     }
 
     createFormControl() {
-        console.log('--Control--');
-        console.log(this.field);
-        this.input = new FormControl(this.field.key);
+        // Create Control
+        this.input = new FormControl();
+        // Config validators
+        if(this.field.validators != undefined && this.field.validators.length > 0){
+            this.input.setValidators(this.field.validators);
+        }
+        // Add in Group
+        this.group.addControl(this.field.key, this.input);
     }
 }

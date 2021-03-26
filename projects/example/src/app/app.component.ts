@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Validators } from '@angular/forms';
 import { MiaFormConfig } from 'projects/agencycoda/mia-form/src/public-api';
 
 @Component({
@@ -17,9 +18,9 @@ export class AppComponent implements OnInit {
   loadForm() {
     this.config = new MiaFormConfig();
     this.config.fields = [
-      { key: 'title', type: 'string' },
+      { key: 'title', type: 'string', validators: [Validators.required] },
       { key: 'caption', type: 'string' },
-      { key: 'subtitle', type: 'string' },
+      { key: 'subtitle', type: 'string', },
     ];
   }
 }

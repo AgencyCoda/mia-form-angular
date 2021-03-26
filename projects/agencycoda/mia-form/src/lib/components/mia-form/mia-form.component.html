@@ -1,3 +1,4 @@
-<form [formGroup]="group">
+<form [formGroup]="group" (ngSubmit)="onSubmit()">
     <mia-print-fields [fields]="config.fields" [group]="group"></mia-print-fields>
+    <button type="submit" [disabled]="!group.valid">Submit</button>
 </form>
