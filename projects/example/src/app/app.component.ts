@@ -18,9 +18,12 @@ export class AppComponent implements OnInit {
   loadForm() {
     this.config = new MiaFormConfig();
     this.config.fields = [
-      { key: 'title', type: 'string', validators: [Validators.required] },
+      { key: 'title', type: 'string', label: 'Title', validators: [Validators.required] },
       { key: 'caption', type: 'string' },
       { key: 'subtitle', type: 'string', },
+    ];
+    this.config.errorMessages = [
+      { key: 'required', message: 'The %label% is required.' }
     ];
   }
 }

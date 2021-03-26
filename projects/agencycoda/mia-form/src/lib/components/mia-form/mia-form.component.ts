@@ -1,6 +1,7 @@
 import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { MiaFormConfig } from '../../entities/mia-form-config';
+import { MiaFormService } from '../../mia-form.service';
 
 @Component({
   selector: 'mia-form',
@@ -15,7 +16,8 @@ export class MiaFormComponent implements OnInit, AfterViewInit {
   group: FormGroup = new FormGroup({});
 
   constructor(
-    protected changeDetector: ChangeDetectorRef
+    protected changeDetector: ChangeDetectorRef,
+    protected miaFormService: MiaFormService
   ) { }
 
   ngOnInit(): void {
@@ -24,6 +26,10 @@ export class MiaFormComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     this.changeDetector.detectChanges();
+  }
+
+  getErrors() {
+    return this.miaFormService.getErrors(this.config, this.group);
   }
 
   onSubmit() {

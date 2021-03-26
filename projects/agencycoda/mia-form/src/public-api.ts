@@ -14,7 +14,7 @@
  /**
   * Services
   */
- //export * from './lib/mia-table.service';
+ export * from './lib/mia-form.service';
  
  /**
   * Fields

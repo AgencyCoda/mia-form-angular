@@ -1,4 +1,10 @@
 <form [formGroup]="group" (ngSubmit)="onSubmit()">
     <mia-print-fields [fields]="config.fields" [group]="group"></mia-print-fields>
     <button type="submit" [disabled]="!group.valid">Submit</button>
+
+    <div *ngIf="!group.valid" class="message-error">
+        <p *ngFor="let error of getErrors()">
+            {{ error }}
+        </p>
+    </div>
 </form>
