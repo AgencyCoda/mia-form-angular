@@ -3,6 +3,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+/** ANGULAR MATERIAL */
+import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+
 /** FIELDS */
 import { StringFieldComponent } from './fields/string-field/string-field.component';
 import { DateFieldComponent } from './fields/date-field/date-field.component';
@@ -40,7 +45,12 @@ import { MiaPrintFieldsComponent } from './components/mia-print-fields/mia-print
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
+    /** MATERIAL */
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
   ],
   exports: [
     MiaFormComponent

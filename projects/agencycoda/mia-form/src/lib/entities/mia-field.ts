@@ -5,4 +5,8 @@ export class MiaField {
     type: string = '';
     label?: string = '';
     validators?: ValidatorFn[] = [];
+    classes?: string = '';
+    isDisabled?: boolean = false;
+    placeholder?: string = '';
+    caption?: string = '';
 }

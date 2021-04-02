@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
   loadForm() {
     this.config = new MiaFormConfig();
     this.config.fields = [
-      { key: 'title', type: 'string', label: 'Title', validators: [Validators.required] },
+      { key: 'title', type: 'string', label: 'Title', validators: [Validators.required], caption: 'El titulo de la noticia.' },
       { key: 'caption', type: 'string' },
       { key: 'subtitle', type: 'string', },
     ];
