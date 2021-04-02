@@ -12,6 +12,7 @@ import { MiaFormService } from '../../mia-form.service';
 export class MiaFormComponent implements OnInit, AfterViewInit {
 
   @Input() config = new MiaFormConfig();
+  @Input() item: any;
 
   group: FormGroup = new FormGroup({});
 
@@ -25,7 +26,12 @@ export class MiaFormComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
+    this.updateValuesToItem();
     this.changeDetector.detectChanges();
+  }
+
+  updateValuesToItem() {
+    this.miaFormService.updateValuesToItem(this.config, this.group, this.item);
   }
 
   getErrors() {

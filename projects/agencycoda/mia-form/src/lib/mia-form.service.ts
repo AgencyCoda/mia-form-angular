@@ -10,6 +10,13 @@ export class MiaFormService {
 
   constructor() { }
 
+  updateValuesToItem(config: MiaFormConfig, group: FormGroup, item: any) {
+    for (const field of config.fields) {
+      let control = group.controls[field.key];
+      control.setValue(item[field.key]);
+    }
+  }
+
   getErrors(config: MiaFormConfig, group: FormGroup): Array<string> {
     let errors: Array<string> = [];
 
