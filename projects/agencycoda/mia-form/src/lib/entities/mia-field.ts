@@ -9,4 +9,5 @@ export class MiaField {
     isDisabled?: boolean = false;
     placeholder?: string = '';
     caption?: string = '';
+    extra?: any;
 }

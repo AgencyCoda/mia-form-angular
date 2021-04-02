@@ -1,3 +1,4 @@
 <ng-container *ngFor="let field of fields">
     <mia-string-field *ngIf="field.type == 'string'" [field]="field" [group]="group"></mia-string-field>
+    <mia-select-field *ngIf="field.type == 'select'" [field]="field" [group]="group"></mia-select-field>
 </ng-container>
