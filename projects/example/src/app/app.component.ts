@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Validators } from '@angular/forms';
-import { MiaFormConfig } from 'projects/agencycoda/mia-form/src/public-api';
+import { MiaFormComponent, MiaFormConfig } from 'projects/agencycoda/mia-form/src/public-api';
 import { Entity } from './entitiy';
 
 @Component({
@@ -10,12 +10,26 @@ import { Entity } from './entitiy';
 })
 export class AppComponent implements OnInit {
 
+  @ViewChild('miaForm') miaForm!: MiaFormComponent;
+
   config!: MiaFormConfig;
   item!: Entity;
 
   ngOnInit(): void {
     this.loadItem();
     this.loadForm();
+  }
+
+  onClickSend() {
+    this.miaForm.submit().subscribe(result => {
+      console.log('--Observable--');
+      console.log(result);
+    });
+  }
+
+  onSubmit(item: Entity) {
+    console.log('--SUBMIT--');
+    console.log(item);
   }
 
   loadItem() {
@@ -28,6 +42,7 @@ export class AppComponent implements OnInit {
 
   loadForm() {
     this.config = new MiaFormConfig();
+    this.config.hasSubmit = false;
     this.config.fields = [
       { key: 'title', type: 'string', label: 'Title', validators: [Validators.required], caption: 'El titulo de la noticia.' },
       { key: 'caption', type: 'string' },

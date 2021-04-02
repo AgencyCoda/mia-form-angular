@@ -10,11 +10,19 @@ export class MiaFormService {
 
   constructor() { }
 
-  updateValuesToItem(config: MiaFormConfig, group: FormGroup, item: any) {
+  updateValuesByItem(config: MiaFormConfig, group: FormGroup, item: any) {
     for (const field of config.fields) {
       let control = group.controls[field.key];
       control.setValue(item[field.key]);
     }
+  }
+
+  updateItemByForm(config: MiaFormConfig, group: FormGroup, item: any): any {
+    for (const field of config.fields) {
+      let control = group.controls[field.key];
+      item[field.key] = control.value;
+    }
+    return item;
   }
 
   getErrors(config: MiaFormConfig, group: FormGroup): Array<string> {
