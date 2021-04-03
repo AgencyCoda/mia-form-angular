@@ -9,6 +9,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
 /** FIELDS */
+import { MiaBaseFieldComponent } from './fields/base-field.component';
 import { StringFieldComponent } from './fields/string-field/string-field.component';
 import { DateFieldComponent } from './fields/date-field/date-field.component';
 import { DateRangeFieldComponent } from './fields/date-range-field/date-range-field.component';
@@ -30,6 +31,7 @@ import { MiaPrintFieldsComponent } from './components/mia-print-fields/mia-print
   declarations: [
     MiaFormComponent,
     /** FIELDS */
+    MiaBaseFieldComponent,
     StringFieldComponent,
     DateFieldComponent,
     DateRangeFieldComponent,
