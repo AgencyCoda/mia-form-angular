@@ -7,6 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDialogModule } from '@angular/material/dialog';
 
 /** FIELDS */
 import { MiaBaseFieldComponent } from './fields/base-field.component';
@@ -24,6 +25,7 @@ import { ListStringFieldComponent } from './fields/list-string-field/list-string
 /** COMPONENTS */
 import { MiaFormComponent } from './components/mia-form/mia-form.component';
 import { MiaPrintFieldsComponent } from './components/mia-print-fields/mia-print-fields.component';
+import { MiaFormModalComponent } from './modals/mia-form-modal/mia-form-modal.component';
 
 
 
@@ -42,7 +44,8 @@ import { MiaPrintFieldsComponent } from './components/mia-print-fields/mia-print
     FilesFieldComponent,
     ImagesFieldComponent,
     ListStringFieldComponent,
-    MiaPrintFieldsComponent
+    MiaPrintFieldsComponent,
+    MiaFormModalComponent
   ],
   imports: [
     CommonModule,
@@ -53,9 +56,14 @@ import { MiaPrintFieldsComponent } from './components/mia-print-fields/mia-print
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
+    MatDialogModule
   ],
   exports: [
-    MiaFormComponent
+    MiaFormComponent,
+    MiaFormModalComponent
+  ],
+  entryComponents: [
+    MiaFormModalComponent
   ]
 })
 export class MiaFormModule { }

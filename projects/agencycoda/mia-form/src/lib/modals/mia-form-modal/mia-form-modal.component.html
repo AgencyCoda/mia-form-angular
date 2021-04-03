@@ -1,0 +1,16 @@
+
+<div class="form-modal">
+
+    <h2 *ngIf="data.item.id == 0" class="title-section">{{ data.titleNew }}</h2>
+    <h2 *ngIf="data.item.id > 0" class="title-section">{{ data.titleEdit }}</h2>
+
+    <div fxLayout="column" fxLayoutGap="16px">
+
+        <mia-form #miaForm [config]="data.config" [item]="data.item"></mia-form>
+
+        <br>
+
+        <button *ngIf="!isSending" fxFlex mat-flat-button class="button-flat button-gray" matDialogClose>Close</button>
+        <button *ngIf="!isSending" fxFlex mat-flat-button class="button-flat button-primary" (click)="onClickSave()">Save</button>
+    </div>     
+</div>

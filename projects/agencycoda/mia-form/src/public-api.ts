@@ -25,6 +25,11 @@
   * Components
   */
  export * from './lib/components/mia-form/mia-form.component';
+
+ /**
+  * Components
+  */
+  export * from './lib/modals/mia-form-modal/mia-form-modal.component';
  
  /**
   * Modules
