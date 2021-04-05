@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Validators } from '@angular/forms';
 import { MiaFormComponent, MiaFormConfig } from 'projects/agencycoda/mia-form/src/public-api';
 import { Entity } from './entitiy';
+import { TestService } from './test.service';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,12 @@ export class AppComponent implements OnInit {
 
   config!: MiaFormConfig;
   item!: Entity;
+
+  constructor(
+    protected testService: TestService
+  ) {
+
+  }
 
   ngOnInit(): void {
     this.loadItem();
@@ -48,7 +55,7 @@ export class AppComponent implements OnInit {
       { key: 'product', type: 'autocomplete', extra: { 
         options: ['One', 'Two', 'Three'] 
       }},
-      { key: 'vendor', type: 'autocomplete-service', extra: { service: {} } },
+      { key: 'vendor', type: 'autocomplete-service', extra: { service: this.testService, field_display: 'title' } },
       { key: 'caption', type: 'string' },
       { key: 'subtitle', type: 'string', },
       { key: 'status', type: 'select', label: 'Estado', extra: {
