@@ -1,4 +1,6 @@
 <ng-container *ngFor="let field of fields">
     <mia-string-field *ngIf="field.type == 'string'" [field]="field" [group]="group"></mia-string-field>
     <mia-select-field *ngIf="field.type == 'select'" [field]="field" [group]="group"></mia-select-field>
+    <mia-autocomplete-field *ngIf="field.type == 'autocomplete'" [field]="field" [group]="group"></mia-autocomplete-field>
+    <mia-autocomplete-service-field *ngIf="field.type == 'autocomplete-service'" [field]="field" [group]="group"></mia-autocomplete-service-field>
 </ng-container>

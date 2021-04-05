@@ -8,6 +8,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 /** FIELDS */
 import { MiaBaseFieldComponent } from './fields/base-field.component';
@@ -26,6 +27,9 @@ import { ListStringFieldComponent } from './fields/list-string-field/list-string
 import { MiaFormComponent } from './components/mia-form/mia-form.component';
 import { MiaPrintFieldsComponent } from './components/mia-print-fields/mia-print-fields.component';
 import { MiaFormModalComponent } from './modals/mia-form-modal/mia-form-modal.component';
+import { ListServiceFieldComponent } from './fields/list-service-field/list-service-field.component';
+import { AutocompleteServiceFieldComponent } from './fields/autocomplete-service-field/autocomplete-service-field.component';
+import { AutocompleteFieldComponent } from './fields/autocomplete-field/autocomplete-field.component';
 
 
 
@@ -45,7 +49,10 @@ import { MiaFormModalComponent } from './modals/mia-form-modal/mia-form-modal.co
     ImagesFieldComponent,
     ListStringFieldComponent,
     MiaPrintFieldsComponent,
-    MiaFormModalComponent
+    MiaFormModalComponent,
+    ListServiceFieldComponent,
+    AutocompleteServiceFieldComponent,
+    AutocompleteFieldComponent
   ],
   imports: [
     CommonModule,
@@ -56,7 +63,8 @@ import { MiaFormModalComponent } from './modals/mia-form-modal/mia-form-modal.co
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    MatDialogModule
+    MatDialogModule,
+    MatAutocompleteModule
   ],
   exports: [
     MiaFormComponent,

@@ -45,6 +45,10 @@ export class AppComponent implements OnInit {
     this.config.hasSubmit = false;
     this.config.fields = [
       { key: 'title', type: 'string', label: 'Title', validators: [Validators.required], caption: 'El titulo de la noticia.' },
+      { key: 'product', type: 'autocomplete', extra: { 
+        options: ['One', 'Two', 'Three'] 
+      }},
+      { key: 'vendor', type: 'autocomplete-service', extra: { service: {} } },
       { key: 'caption', type: 'string' },
       { key: 'subtitle', type: 'string', },
       { key: 'status', type: 'select', label: 'Estado', extra: {
