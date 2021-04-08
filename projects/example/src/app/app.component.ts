@@ -1,3 +1,4 @@
+import { MiaQuery } from '@agencycoda/mia-core';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Validators } from '@angular/forms';
 import { MiaFormComponent, MiaFormConfig } from 'projects/agencycoda/mia-form/src/public-api';
@@ -45,6 +46,9 @@ export class AppComponent implements OnInit {
     this.item.subtitle = 'Subitulo';*/
     this.item.caption = 'asld jasld kjaslkdjaklj dakls jdalkjd aslkdj alkdj aklj dalkajslk jadlsk jakslsd lakj';
     this.item.status = 1;
+    this.item.vendors = [
+      { id: 1, title: 'Vendor 1' }
+    ];
   }
 
   loadForm() {
@@ -58,6 +62,7 @@ export class AppComponent implements OnInit {
       { key: 'vendor', type: 'autocomplete-service', extra: { service: this.testService, field_display: 'title' } },
       { key: 'caption', type: 'string' },
       { key: 'subtitle', type: 'string', },
+      { key: 'vendor-list', type: 'list-service', extra: { service: this.testService, field_display: 'title', field_list: 'vendors', query: new MiaQuery() } },
       { key: 'status', type: 'select', label: 'Estado', extra: {
         options: [
           { id: 0, title: 'Estado 1' },

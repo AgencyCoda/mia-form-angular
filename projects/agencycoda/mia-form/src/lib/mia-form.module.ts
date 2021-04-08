@@ -9,6 +9,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatIconModule } from '@angular/material/icon';
 
 /** FIELDS */
 import { MiaBaseFieldComponent } from './fields/base-field.component';
@@ -64,7 +65,8 @@ import { AutocompleteFieldComponent } from './fields/autocomplete-field/autocomp
     MatInputModule,
     MatSelectModule,
     MatDialogModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatIconModule
   ],
   exports: [
     MiaFormComponent,

@@ -4,4 +4,6 @@ export class Entity {
     subtitle = '';
     caption = '';
     status = 0;
+
+    vendors: Array<any> = [];
 }

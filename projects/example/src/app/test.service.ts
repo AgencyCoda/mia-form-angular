@@ -20,4 +20,8 @@ export class TestService extends MiaBaseCrudHttpService<any> {
     params.access_token = 'c3349e695bd8c07388902de25278d6302e75e86d';
     return this.postOb(this.basePathUrl + '/list', params);
   }
+
+  list(query: MiaQuery): Promise<MiaPagination<any>> {
+    return this.listWithExtras(query, { access_token: 'c3349e695bd8c07388902de25278d6302e75e86d'});
+  }
 }
