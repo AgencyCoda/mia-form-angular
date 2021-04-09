@@ -1,5 +1,6 @@
 import { MiaBaseCrudHttpService, MiaPagination } from '@agencycoda/mia-core';
 import { Component, OnInit } from '@angular/core';
+import { FormArray, FormControl } from '@angular/forms';
 import { AutocompleteServiceFieldComponent } from '../autocomplete-service-field/autocomplete-service-field.component';
 import { MiaBaseFieldComponent } from '../base-field.component';
 
@@ -10,7 +11,7 @@ import { MiaBaseFieldComponent } from '../base-field.component';
 })
 export class ListServiceFieldComponent extends AutocompleteServiceFieldComponent implements OnInit {
 
-  dataItems?: Array<any>;
+  inputList!: FormArray;
   
   _isLoading = true;
 
@@ -23,11 +24,34 @@ export class ListServiceFieldComponent extends AutocompleteServiceFieldComponent
     this.loadItems();
   }
 
+  onClickAdd() {
+    if(this.input.value == null || this.input.value == undefined){
+      return;
+    }
+    let control = new FormControl();
+    control.setValue(this.input.value);
+    this.inputList.push(control);
+    this.input.setValue(null);
+  }
+
+  onClickRemove(index: number) {
+    this.inputList.removeAt(index);
+  }
+
   loadItems() {
     if(this.field.extra.field_list == undefined){
       return;
     }
     
     this._isLoading = true;
+  }
+
+  createFormControl() {
+    // Create Control
+    this.input = new FormControl();
+    // Create Control
+    this.inputList = new FormArray([]);
+    // Add in Group
+    this.group.addControl(this.field.key, this.inputList);
   }
 }

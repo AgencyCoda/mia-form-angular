@@ -33,4 +33,23 @@ export class MiaBaseFieldComponent implements OnInit {
         // Add in Group
         this.group.addControl(this.field.key, this.input);
     }
+
+    getFieldValueByKey(item: any, key: string|Array<string>|undefined): any {
+        if(key == undefined){
+          return '';
+        }
+  
+        if (typeof key == 'string' && item[key] != undefined) {
+          return item[key];
+        }
+  
+        let valueFinal = item;
+        for (const keyObj of key!) {
+          if(valueFinal[keyObj] == undefined){
+            return '';
+          }
+          valueFinal = valueFinal[keyObj];
+        }
+        return valueFinal;
+      }
 }

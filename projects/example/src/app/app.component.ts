@@ -59,10 +59,10 @@ export class AppComponent implements OnInit {
       { key: 'product', type: 'autocomplete', extra: { 
         options: ['One', 'Two', 'Three'] 
       }},
-      { key: 'vendor', type: 'autocomplete-service', extra: { service: this.testService, field_display: 'title' } },
+      { key: 'vendor', type: 'autocomplete-service', extra: { service: this.testService, field_display: 'title', query: new MiaQuery() } },
       { key: 'caption', type: 'string' },
       { key: 'subtitle', type: 'string', },
-      { key: 'vendor-list', type: 'list-service', extra: { service: this.testService, field_display: 'title', field_list: 'vendors', query: new MiaQuery() } },
+      { key: 'vendors', type: 'list-service', extra: { service: this.testService, field_display: 'title', field_list: 'vendors-auto', query: new MiaQuery() } },
       { key: 'status', type: 'select', label: 'Estado', extra: {
         options: [
           { id: 0, title: 'Estado 1' },

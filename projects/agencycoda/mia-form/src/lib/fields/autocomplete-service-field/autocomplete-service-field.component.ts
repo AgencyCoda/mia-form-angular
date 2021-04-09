@@ -22,7 +22,7 @@ export class AutocompleteServiceFieldComponent extends MiaBaseFieldComponent imp
     this.filteredOptions = this.input.valueChanges.pipe(
       startWith(''),
       switchMap(value => {
-        let query = new MiaQuery();
+        let query: MiaQuery = this.field.extra.query;
         query.search = value;
         let service: MiaBaseCrudHttpService<any> = this.field.extra.service;
         return service.listOb(query);
@@ -38,8 +38,7 @@ export class AutocompleteServiceFieldComponent extends MiaBaseFieldComponent imp
     if(item == undefined){
       return '';
     }
-    return item.title;
-    //let keyDisplay = this.field.extra.field_display;
-    //return item[keyDisplay];
+    let keyDisplay = this.field.extra.field_display;
+    return item[keyDisplay];
   }
 }
