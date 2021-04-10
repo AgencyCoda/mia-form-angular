@@ -70,6 +70,7 @@ export class AppComponent implements OnInit {
           { id: 2, title: 'Estado 3' },
         ]
       }},
+      { key: 'vendor-select', type: 'select-service', extra: { service: this.testService, field_display: 'title', query: new MiaQuery() } },
     ];
     this.config.errorMessages = [
       { key: 'required', message: 'The %label% is required.' }

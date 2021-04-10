@@ -31,6 +31,7 @@ import { MiaFormModalComponent } from './modals/mia-form-modal/mia-form-modal.co
 import { ListServiceFieldComponent } from './fields/list-service-field/list-service-field.component';
 import { AutocompleteServiceFieldComponent } from './fields/autocomplete-service-field/autocomplete-service-field.component';
 import { AutocompleteFieldComponent } from './fields/autocomplete-field/autocomplete-field.component';
+import { SelectServiceFieldComponent } from './fields/select-service-field/select-service-field.component';
 
 
 
@@ -53,7 +54,8 @@ import { AutocompleteFieldComponent } from './fields/autocomplete-field/autocomp
     MiaFormModalComponent,
     ListServiceFieldComponent,
     AutocompleteServiceFieldComponent,
-    AutocompleteFieldComponent
+    AutocompleteFieldComponent,
+    SelectServiceFieldComponent
   ],
   imports: [
     CommonModule,
