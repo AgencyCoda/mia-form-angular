@@ -11,8 +11,4 @@ export class DateFieldComponent extends MiaBaseFieldComponent implements OnInit 
   constructor() {
     super();
   }
-
-  ngOnInit(): void {
-  }
-
 }

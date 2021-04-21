@@ -11,8 +11,4 @@ export class TextFieldComponent extends MiaBaseFieldComponent implements OnInit 
   constructor() {
     super();
   }
-
-  ngOnInit(): void {
-  }
-
 }
