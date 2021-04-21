@@ -46,6 +46,7 @@ export class AppComponent implements OnInit {
     this.item.subtitle = 'Subitulo';*/
     this.item.caption = 'asld jasld kjaslkdjaklj dakls jdalkjd aslkdj alkdj aklj dalkajslk jadlsk jakslsd lakj';
     this.item.status = 1;
+    this.item.date = '2021-04-08 04:20:00';
     this.item.vendors = [
       { id: 1, title: 'Vendor 1' }
     ];
@@ -61,6 +62,7 @@ export class AppComponent implements OnInit {
       }},
       { key: 'vendor', type: 'autocomplete-service', extra: { service: this.testService, field_display: 'title', query: new MiaQuery() } },
       { key: 'caption', type: 'string' },
+      { key: 'date', type: 'date', label: 'Fecha' },
       { key: 'subtitle', type: 'string', },
       { key: 'vendors', type: 'list-service', extra: { service: this.testService, field_display: 'title', field_list: 'vendors-auto', query: new MiaQuery() } },
       { key: 'status', type: 'select', label: 'Estado', extra: {

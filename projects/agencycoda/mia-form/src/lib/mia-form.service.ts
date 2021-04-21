@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { FormArray, FormControl, FormGroup } from '@angular/forms';
 import { MiaField } from './entities/mia-field';
 import { MiaFormConfig } from './entities/mia-form-config';
+import * as moment from 'moment';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +21,11 @@ export class MiaFormService {
         this.updateValuesByItemInFormArray(control, field.key, item);
         continue;
       }
-      control.setValue(item[field.key]);
+      if(field.type == 'date'){
+        control.setValue(moment(item[field.key], 'YYYY-MM-DD hh:mm:ss'));
+      } else {
+        control.setValue(item[field.key]);
+      }
     }
   }
 
@@ -30,7 +35,11 @@ export class MiaFormService {
       if(control == undefined){
         continue;
       }
-      item[field.key] = control.value;
+      if(field.type == 'date'){
+        item[field.key] = control.value.format('YYYY-MM-DD hh:mm:ss');
+      }else {
+        item[field.key] = control.value;
+      }
     }
     return item;
   }

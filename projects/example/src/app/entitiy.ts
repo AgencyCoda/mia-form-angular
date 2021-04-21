@@ -3,6 +3,7 @@ export class Entity {
     title = '';
     subtitle = '';
     caption = '';
+    date = '';
     status = 0;
 
     vendors: Array<any> = [];
