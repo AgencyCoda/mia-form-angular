@@ -10,6 +10,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatIconModule } from '@angular/material/icon';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 /** FIELDS */
 import { MiaBaseFieldComponent } from './fields/base-field.component';
@@ -68,7 +69,8 @@ import { SelectServiceFieldComponent } from './fields/select-service-field/selec
     MatSelectModule,
     MatDialogModule,
     MatAutocompleteModule,
-    MatIconModule
+    MatIconModule,
+    MatDatepickerModule
   ],
   exports: [
     MiaFormComponent,
