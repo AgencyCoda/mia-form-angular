@@ -10,6 +10,7 @@ export class MiaField {
     static TYPE_SELECT_SERVICE = 'select-service';
     static TYPE_TEXT = 'text';
     static TYPE_DATE = 'date';
+    static TYPE_PHOTO = 'photo';
 
     key: string = '';
     type: string = '';

@@ -13,6 +13,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
 import { MatMomentDateModule, MAT_MOMENT_DATE_ADAPTER_OPTIONS, MAT_MOMENT_DATE_FORMATS, MomentDateAdapter } from '@angular/material-moment-adapter';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 /** FIELDS */
 import { MiaBaseFieldComponent } from './fields/base-field.component';
@@ -35,6 +36,7 @@ import { ListServiceFieldComponent } from './fields/list-service-field/list-serv
 import { AutocompleteServiceFieldComponent } from './fields/autocomplete-service-field/autocomplete-service-field.component';
 import { AutocompleteFieldComponent } from './fields/autocomplete-field/autocomplete-field.component';
 import { SelectServiceFieldComponent } from './fields/select-service-field/select-service-field.component';
+import { PhotoFieldComponent } from './fields/photo-field/photo-field.component';
 
 
 
@@ -58,7 +60,8 @@ import { SelectServiceFieldComponent } from './fields/select-service-field/selec
     ListServiceFieldComponent,
     AutocompleteServiceFieldComponent,
     AutocompleteFieldComponent,
-    SelectServiceFieldComponent
+    SelectServiceFieldComponent,
+    PhotoFieldComponent
   ],
   imports: [
     CommonModule,
@@ -73,7 +76,8 @@ import { SelectServiceFieldComponent } from './fields/select-service-field/selec
     MatAutocompleteModule,
     MatIconModule,
     MatDatepickerModule,
-    MatMomentDateModule
+    MatMomentDateModule,
+    MatProgressSpinnerModule
   ],
   exports: [
     MiaFormComponent,

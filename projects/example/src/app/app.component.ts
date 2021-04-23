@@ -56,6 +56,7 @@ export class AppComponent implements OnInit {
     this.config = new MiaFormConfig();
     this.config.hasSubmit = false;
     this.config.fields = [
+      { key: 'photo', type: 'photo', label: 'Photo', caption: 'Foto del usuario.' },
       { key: 'title', type: 'string', label: 'Title', validators: [Validators.required], caption: 'El titulo de la noticia.' },
       { key: 'product', type: 'autocomplete', extra: { 
         options: ['One', 'Two', 'Three'] 
