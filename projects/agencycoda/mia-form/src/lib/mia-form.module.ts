@@ -37,6 +37,7 @@ import { AutocompleteServiceFieldComponent } from './fields/autocomplete-service
 import { AutocompleteFieldComponent } from './fields/autocomplete-field/autocomplete-field.component';
 import { SelectServiceFieldComponent } from './fields/select-service-field/select-service-field.component';
 import { PhotoFieldComponent } from './fields/photo-field/photo-field.component';
+import { MiaCoreModule } from '@agencycoda/mia-core';
 
 
 
@@ -67,6 +68,7 @@ import { PhotoFieldComponent } from './fields/photo-field/photo-field.component'
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    MiaCoreModule,
 
     /** MATERIAL */
     MatFormFieldModule,
