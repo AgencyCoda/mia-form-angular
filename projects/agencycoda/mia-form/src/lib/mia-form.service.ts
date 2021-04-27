@@ -35,7 +35,7 @@ export class MiaFormService {
       if(control == undefined){
         continue;
       }
-      if(field.type == 'date'){
+      if(field.type == 'date' && control.value != undefined){
         item[field.key] = control.value.format('YYYY-MM-DD hh:mm:ss');
       }else {
         item[field.key] = control.value;
