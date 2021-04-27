@@ -11,6 +11,7 @@ export class MiaField {
     static TYPE_TEXT = 'text';
     static TYPE_DATE = 'date';
     static TYPE_PHOTO = 'photo';
+    static TYPE_AVATAR_LIST_SERVICE = 'avatar-list-service';
 
     key: string = '';
     type: string = '';

@@ -1,0 +1,15 @@
+<div class="avatar-list-service {{ field.classes }}">
+    <mat-label *ngIf="field.label"> {{ field.label }} </mat-label>
+    <button mat-flat-button class="add-button-avatar" [matMenuTriggerFor]="addNewAvatar">+</button>
+    <mat-menu #addNewAvatar="matMenu" class="mat-menu-tasks-status" [hasBackdrop]="true" [overlapTrigger]="true">
+        <mat-form-field *ngIf="input" (click)="$event.stopPropagation();">
+            <input matInput type="text" [formControl]="input" [placeholder]="'Search'" />
+        </mat-form-field>
+        <hr />
+        <div class="items">
+            <div *ngFor="let item of items" class="item">
+                {{ getFieldValueByKey(item, field.extra.field_display) }}
+            </div>
+        </div>
+    </mat-menu>
+</div>

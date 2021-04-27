@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+/** AGENCY CODA */
+import { MiaCoreModule } from '@agencycoda/mia-core';
+
 /** ANGULAR MATERIAL */
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
@@ -14,6 +17,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
 import { MatMomentDateModule, MAT_MOMENT_DATE_ADAPTER_OPTIONS, MAT_MOMENT_DATE_FORMATS, MomentDateAdapter } from '@angular/material-moment-adapter';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatMenuModule } from '@angular/material/menu';
 
 /** FIELDS */
 import { MiaBaseFieldComponent } from './fields/base-field.component';
@@ -27,18 +31,18 @@ import { HtmlFieldComponent } from './fields/html-field/html-field.component';
 import { FilesFieldComponent } from './fields/files-field/files-field.component';
 import { ImagesFieldComponent } from './fields/images-field/images-field.component';
 import { ListStringFieldComponent } from './fields/list-string-field/list-string-field.component';
-
-/** COMPONENTS */
-import { MiaFormComponent } from './components/mia-form/mia-form.component';
-import { MiaPrintFieldsComponent } from './components/mia-print-fields/mia-print-fields.component';
-import { MiaFormModalComponent } from './modals/mia-form-modal/mia-form-modal.component';
 import { ListServiceFieldComponent } from './fields/list-service-field/list-service-field.component';
 import { AutocompleteServiceFieldComponent } from './fields/autocomplete-service-field/autocomplete-service-field.component';
 import { AutocompleteFieldComponent } from './fields/autocomplete-field/autocomplete-field.component';
 import { SelectServiceFieldComponent } from './fields/select-service-field/select-service-field.component';
 import { PhotoFieldComponent } from './fields/photo-field/photo-field.component';
-import { MiaCoreModule } from '@agencycoda/mia-core';
+import { AvatarListServiceFieldComponent } from './fields/avatar-list-service-field/avatar-list-service-field.component';
 
+
+/** COMPONENTS */
+import { MiaFormComponent } from './components/mia-form/mia-form.component';
+import { MiaPrintFieldsComponent } from './components/mia-print-fields/mia-print-fields.component';
+import { MiaFormModalComponent } from './modals/mia-form-modal/mia-form-modal.component';
 
 
 @NgModule({
@@ -62,7 +66,8 @@ import { MiaCoreModule } from '@agencycoda/mia-core';
     AutocompleteServiceFieldComponent,
     AutocompleteFieldComponent,
     SelectServiceFieldComponent,
-    PhotoFieldComponent
+    PhotoFieldComponent,
+    AvatarListServiceFieldComponent
   ],
   imports: [
     CommonModule,
@@ -79,12 +84,14 @@ import { MiaCoreModule } from '@agencycoda/mia-core';
     MatIconModule,
     MatDatepickerModule,
     MatMomentDateModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatMenuModule
   ],
   exports: [
     MiaFormComponent,
     MiaFormModalComponent,
-    MatMomentDateModule
+    MatMomentDateModule,
+    AvatarListServiceFieldComponent
   ],
   entryComponents: [
     MiaFormModalComponent

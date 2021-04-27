@@ -20,6 +20,7 @@
   * Fields
   */
  export * from './lib/fields/base-field.component';
+ export * from './lib/fields/avatar-list-service-field/avatar-list-service-field.component';
  
  /**
   * Components

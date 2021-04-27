@@ -74,6 +74,7 @@ export class AppComponent implements OnInit {
         ]
       }},
       { key: 'vendor-select', type: 'select-service', extra: { service: this.testService, field_display: 'title', query: new MiaQuery() } },
+      { key: 'avatars', type: 'avatar-list-service', extra: { service: this.testService, field_display: 'title', field_list: 'avatars-auto', query: new MiaQuery() } },
     ];
     this.config.errorMessages = [
       { key: 'required', message: 'The %label% is required.' }
