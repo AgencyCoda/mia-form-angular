@@ -18,14 +18,43 @@ export class AvatarListServiceFieldComponent extends SelectServiceFieldComponent
     super();
   }
 
-  onClickAdd() {
-    if(this.input.value == null || this.input.value == undefined){
-      return;
-    }
+  applySearch() {
+    let query: string = this.input.value;
+    this.itemsFiltered = this.items.filter(it => {
+      let valIt: string = this.getFieldValueByKey(it, this.field.extra.field_display);
+      // Verify if Selected
+      for (const itSel of this.inputList.value) {
+        if(itSel.id == it.id){
+          return false;
+        }
+      }
+      if(query == ''){
+        return true;
+      }
+      // Verify if same query
+      if(valIt.toLowerCase().includes(query.toLowerCase())){
+        return true;
+      }
+
+      return false;
+    });
+  }
+
+  onClickAdd(item: any) {
     let control = new FormControl();
-    control.setValue(this.input.value);
+    control.setValue(item);
     this.inputList.push(control);
-    this.input.setValue(null);
+    this.input.setValue('');
+    this.applySearch();
+  }
+
+  getInitials(item: any) {
+    let title: string = this.getFieldValueByKey(item, this.field.extra.field_display);
+    return title.substr(0, 1).toUpperCase();
+  }
+
+  getAvatar(item: any) {
+    return this.getFieldValueByKey(item, this.field.extra.field_photo);
   }
 
   onClickRemove(index: number) {
@@ -38,6 +67,7 @@ export class AvatarListServiceFieldComponent extends SelectServiceFieldComponent
     let service: MiaBaseCrudHttpService<any> = this.field.extra.service;
     service.list(query).then(result => {
       this.items = result.data;
+      this.itemsFiltered = result.data;
     });
   }
 
