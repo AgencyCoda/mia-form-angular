@@ -59,6 +59,7 @@ export class AvatarListServiceFieldComponent extends SelectServiceFieldComponent
 
   onClickRemove(index: number) {
     this.inputList.removeAt(index);
+    this.applySearch();
   }
 
   loadItems() {

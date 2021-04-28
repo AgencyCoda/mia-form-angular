@@ -2,7 +2,7 @@
     <mat-label *ngIf="field.label"> {{ field.label }} </mat-label>
 
     <div class="avatar-items-selected">
-        <button *ngFor="let itSel of inputList.value" mat-flat-button class="button-avatar-item">
+        <button *ngFor="let itSel of inputList.value; let index = index" mat-flat-button class="button-avatar-item" (click)="onClickRemove(index)">
             <img *ngIf="getAvatar(itSel) != ''" [src]="getAvatar(itSel)" />
             <span *ngIf="getAvatar(itSel) == ''">{{ getInitials(itSel) }}</span>
         </button>
