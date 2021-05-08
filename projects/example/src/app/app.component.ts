@@ -1,7 +1,7 @@
 import { MiaQuery } from '@agencycoda/mia-core';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Validators } from '@angular/forms';
-import { MiaFormComponent, MiaFormConfig } from 'projects/agencycoda/mia-form/src/public-api';
+import { MiaField, MiaFormComponent, MiaFormConfig } from 'projects/agencycoda/mia-form/src/public-api';
 import { Entity } from './entitiy';
 import { TestService } from './test.service';
 
@@ -75,6 +75,7 @@ export class AppComponent implements OnInit {
       }},
       { key: 'vendor-select', type: 'select-service', extra: { service: this.testService, field_display: 'title', query: new MiaQuery() } },
       { key: 'avatars', type: 'avatar-list-service', extra: { service: this.testService, field_display: 'title', field_photo: 'photo', field_list: 'avatars-auto', query: new MiaQuery() } },
+      { key: 'data', type: MiaField.TYPE_LIST_STRING, label: 'Items:', caption: '' },
     ];
     this.config.errorMessages = [
       { key: 'required', message: 'The %label% is required.' }
