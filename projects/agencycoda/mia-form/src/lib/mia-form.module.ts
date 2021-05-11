@@ -18,6 +18,9 @@ import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/materia
 import { MatMomentDateModule, MAT_MOMENT_DATE_ADAPTER_OPTIONS, MAT_MOMENT_DATE_FORMATS, MomentDateAdapter } from '@angular/material-moment-adapter';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatButtonModule } from '@angular/material/button';
+import { MatListModule } from '@angular/material/list';
 
 /** FIELDS */
 import { MiaBaseFieldComponent } from './fields/base-field.component';
@@ -43,6 +46,7 @@ import { AvatarListServiceFieldComponent } from './fields/avatar-list-service-fi
 import { MiaFormComponent } from './components/mia-form/mia-form.component';
 import { MiaPrintFieldsComponent } from './components/mia-print-fields/mia-print-fields.component';
 import { MiaFormModalComponent } from './modals/mia-form-modal/mia-form-modal.component';
+import { ChipsAndSelectFieldComponent } from './fields/chips-and-select-field/chips-and-select-field.component';
 
 
 @NgModule({
@@ -67,7 +71,8 @@ import { MiaFormModalComponent } from './modals/mia-form-modal/mia-form-modal.co
     AutocompleteFieldComponent,
     SelectServiceFieldComponent,
     PhotoFieldComponent,
-    AvatarListServiceFieldComponent
+    AvatarListServiceFieldComponent,
+    ChipsAndSelectFieldComponent
   ],
   imports: [
     CommonModule,
@@ -85,7 +90,10 @@ import { MiaFormModalComponent } from './modals/mia-form-modal/mia-form-modal.co
     MatDatepickerModule,
     MatMomentDateModule,
     MatProgressSpinnerModule,
-    MatMenuModule
+    MatMenuModule,
+    MatChipsModule,
+    MatButtonModule,
+    MatListModule
   ],
   exports: [
     MiaFormComponent,
