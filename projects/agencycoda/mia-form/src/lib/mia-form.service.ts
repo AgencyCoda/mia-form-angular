@@ -23,6 +23,10 @@ export class MiaFormService {
       }
       if(field.type == 'date'){
         control.setValue(moment(item[field.key], 'YYYY-MM-DD hh:mm:ss'));
+      } else if(field.type == MiaField.TYPE_STRING_WITH_COLOR){
+        control.setValue(item[field.key]);
+        let controlColor = group.controls[field.extra.key_color];
+        controlColor.setValue(item[field.extra.key_color]);
       } else {
         control.setValue(item[field.key]);
       }
@@ -37,6 +41,12 @@ export class MiaFormService {
       }
       if(field.type == 'date' && control.value != undefined){
         item[field.key] = control.value.format('YYYY-MM-DD hh:mm:ss');
+      }if(field.type == MiaField.TYPE_STRING_WITH_COLOR && control.value != undefined){
+        item[field.key] = control.value;
+        let controlColor = group.controls[field.extra.key_color];
+        if(controlColor.value != undefined){
+          item[field.extra.key_color] = controlColor.value;
+        }
       }else {
         item[field.key] = control.value;
       }

@@ -84,6 +84,7 @@ export class AppComponent implements OnInit {
           { id: 2, title: 'State 3' },
         ]
       } },
+      { key: 'tag', type: MiaField.TYPE_STRING_WITH_COLOR, label: 'Tag name', caption: '', appearance: 'outline', extra: { key_color: 'color' } },
     ];
     this.config.errorMessages = [
       { key: 'required', message: 'The %label% is required.' }

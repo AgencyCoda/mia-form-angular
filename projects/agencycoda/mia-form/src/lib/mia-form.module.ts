@@ -47,6 +47,7 @@ import { MiaFormComponent } from './components/mia-form/mia-form.component';
 import { MiaPrintFieldsComponent } from './components/mia-print-fields/mia-print-fields.component';
 import { MiaFormModalComponent } from './modals/mia-form-modal/mia-form-modal.component';
 import { ChipsAndSelectFieldComponent } from './fields/chips-and-select-field/chips-and-select-field.component';
+import { StringWithColorFieldComponent } from './fields/string-with-color-field/string-with-color-field.component';
 
 
 @NgModule({
@@ -72,7 +73,8 @@ import { ChipsAndSelectFieldComponent } from './fields/chips-and-select-field/ch
     SelectServiceFieldComponent,
     PhotoFieldComponent,
     AvatarListServiceFieldComponent,
-    ChipsAndSelectFieldComponent
+    ChipsAndSelectFieldComponent,
+    StringWithColorFieldComponent
   ],
   imports: [
     CommonModule,

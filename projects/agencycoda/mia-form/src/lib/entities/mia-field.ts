@@ -1,8 +1,10 @@
 import { ValidatorFn } from "@angular/forms";
+import { MatFormFieldAppearance } from "@angular/material/form-field";
 
 export class MiaField {
 
     static TYPE_STRING = 'string';
+    static TYPE_STRING_WITH_COLOR = 'string-with-color';
     static TYPE_SELECT = 'select';
     static TYPE_AUTOCOMPLETE = 'autocomplete';
     static TYPE_AUTOCOMPLETE_SERVICE = 'autocomplete-service';
@@ -23,5 +25,6 @@ export class MiaField {
     isDisabled?: boolean = false;
     placeholder?: string = '';
     caption?: string = '';
+    appearance?: MatFormFieldAppearance = 'outline';
     extra?: any;
 }
