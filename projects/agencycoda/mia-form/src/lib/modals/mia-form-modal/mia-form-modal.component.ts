@@ -1,6 +1,7 @@
 import { MiaBaseCrudHttpService } from '@agencycoda/mia-core';
 import { Component, Inject, OnInit, ViewChild } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Observable, Subject } from 'rxjs';
 import { MiaFormComponent } from '../../components/mia-form/mia-form.component';
 import { MiaFormConfig } from '../../entities/mia-form-config';
 
@@ -10,6 +11,8 @@ export class MiaFormModalConfig {
   config!: MiaFormConfig;
   titleNew = '';
   titleEdit = '';
+  nextProcess?: Subject<any>;
+  resultProcess?: Observable<boolean>;
 }
 
 @Component({
@@ -32,13 +35,7 @@ export class MiaFormModalComponent implements OnInit {
     
   }
 
-  save(item: any) {
-    if(this.isSending){
-      return;
-    }
-
-    this.isSending = true;
-
+  processWithBaseService(item: any) {
     let serviceSave: Promise<any> = this.data.service.save(item);
     serviceSave.then(result => {
       this.dialogRef.close(true);
@@ -46,6 +43,33 @@ export class MiaFormModalComponent implements OnInit {
     }).catch(error => {
       this.isSending = false;
     });
+  }
+
+  processWithInternal(item: any) {
+    this.data.nextProcess!.next(item);
+    this.data.resultProcess?.subscribe(result => {
+      if(result){
+        this.dialogRef.close(true);
+      }
+      this.isSending = false;
+    }, error => {
+      this.isSending = false;
+    });
+  }
+
+  save(item: any) {
+    if(this.isSending){
+      return;
+    }
+
+    this.isSending = true;
+
+    if(this.data.nextProcess != undefined && this.data.resultProcess != undefined){
+      this.processWithInternal(item);
+    } else {
+      this.processWithBaseService(item);
+    }
+
   }
 
   onClickSave() {
