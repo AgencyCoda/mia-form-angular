@@ -1,16 +1,13 @@
+<h5 *ngIf="data.item.id == 0" mat-dialog-title class="mat-dialog-title">{{ data.titleNew }}</h5>
+<h5 *ngIf="data.item.id > 0" mat-dialog-title class="mat-dialog-title">{{ data.titleEdit }}</h5>
 
-<div class="form-modal">
+<mat-dialog-content class="form-modal">
+  <div class="content">
+    <mia-form #miaForm [config]="data.config" [item]="data.item"></mia-form>
+  </div>
+</mat-dialog-content>
 
-    <h2 *ngIf="data.item.id == 0" class="title-section">{{ data.titleNew }}</h2>
-    <h2 *ngIf="data.item.id > 0" class="title-section">{{ data.titleEdit }}</h2>
-
-    <div fxLayout="column" fxLayoutGap="16px">
-
-        <mia-form #miaForm [config]="data.config" [item]="data.item"></mia-form>
-
-        <br>
-
-        <button *ngIf="!isSending" fxFlex mat-flat-button class="button-flat button-gray" matDialogClose>Close</button>
-        <button *ngIf="!isSending" fxFlex mat-flat-button class="button-flat button-primary" (click)="onClickSave()">Save</button>
-    </div>     
+<div class="mat-dialog-actions" mat-dialog-actions>
+  <button *ngIf="!isSending" mat-stroked-button mat-dialog-close>Close</button>
+  <button *ngIf="!isSending" mat-raised-button color="primary" (click)="onClickSave()">Save</button>
 </div>
