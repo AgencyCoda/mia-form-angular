@@ -67,6 +67,7 @@ export class AppComponent implements OnInit {
       { key: 'date', type: 'date', label: 'Fecha' },
       { key: 'subtitle', type: 'string', },
       { key: 'vendors', type: 'list-service', extra: { service: this.testService, field_display: 'title', field_list: 'vendors-auto', query: new MiaQuery() } },
+      { key: '', type: MiaField.TYPE_LABEL, label: 'Esto es una <strong>prueba</strong> texto plano sin funcionalidad, admite HTML.', classes: 'label-custom' },
       { key: 'status', type: 'select', label: 'Estado', extra: {
         options: [
           { id: 0, title: 'Estado 1' },

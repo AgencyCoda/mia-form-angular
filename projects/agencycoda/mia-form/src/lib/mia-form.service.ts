@@ -26,6 +26,10 @@ export class MiaFormService {
   }
 
   private updateValuesByItemField(field: MiaField, group: FormGroup, item: any) {
+    if(field.type == 'label'){
+      return;
+    }
+
     let control = group.controls[field.key];
     if(control == undefined || item[field.key] == undefined){
       return;
@@ -61,6 +65,10 @@ export class MiaFormService {
   }
 
   private updateItemByFormField(field: MiaField, group: FormGroup, item: any) {
+    if(field.type == 'label'){
+      return;
+    }
+
     let control = group.controls[field.key];
     if(control == undefined){
       return;
@@ -73,7 +81,7 @@ export class MiaFormService {
       if(controlColor.value != undefined){
         item[field.extra.key_color] = controlColor.value;
       }
-    }else {
+    } else {
       item[field.key] = control.value;
     }
   }
@@ -96,6 +104,10 @@ export class MiaFormService {
     let errors: Array<string> = [];
 
     for (const field of config.fields) {
+      if(field.type == 'label'){
+        continue;
+      }
+
       let control = group.controls[field.key];
 
       if(control == undefined || control.errors == undefined){
