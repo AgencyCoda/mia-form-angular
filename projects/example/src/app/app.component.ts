@@ -44,6 +44,7 @@ export class AppComponent implements OnInit {
     this.item = new Entity();
     /*this.item.title = 'Noticia titue';
     this.item.subtitle = 'Subitulo';*/
+    this.item.firstname = 'Matias';
     this.item.caption = 'asld jasld kjaslkdjaklj dakls jdalkjd aslkdj alkdj aklj dalkajslk jadlsk jakslsd lakj';
     this.item.status = 1;
     this.item.date = '2021-04-08 04:20:00';
@@ -85,6 +86,10 @@ export class AppComponent implements OnInit {
         ]
       } },
       { key: 'tag', type: MiaField.TYPE_STRING_WITH_COLOR, label: 'Tag name', caption: '', appearance: 'outline', extra: { key_color: 'color' } },
+      { key: 'row-one', type: MiaField.TYPE_ROW, extra: { fields: [
+        { key: 'firstname', type: 'string', label: 'Nombre' },
+        { key: 'lastname', type: 'string', label: 'Apellido' },
+      ] }  }
     ];
     this.config.errorMessages = [
       { key: 'required', message: 'The %label% is required.' }

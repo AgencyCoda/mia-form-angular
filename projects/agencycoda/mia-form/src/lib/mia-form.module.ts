@@ -21,6 +21,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 /** FIELDS */
 import { MiaBaseFieldComponent } from './fields/base-field.component';
@@ -48,6 +49,7 @@ import { MiaPrintFieldsComponent } from './components/mia-print-fields/mia-print
 import { MiaFormModalComponent } from './modals/mia-form-modal/mia-form-modal.component';
 import { ChipsAndSelectFieldComponent } from './fields/chips-and-select-field/chips-and-select-field.component';
 import { StringWithColorFieldComponent } from './fields/string-with-color-field/string-with-color-field.component';
+import { RowFieldComponent } from './fields/row-field/row-field.component';
 
 
 @NgModule({
@@ -74,7 +76,8 @@ import { StringWithColorFieldComponent } from './fields/string-with-color-field/
     PhotoFieldComponent,
     AvatarListServiceFieldComponent,
     ChipsAndSelectFieldComponent,
-    StringWithColorFieldComponent
+    StringWithColorFieldComponent,
+    RowFieldComponent
   ],
   imports: [
     CommonModule,
@@ -95,7 +98,8 @@ import { StringWithColorFieldComponent } from './fields/string-with-color-field/
     MatMenuModule,
     MatChipsModule,
     MatButtonModule,
-    MatListModule
+    MatListModule,
+    FlexLayoutModule
   ],
   exports: [
     MiaFormComponent,

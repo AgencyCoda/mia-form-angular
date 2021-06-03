@@ -1,5 +1,7 @@
 <form [formGroup]="group" (ngSubmit)="onSubmit()">
-    <mia-print-fields [fields]="config.fields" [group]="group"></mia-print-fields>
+    <div class="mia-form-print" fxLayout="column">
+        <mia-print-fields class="mia-print-main" [fields]="config.fields" [group]="group"></mia-print-fields>
+    </div>
 
     <div *ngIf="!group.valid" class="message-error">
         <p *ngFor="let error of getErrors()">

@@ -1,5 +1,6 @@
 export class Entity {
     id = 0;
+    firstname = '';
     title = '';
     subtitle = '';
     caption = '';

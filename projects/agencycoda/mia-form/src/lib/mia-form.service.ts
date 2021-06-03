@@ -12,46 +12,70 @@ export class MiaFormService {
   constructor() { }
 
   updateValuesByItem(config: MiaFormConfig, group: FormGroup, item: any) {
-    for (const field of config.fields) {
-      let control = group.controls[field.key];
-      if(control == undefined || item[field.key] == undefined){
-        continue;
-      }
-      if(control instanceof FormArray){
-        this.updateValuesByItemInFormArray(control, field.key, item);
-        continue;
-      }
-      if(field.type == 'date'){
-        control.setValue(moment(item[field.key], 'YYYY-MM-DD hh:mm:ss'));
-      } else if(field.type == MiaField.TYPE_STRING_WITH_COLOR){
-        control.setValue(item[field.key]);
-        let controlColor = group.controls[field.extra.key_color];
-        controlColor.setValue(item[field.extra.key_color]);
-      } else {
-        control.setValue(item[field.key]);
+    this.updateValuesByItemFields(config.fields, group, item);
+  }
+
+  private updateValuesByItemFields(fields: Array<MiaField>, group: FormGroup, item: any) {
+    for (const field of fields) {
+      if(field.type == MiaField.TYPE_ROW){
+        this.updateValuesByItemFields(field.extra.fields, group, item);
+      } else {
+        this.updateValuesByItemField(field, group, item);
       }
     }
   }
 
+  private updateValuesByItemField(field: MiaField, group: FormGroup, item: any) {
+    let control = group.controls[field.key];
+    if(control == undefined || item[field.key] == undefined){
+      return;
+    }
+    if(control instanceof FormArray){
+      this.updateValuesByItemInFormArray(control, field.key, item);
+      return;
+    }
+    if(field.type == 'date'){
+      control.setValue(moment(item[field.key], 'YYYY-MM-DD hh:mm:ss'));
+    } else if(field.type == MiaField.TYPE_STRING_WITH_COLOR){
+      control.setValue(item[field.key]);
+      let controlColor = group.controls[field.extra.key_color];
+      controlColor.setValue(item[field.extra.key_color]);
+    } else {
+      control.setValue(item[field.key]);
+    }
+  }
+
   updateItemByForm(config: MiaFormConfig, group: FormGroup, item: any): any {
-    for (const field of config.fields) {
-      let control = group.controls[field.key];
-      if(control == undefined){
-        continue;
-      }
-      if(field.type == 'date' && control.value != undefined){
-        item[field.key] = control.value.format('YYYY-MM-DD hh:mm:ss');
-      }if(field.type == MiaField.TYPE_STRING_WITH_COLOR && control.value != undefined){
-        item[field.key] = control.value;
-        let controlColor = group.controls[field.extra.key_color];
-        if(controlColor.value != undefined){
-          item[field.extra.key_color] = controlColor.value;
-        }
-      }else {
-        item[field.key] = control.value;
+    this.updateItemByFormFields(config.fields, group, item);
+    return item;
+  }
+
+  private updateItemByFormFields(fields: Array<MiaField>, group: FormGroup, item: any) {
+    for (const field of fields) {
+      if(field.type == MiaField.TYPE_ROW){
+        this.updateItemByFormFields(field.extra.fields, group, item);
+      } else {
+        this.updateItemByFormField(field, group, item);
       }
     }
-    return item;
+  }
+
+  private updateItemByFormField(field: MiaField, group: FormGroup, item: any) {
+    let control = group.controls[field.key];
+    if(control == undefined){
+      return;
+    }
+    if(field.type == 'date' && control.value != undefined){
+      item[field.key] = control.value.format('YYYY-MM-DD hh:mm:ss');
+    } else if(field.type == MiaField.TYPE_STRING_WITH_COLOR && control.value != undefined){
+      item[field.key] = control.value;
+      let controlColor = group.controls[field.extra.key_color];
+      if(controlColor.value != undefined){
+        item[field.extra.key_color] = controlColor.value;
+      }
+    }else {
+      item[field.key] = control.value;
+    }
   }
 
   updateValuesByItemInFormArray(group: FormArray, key: string, item: any) {
