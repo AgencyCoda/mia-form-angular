@@ -25,7 +25,8 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadItem();
-    this.loadForm();
+    //this.loadForm();
+    this.loadFormMarketplace();
   }
 
   onClickSend() {
@@ -50,6 +51,38 @@ export class AppComponent implements OnInit {
     this.item.date = '2021-04-08 04:20:00';
     this.item.vendors = [
       { id: 1, title: 'Vendor 1' }
+    ];
+  }
+
+  loadFormMarketplace() {
+    this.config = new MiaFormConfig();
+    this.config.hasSubmit = false;
+    this.config.fields = [
+      { key: 'box-one', type: MiaField.TYPE_BOX, extra: { fields: [
+        { key: 'features', type: MiaField.TYPE_CHIPS_AND_SELECT, label: '', caption: '', extra: { 
+          title: 'Valores del producto', field_display: 'title',
+          options: [
+            { id: 0, title: 'Reciclado' },
+            { id: 1, title: 'Rehusado' },
+            { id: 2, title: 'Sustentable' },
+            { id: 3, title: 'Libre de animal' },
+          ]
+        } },
+        { key: '', type: MiaField.TYPE_LABEL, label: 'Marca del producto', classes: 'label-form' },
+        { key: 'brand', type: 'string', label: 'Marca del producto' },
+        { key: 'caption', type: MiaField.TYPE_TEXT, label: 'Descripcion del producto' },
+        { key: 'row-one', type: MiaField.TYPE_ROW, extra: { fields: [
+          { key: '', type: MiaField.TYPE_LABEL, label: 'Precio' },
+          { key: '', type: MiaField.TYPE_LABEL, label: 'Categoría' },
+        ] }  },
+        { key: 'row-one', type: MiaField.TYPE_ROW, extra: { fields: [
+          { key: 'price', type: 'string', label: 'Precio' },
+          { key: 'category', type: 'string', label: 'Categoria' },
+        ] }  }
+      ] }  },
+    ];
+    this.config.errorMessages = [
+      { key: 'required', message: 'The %label% is required.' }
     ];
   }
 

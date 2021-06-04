@@ -51,6 +51,7 @@ import { ChipsAndSelectFieldComponent } from './fields/chips-and-select-field/ch
 import { StringWithColorFieldComponent } from './fields/string-with-color-field/string-with-color-field.component';
 import { RowFieldComponent } from './fields/row-field/row-field.component';
 import { LabelFieldComponent } from './fields/label-field/label-field.component';
+import { BoxFieldComponent } from './fields/box-field/box-field.component';
 
 
 @NgModule({
@@ -79,7 +80,8 @@ import { LabelFieldComponent } from './fields/label-field/label-field.component'
     ChipsAndSelectFieldComponent,
     StringWithColorFieldComponent,
     RowFieldComponent,
-    LabelFieldComponent
+    LabelFieldComponent,
+    BoxFieldComponent
   ],
   imports: [
     CommonModule,
