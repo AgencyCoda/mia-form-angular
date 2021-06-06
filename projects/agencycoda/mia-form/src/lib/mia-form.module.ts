@@ -52,6 +52,7 @@ import { StringWithColorFieldComponent } from './fields/string-with-color-field/
 import { RowFieldComponent } from './fields/row-field/row-field.component';
 import { LabelFieldComponent } from './fields/label-field/label-field.component';
 import { BoxFieldComponent } from './fields/box-field/box-field.component';
+import { CityFieldComponent } from './fields/city-field/city-field.component';
 
 
 @NgModule({
@@ -81,7 +82,8 @@ import { BoxFieldComponent } from './fields/box-field/box-field.component';
     StringWithColorFieldComponent,
     RowFieldComponent,
     LabelFieldComponent,
-    BoxFieldComponent
+    BoxFieldComponent,
+    CityFieldComponent
   ],
   imports: [
     CommonModule,

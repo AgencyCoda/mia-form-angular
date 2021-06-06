@@ -19,6 +19,7 @@ export class MiaField {
     static TYPE_ROW = 'row';
     static TYPE_LABEL = 'label';
     static TYPE_BOX = 'box';
+    static TYPE_CITY = 'city';
 
     key: string = '';
     type: string = '';

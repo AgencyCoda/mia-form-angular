@@ -2,6 +2,7 @@ import { MiaQuery } from '@agencycoda/mia-core';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Validators } from '@angular/forms';
 import { MiaField, MiaFormComponent, MiaFormConfig } from 'projects/agencycoda/mia-form/src/public-api';
+import { environment } from '../environments/environment';
 import { Entity } from './entitiy';
 import { TestService } from './test.service';
 
@@ -80,6 +81,7 @@ export class AppComponent implements OnInit {
           { key: 'category', type: 'string', label: 'Categoria' },
         ] }  }
       ] }  },
+      { key: 'city_id', type: MiaField.TYPE_CITY, label: 'Ciudad', extra: { basePath: 'http://0.0.0.0:8080/' } },
     ];
     this.config.errorMessages = [
       { key: 'required', message: 'The %label% is required.' }
