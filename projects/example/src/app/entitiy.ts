@@ -6,6 +6,7 @@ export class Entity {
     caption = '';
     date = '';
     status = 0;
+    city_id?: number;
 
     vendors: Array<any> = [];
 }

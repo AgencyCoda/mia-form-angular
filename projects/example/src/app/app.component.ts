@@ -49,6 +49,7 @@ export class AppComponent implements OnInit {
     this.item.firstname = 'Matias';
     this.item.caption = 'asld jasld kjaslkdjaklj dakls jdalkjd aslkdj alkdj aklj dalkajslk jadlsk jakslsd lakj';
     this.item.status = 1;
+    this.item.city_id = 1;
     this.item.date = '2021-04-08 04:20:00';
     this.item.vendors = [
       { id: 1, title: 'Vendor 1' }
