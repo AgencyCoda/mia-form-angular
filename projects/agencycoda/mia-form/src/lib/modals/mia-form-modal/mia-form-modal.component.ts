@@ -66,8 +66,10 @@ export class MiaFormModalComponent implements OnInit {
 
     if(this.data.nextProcess != undefined && this.data.resultProcess != undefined){
       this.processWithInternal(item);
-    } else {
+    } else if (this.data.service != undefined) {
       this.processWithBaseService(item);
+    } else {
+      this.dialogRef.close(item);
     }
 
   }
