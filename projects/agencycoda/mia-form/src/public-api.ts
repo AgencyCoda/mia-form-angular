@@ -21,6 +21,7 @@
   */
  export * from './lib/fields/base-field.component';
  export * from './lib/fields/avatar-list-service-field/avatar-list-service-field.component';
+ export * from './lib/fields/chips-and-select-field/chips-and-select-field.component';
  
  /**
   * Components

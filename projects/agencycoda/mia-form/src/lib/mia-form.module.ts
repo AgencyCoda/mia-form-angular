@@ -111,7 +111,10 @@ import { CityFieldComponent } from './fields/city-field/city-field.component';
     MiaFormComponent,
     MiaFormModalComponent,
     MatMomentDateModule,
-    AvatarListServiceFieldComponent
+
+    /** FIELDS */
+    AvatarListServiceFieldComponent,
+    ChipsAndSelectFieldComponent,
   ],
   entryComponents: [
     MiaFormModalComponent
