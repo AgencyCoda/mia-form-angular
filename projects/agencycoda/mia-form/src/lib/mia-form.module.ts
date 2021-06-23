@@ -113,6 +113,7 @@ import { CityFieldComponent } from './fields/city-field/city-field.component';
     MatMomentDateModule,
 
     /** FIELDS */
+    SelectServiceFieldComponent,
     AutocompleteServiceFieldComponent,
     ListServiceFieldComponent,
     AvatarListServiceFieldComponent,

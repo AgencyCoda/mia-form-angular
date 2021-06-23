@@ -24,6 +24,7 @@
  export * from './lib/fields/chips-and-select-field/chips-and-select-field.component';
  export * from './lib/fields/list-service-field/list-service-field.component';
  export * from './lib/fields/autocomplete-service-field/autocomplete-service-field.component';
+ export * from './lib/fields/select-service-field/select-service-field.component';
  
  /**
   * Components
