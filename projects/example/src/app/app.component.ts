@@ -126,7 +126,8 @@ export class AppComponent implements OnInit {
       { key: 'row-one', type: MiaField.TYPE_ROW, extra: { fields: [
         { key: 'firstname', type: 'string', label: 'Nombre' },
         { key: 'lastname', type: 'string', label: 'Apellido' },
-      ] }  }
+      ] }  },
+      { key: 'tags', type: MiaField.TYPE_TAGS, label: 'Tags', caption: '', appearance: 'outline' },
     ];
     this.config.errorMessages = [
       { key: 'required', message: 'The %label% is required.' }

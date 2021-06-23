@@ -41,19 +41,19 @@ import { AutocompleteFieldComponent } from './fields/autocomplete-field/autocomp
 import { SelectServiceFieldComponent } from './fields/select-service-field/select-service-field.component';
 import { PhotoFieldComponent } from './fields/photo-field/photo-field.component';
 import { AvatarListServiceFieldComponent } from './fields/avatar-list-service-field/avatar-list-service-field.component';
-
-
-/** COMPONENTS */
-import { MiaFormComponent } from './components/mia-form/mia-form.component';
-import { MiaPrintFieldsComponent } from './components/mia-print-fields/mia-print-fields.component';
-import { MiaFormModalComponent } from './modals/mia-form-modal/mia-form-modal.component';
 import { ChipsAndSelectFieldComponent } from './fields/chips-and-select-field/chips-and-select-field.component';
 import { StringWithColorFieldComponent } from './fields/string-with-color-field/string-with-color-field.component';
 import { RowFieldComponent } from './fields/row-field/row-field.component';
 import { LabelFieldComponent } from './fields/label-field/label-field.component';
 import { BoxFieldComponent } from './fields/box-field/box-field.component';
 import { CityFieldComponent } from './fields/city-field/city-field.component';
+import { TagsFieldComponent } from './fields/tags-field/tags-field.component';
 
+
+/** COMPONENTS */
+import { MiaFormComponent } from './components/mia-form/mia-form.component';
+import { MiaPrintFieldsComponent } from './components/mia-print-fields/mia-print-fields.component';
+import { MiaFormModalComponent } from './modals/mia-form-modal/mia-form-modal.component';
 
 @NgModule({
   declarations: [
@@ -83,7 +83,8 @@ import { CityFieldComponent } from './fields/city-field/city-field.component';
     RowFieldComponent,
     LabelFieldComponent,
     BoxFieldComponent,
-    CityFieldComponent
+    CityFieldComponent,
+    TagsFieldComponent
   ],
   imports: [
     CommonModule,
@@ -118,6 +119,7 @@ import { CityFieldComponent } from './fields/city-field/city-field.component';
     ListServiceFieldComponent,
     AvatarListServiceFieldComponent,
     ChipsAndSelectFieldComponent,
+    TagsFieldComponent
   ],
   entryComponents: [
     MiaFormModalComponent
