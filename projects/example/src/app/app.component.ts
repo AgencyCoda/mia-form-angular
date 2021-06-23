@@ -26,8 +26,8 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadItem();
-    //this.loadForm();
-    this.loadFormMarketplace();
+    this.loadForm();
+    //this.loadFormMarketplace();
   }
 
   onClickSend() {
