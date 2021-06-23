@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { MatChipInputEvent } from '@angular/material/chips';
 import { MiaBaseFieldComponent } from '../base-field.component';
 
@@ -9,29 +10,37 @@ import { MiaBaseFieldComponent } from '../base-field.component';
 })
 export class TagsFieldComponent extends MiaBaseFieldComponent implements OnInit {
 
-  tags = new Array<string>();
-
   constructor() {
     super();
   }
 
+  createFormControl() {
+    // Create Control
+    this.input = new FormControl([]);
+    // Config validators
+    if(this.field.validators != undefined && this.field.validators.length > 0){
+        this.input.setValidators(this.field.validators);
+    }
+    // Add in Group
+    this.group.addControl(this.field.key, this.input);
+}
+
   addTagFromInput(event: MatChipInputEvent) {
     if (event.value) {
-      this.tags.push(event.value);
+      let tags = this.input.value;
+      tags.push(event.value);
+      this.input.setValue(tags);
       event.input!.value = '';
     }
-
-    this.input.setValue(this.tags);
-    console.log(this.input.value);
   }
 
   remove(tag: string) {
-    let index = this.tags.indexOf(tag);
+    let tags = this.input.value;
+    let index = tags.indexOf(tag);
     if(index >= 0) {
-      this.tags.splice(index, 1);
+      tags.splice(index, 1);
     }
     
-    this.input.setValue(this.tags);
-    console.log(this.input.value);
+    this.input.setValue(tags);
   }
 }
