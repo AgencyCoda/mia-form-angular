@@ -54,6 +54,7 @@ import { TagsFieldComponent } from './fields/tags-field/tags-field.component';
 import { MiaFormComponent } from './components/mia-form/mia-form.component';
 import { MiaPrintFieldsComponent } from './components/mia-print-fields/mia-print-fields.component';
 import { MiaFormModalComponent } from './modals/mia-form-modal/mia-form-modal.component';
+import { ChipsAndSelectServiceFieldComponent } from './fields/chips-and-select-service-field/chips-and-select-service-field.component';
 
 @NgModule({
   declarations: [
@@ -84,7 +85,8 @@ import { MiaFormModalComponent } from './modals/mia-form-modal/mia-form-modal.co
     LabelFieldComponent,
     BoxFieldComponent,
     CityFieldComponent,
-    TagsFieldComponent
+    TagsFieldComponent,
+    ChipsAndSelectServiceFieldComponent
   ],
   imports: [
     CommonModule,

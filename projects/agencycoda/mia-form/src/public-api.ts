@@ -26,6 +26,7 @@
  export * from './lib/fields/autocomplete-service-field/autocomplete-service-field.component';
  export * from './lib/fields/select-service-field/select-service-field.component';
  export * from './lib/fields/tags-field/tags-field.component';
+ export * from './lib/fields/chips-and-select-service-field/chips-and-select-service-field.component';
  
  /**
   * Components

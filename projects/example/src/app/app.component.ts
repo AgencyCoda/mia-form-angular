@@ -51,6 +51,7 @@ export class AppComponent implements OnInit {
     this.item.status = 1;
     this.item.city_id = 1;
     this.item.date = '2021-04-08 04:20:00';
+    this.item.tags = ['tag1', 'tag2', 'tag3'];
     this.item.vendors = [
       { id: 1, title: 'Vendor 1' }
     ];
@@ -128,6 +129,7 @@ export class AppComponent implements OnInit {
         { key: 'lastname', type: 'string', label: 'Apellido' },
       ] }  },
       { key: 'tags', type: MiaField.TYPE_TAGS, label: 'Tags', caption: '', appearance: 'outline' },
+      { key: 'chips-service', type: MiaField.TYPE_CHIPS_AND_SELECT_SERVICE, label: 'Seleccionador multiple chip', caption: '', extra: { title: 'Multiple chips service', service: this.testService, field_display: 'title', field_list: 'chips-auto', query: new MiaQuery() } },
     ];
     this.config.errorMessages = [
       { key: 'required', message: 'The %label% is required.' }

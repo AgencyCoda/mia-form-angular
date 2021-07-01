@@ -16,6 +16,7 @@ export class MiaField {
     static TYPE_PHOTO = 'photo';
     static TYPE_AVATAR_LIST_SERVICE = 'avatar-list-service';
     static TYPE_CHIPS_AND_SELECT = 'chips-and-select';
+    static TYPE_CHIPS_AND_SELECT_SERVICE = 'chips-and-select-service';
     static TYPE_ROW = 'row';
     static TYPE_LABEL = 'label';
     static TYPE_BOX = 'box';

@@ -9,4 +9,5 @@ export class Entity {
     city_id?: number;
 
     vendors: Array<any> = [];
+    tags: Array<string> = [];
 }
