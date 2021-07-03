@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { MiaFormModule } from 'projects/agencycoda/mia-form/src/public-api';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { QuillModule } from 'ngx-quill';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     HttpClientModule,
     MiaFormModule,
+    QuillModule.forRoot(),
     BrowserAnimationsModule
   ],
   providers: [],

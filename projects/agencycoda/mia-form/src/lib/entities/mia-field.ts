@@ -22,6 +22,7 @@ export class MiaField {
     static TYPE_BOX = 'box';
     static TYPE_CITY = 'city';
     static TYPE_TAGS = 'tags';
+    static TYPE_HTML = 'html';
 
     key: string = '';
     type: string = '';

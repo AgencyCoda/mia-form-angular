@@ -8,11 +8,20 @@ import { MiaBaseFieldComponent } from '../base-field.component';
 })
 export class HtmlFieldComponent extends MiaBaseFieldComponent implements OnInit {
 
+  heightEditor = 250;
+
   constructor() {
     super();
   }
 
   ngOnInit(): void {
+    super.ngOnInit();
+    this.loadConfig();
   }
 
+  loadConfig() {
+    if(this.field.extra.height != undefined){
+      this.heightEditor = this.field.extra.height;
+    }
+  }
 }

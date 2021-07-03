@@ -23,6 +23,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
+/** EXTERNAL LIBRARIES */
+import { QuillModule } from 'ngx-quill';
+
 /** FIELDS */
 import { MiaBaseFieldComponent } from './fields/base-field.component';
 import { StringFieldComponent } from './fields/string-field/string-field.component';
@@ -108,12 +111,18 @@ import { ChipsAndSelectServiceFieldComponent } from './fields/chips-and-select-s
     MatChipsModule,
     MatButtonModule,
     MatListModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+
+    // External Libraries
+    QuillModule
   ],
   exports: [
     MiaFormComponent,
     MiaFormModalComponent,
     MatMomentDateModule,
+
+    // External Libraries
+    QuillModule,
 
     /** FIELDS */
     SelectServiceFieldComponent,
