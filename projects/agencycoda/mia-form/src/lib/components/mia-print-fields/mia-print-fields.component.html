@@ -1,5 +1,6 @@
 <ng-container *ngFor="let field of fields">
     <mia-string-field *ngIf="field.type == 'string'" [field]="field" [group]="group"></mia-string-field>
+    <mia-string-title-field *ngIf="field.type == 'string-title'" [field]="field" [group]="group"></mia-string-title-field>
     <mia-select-field *ngIf="field.type == 'select'" [field]="field" [group]="group"></mia-select-field>
     <mia-autocomplete-field *ngIf="field.type == 'autocomplete'" [field]="field" [group]="group"></mia-autocomplete-field>
     <mia-autocomplete-service-field *ngIf="field.type == 'autocomplete-service'" [field]="field" [group]="group"></mia-autocomplete-service-field>
@@ -8,6 +9,7 @@
     <mia-text-field *ngIf="field.type == 'text'" [field]="field" [group]="group"></mia-text-field>
     <mia-date-field *ngIf="field.type == 'date'" [field]="field" [group]="group"></mia-date-field>
     <mia-photo-field *ngIf="field.type == 'photo'" [field]="field" [group]="group"></mia-photo-field>
+    <mia-photo-header-field *ngIf="field.type == 'photo-header'" [field]="field" [group]="group"></mia-photo-header-field>
     <mia-avatar-list-service-field *ngIf="field.type == 'avatar-list-service'" [field]="field" [group]="group"></mia-avatar-list-service-field>
     <mia-list-string-field *ngIf="field.type == 'list-string'" [field]="field" [group]="group"></mia-list-string-field>
     <mia-chips-and-select-field *ngIf="field.type == 'chips-and-select'" [field]="field" [group]="group"></mia-chips-and-select-field>

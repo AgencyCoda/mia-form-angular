@@ -58,6 +58,8 @@ import { MiaFormComponent } from './components/mia-form/mia-form.component';
 import { MiaPrintFieldsComponent } from './components/mia-print-fields/mia-print-fields.component';
 import { MiaFormModalComponent } from './modals/mia-form-modal/mia-form-modal.component';
 import { ChipsAndSelectServiceFieldComponent } from './fields/chips-and-select-service-field/chips-and-select-service-field.component';
+import { StringTitleFieldComponent } from './fields/string-title-field/string-title-field.component';
+import { PhotoHeaderFieldComponent } from './fields/photo-header-field/photo-header-field.component';
 
 @NgModule({
   declarations: [
@@ -89,7 +91,9 @@ import { ChipsAndSelectServiceFieldComponent } from './fields/chips-and-select-s
     BoxFieldComponent,
     CityFieldComponent,
     TagsFieldComponent,
-    ChipsAndSelectServiceFieldComponent
+    ChipsAndSelectServiceFieldComponent,
+    StringTitleFieldComponent,
+    PhotoHeaderFieldComponent
   ],
   imports: [
     CommonModule,

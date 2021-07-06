@@ -23,6 +23,8 @@ export class MiaField {
     static TYPE_CITY = 'city';
     static TYPE_TAGS = 'tags';
     static TYPE_HTML = 'html';
+    static TYPE_STRING_TITLE = 'string-title';
+    static TYPE_PHOTO_HEADER = 'photo-header';
 
     key: string = '';
     type: string = '';
