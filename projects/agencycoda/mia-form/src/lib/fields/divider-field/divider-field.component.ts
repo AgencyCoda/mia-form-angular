@@ -12,4 +12,6 @@ export class DividerFieldComponent extends MiaBaseFieldComponent implements OnIn
     super();
   }
 
+  ngOnInit(): void {
+  }
 }
