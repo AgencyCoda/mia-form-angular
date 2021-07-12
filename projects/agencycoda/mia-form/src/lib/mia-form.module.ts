@@ -22,6 +22,7 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatDividerModule } from '@angular/material/divider';
 
 /** EXTERNAL LIBRARIES */
 import { QuillModule } from 'ngx-quill';
@@ -60,6 +61,7 @@ import { MiaFormModalComponent } from './modals/mia-form-modal/mia-form-modal.co
 import { ChipsAndSelectServiceFieldComponent } from './fields/chips-and-select-service-field/chips-and-select-service-field.component';
 import { StringTitleFieldComponent } from './fields/string-title-field/string-title-field.component';
 import { PhotoHeaderFieldComponent } from './fields/photo-header-field/photo-header-field.component';
+import { DividerFieldComponent } from './fields/divider-field/divider-field.component';
 
 @NgModule({
   declarations: [
@@ -93,7 +95,8 @@ import { PhotoHeaderFieldComponent } from './fields/photo-header-field/photo-hea
     TagsFieldComponent,
     ChipsAndSelectServiceFieldComponent,
     StringTitleFieldComponent,
-    PhotoHeaderFieldComponent
+    PhotoHeaderFieldComponent,
+    DividerFieldComponent
   ],
   imports: [
     CommonModule,
@@ -116,6 +119,7 @@ import { PhotoHeaderFieldComponent } from './fields/photo-header-field/photo-hea
     MatButtonModule,
     MatListModule,
     FlexLayoutModule,
+    MatDividerModule,
 
     // External Libraries
     QuillModule

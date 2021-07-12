@@ -25,6 +25,7 @@ export class MiaField {
     static TYPE_HTML = 'html';
     static TYPE_STRING_TITLE = 'string-title';
     static TYPE_PHOTO_HEADER = 'photo-header';
+    static TYPE_DIVIDER = 'divider';
 
     key: string = '';
     type: string = '';

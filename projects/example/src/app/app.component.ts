@@ -124,6 +124,7 @@ export class AppComponent implements OnInit {
         ]
       } },
       { key: 'tag', type: MiaField.TYPE_STRING_WITH_COLOR, label: 'Tag name', caption: '', appearance: 'outline', extra: { key_color: 'color' } },
+      { key: 'divider-1', type: MiaField.TYPE_DIVIDER },
       { key: 'row-one', type: MiaField.TYPE_ROW, extra: { fields: [
         { key: 'firstname', type: 'string', label: 'Nombre' },
         { key: 'lastname', type: 'string', label: 'Apellido' },
