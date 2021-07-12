@@ -1,17 +1,18 @@
-<!-- Example Full Request Branch Axel -->
+<h4 mat-dialog-title>
+    <span *ngIf="data.item.id == 0">{{ data.titleNew }}</span>
+    <span *ngIf="data.item.id > 0">{{ data.titleEdit }}</span>
+    <button mat-icon-button matTooltip="Close" mat-dialog-close><mat-icon>close</mat-icon></button>
+</h4>
 
-<div class="form-modal">
-
-    <h2 *ngIf="data.item.id == 0" class="title-section">{{ data.titleNew }}</h2>
-    <h2 *ngIf="data.item.id > 0" class="title-section">{{ data.titleEdit }}</h2>
-
-    <div fxLayout="column" fxLayoutGap="16px">
-
-        <mia-form #miaForm [config]="data.config" [item]="data.item"></mia-form>
-
-        <br>
-
-        <button *ngIf="!isSending" fxFlex mat-flat-button class="button-flat button-gray" matDialogClose>Close</button>
-        <button *ngIf="!isSending" fxFlex mat-flat-button class="button-flat button-primary" (click)="onClickSave()">Save</button>
+<mat-dialog-content>
+    <div class="form-modal">
+        <div fxLayout="column" fxLayoutGap="16px">
+            <mia-form #miaForm [config]="data.config" [item]="data.item"></mia-form>
+        </div>
     </div>
+</mat-dialog-content>
+
+<div class="mat-dialog-actions" mat-dialog-actions>
+    <button *ngIf="!isSending" mat-stroked-button matDialogClose>Cancel</button>
+    <button *ngIf="!isSending" mat-raised-button color="primary" (click)="onClickSave()">Save</button>
 </div>
