@@ -31,6 +31,12 @@ export class MiaFormService {
     }
 
     let control = group.controls[field.key];
+    if(field.type == MiaField.TYPE_CUSTOM){
+      if(field.extra.component.updateValuesByItem){
+        field.extra.component.updateValuesByItem(group, item);
+      }
+      return;
+    } 
     if(control == undefined || item[field.key] == undefined){
       return;
     }
@@ -74,6 +80,12 @@ export class MiaFormService {
     }
 
     let control = group.controls[field.key];
+    if(field.type == MiaField.TYPE_CUSTOM){
+      if(field.extra.component.updateItemByFormField){
+        field.extra.component.updateItemByFormField(group, item);
+      }
+      return;
+    } 
     if(control == undefined){
       return;
     }
