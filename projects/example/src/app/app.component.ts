@@ -52,6 +52,8 @@ export class AppComponent implements OnInit {
     this.item.city_id = 1;
     this.item.date = '2021-04-08 04:20:00';
     this.item.tags = ['tag1', 'tag2', 'tag3'];
+    this.item.event_start = '2021-07-19 16:00:00';
+    this.item.event_end = '2021-07-20 18:00:00';
     this.item.vendors = [
       { id: 1, title: 'Vendor 1' }
     ];
@@ -134,6 +136,7 @@ export class AppComponent implements OnInit {
       { key: 'content-html', type: MiaField.TYPE_HTML, label: 'Contenido del post', caption: '', extra: { height: 400 } },
       { key: 'title-header', type: MiaField.TYPE_STRING_TITLE, placeholder: 'Write your title', caption: '' },
       { key: 'photo-header', type: MiaField.TYPE_PHOTO_HEADER, label: 'Photo Header', caption: 'Foto del header.' },
+      { key: 'event_start', type: MiaField.TYPE_EVENT, label: 'Fecha del evento', extra: { field_end_key: 'event_end'} },
     ];
     this.config.errorMessages = [
       { key: 'required', message: 'The %label% is required.' }

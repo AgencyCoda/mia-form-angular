@@ -5,6 +5,8 @@ export class Entity {
     subtitle = '';
     caption = '';
     date = '';
+    event_start = '';
+    event_end = '';
     status = 0;
     city_id?: number;
 

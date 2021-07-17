@@ -39,7 +39,11 @@ export class MiaFormService {
       return;
     }
     if(field.type == 'date'){
-      control.setValue(moment(item[field.key], 'YYYY-MM-DD hh:mm:ss'));
+      control.setValue(moment(item[field.key], 'YYYY-MM-DD HH:mm:ss'));
+    } else if(field.type == 'event'){
+      control.setValue(moment(item[field.key], 'YYYY-MM-DD HH:mm:ss'));
+      let controlEnd = group.controls[field.extra.field_end_key];
+      controlEnd.setValue(moment(item[field.extra.field_end_key], 'YYYY-MM-DD HH:mm:ss'));
     } else if(field.type == MiaField.TYPE_STRING_WITH_COLOR){
       control.setValue(item[field.key]);
       let controlColor = group.controls[field.extra.key_color];
@@ -74,7 +78,15 @@ export class MiaFormService {
       return;
     }
     if(field.type == 'date' && control.value != undefined){
-      item[field.key] = control.value.format('YYYY-MM-DD hh:mm:ss');
+      item[field.key] = control.value.format('YYYY-MM-DD HH:mm:ss');
+    } else if(field.type == 'event' && control.value != undefined){
+
+      item[field.key] = control.value.format('YYYY-MM-DD HH:mm:ss');
+      let controlEnd = group.controls[field.extra.field_end_key];
+      if(controlEnd.value != undefined){
+        item[field.extra.field_end_key] = controlEnd.value.format('YYYY-MM-DD HH:mm:ss');
+      }
+
     } else if(field.type == MiaField.TYPE_STRING_WITH_COLOR && control.value != undefined){
       item[field.key] = control.value;
       let controlColor = group.controls[field.extra.key_color];

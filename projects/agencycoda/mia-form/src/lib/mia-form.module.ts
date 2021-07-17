@@ -62,6 +62,7 @@ import { ChipsAndSelectServiceFieldComponent } from './fields/chips-and-select-s
 import { StringTitleFieldComponent } from './fields/string-title-field/string-title-field.component';
 import { PhotoHeaderFieldComponent } from './fields/photo-header-field/photo-header-field.component';
 import { DividerFieldComponent } from './fields/divider-field/divider-field.component';
+import { EventFieldComponent } from './fields/event-field/event-field.component';
 
 @NgModule({
   declarations: [
@@ -96,7 +97,8 @@ import { DividerFieldComponent } from './fields/divider-field/divider-field.comp
     ChipsAndSelectServiceFieldComponent,
     StringTitleFieldComponent,
     PhotoHeaderFieldComponent,
-    DividerFieldComponent
+    DividerFieldComponent,
+    EventFieldComponent
   ],
   imports: [
     CommonModule,
@@ -138,7 +140,8 @@ import { DividerFieldComponent } from './fields/divider-field/divider-field.comp
     ListServiceFieldComponent,
     AvatarListServiceFieldComponent,
     ChipsAndSelectFieldComponent,
-    TagsFieldComponent
+    TagsFieldComponent,
+    EventFieldComponent
   ],
   entryComponents: [
     MiaFormModalComponent
