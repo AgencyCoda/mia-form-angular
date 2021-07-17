@@ -63,6 +63,7 @@ import { StringTitleFieldComponent } from './fields/string-title-field/string-ti
 import { PhotoHeaderFieldComponent } from './fields/photo-header-field/photo-header-field.component';
 import { DividerFieldComponent } from './fields/divider-field/divider-field.component';
 import { EventFieldComponent } from './fields/event-field/event-field.component';
+import { CustomFieldComponent } from './fields/custom-field/custom-field.component';
 
 @NgModule({
   declarations: [
@@ -98,7 +99,8 @@ import { EventFieldComponent } from './fields/event-field/event-field.component'
     StringTitleFieldComponent,
     PhotoHeaderFieldComponent,
     DividerFieldComponent,
-    EventFieldComponent
+    EventFieldComponent,
+    CustomFieldComponent
   ],
   imports: [
     CommonModule,

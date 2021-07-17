@@ -7,10 +7,12 @@ import { MiaFormModule } from 'projects/agencycoda/mia-form/src/public-api';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { QuillModule } from 'ngx-quill';
+import { ExampleCustomFieldComponent } from './fields/example-custom-field/example-custom-field.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ExampleCustomFieldComponent
   ],
   imports: [
     BrowserModule,

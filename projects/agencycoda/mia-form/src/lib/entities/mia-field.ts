@@ -27,6 +27,7 @@ export class MiaField {
     static TYPE_PHOTO_HEADER = 'photo-header';
     static TYPE_DIVIDER = 'divider';
     static TYPE_EVENT = 'event';
+    static TYPE_CUSTOM = 'custom';
 
     key: string = '';
     type: string = '';

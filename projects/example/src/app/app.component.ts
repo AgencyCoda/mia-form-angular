@@ -4,6 +4,7 @@ import { Validators } from '@angular/forms';
 import { MiaField, MiaFormComponent, MiaFormConfig } from 'projects/agencycoda/mia-form/src/public-api';
 import { environment } from '../environments/environment';
 import { Entity } from './entitiy';
+import { ExampleCustomFieldComponent } from './fields/example-custom-field/example-custom-field.component';
 import { TestService } from './test.service';
 
 @Component({
@@ -137,6 +138,7 @@ export class AppComponent implements OnInit {
       { key: 'title-header', type: MiaField.TYPE_STRING_TITLE, placeholder: 'Write your title', caption: '' },
       { key: 'photo-header', type: MiaField.TYPE_PHOTO_HEADER, label: 'Photo Header', caption: 'Foto del header.' },
       { key: 'event_start', type: MiaField.TYPE_EVENT, label: 'Fecha del evento', extra: { field_end_key: 'event_end'} },
+      { key: 'custom_example', type: MiaField.TYPE_CUSTOM, extra: { component: ExampleCustomFieldComponent } },
     ];
     this.config.errorMessages = [
       { key: 'required', message: 'The %label% is required.' }
