@@ -142,6 +142,7 @@ import { CustomFieldComponent } from './fields/custom-field/custom-field.compone
     ListServiceFieldComponent,
     AvatarListServiceFieldComponent,
     ChipsAndSelectFieldComponent,
+    ChipsAndSelectServiceFieldComponent,
     TagsFieldComponent,
     EventFieldComponent
   ],

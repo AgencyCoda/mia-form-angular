@@ -80,6 +80,7 @@ export class MiaFormService {
     }
 
     let control = group.controls[field.key];
+    // TODO: Cambiar para que todos los fields se comporten de esta manera. Ya asi simplificar el tema del Mia Print
     if(field.type == MiaField.TYPE_CUSTOM){
       if(field.extra.component.updateItemByFormField){
         field.extra.component.updateItemByFormField(group, item);

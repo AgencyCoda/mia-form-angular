@@ -25,8 +25,4 @@ export class ExampleCustomFieldComponent extends MiaBaseFieldComponent implement
     item['custom_var'] = 'example';
     console.log('llego aqui');
   }
-
-  static toItems() {
-    return 'pepe';
-  }
 }
