@@ -1,4 +1,7 @@
 <h1>Formulario example</h1>
 <mia-form #miaForm [config]="config" [item]="item" (save)="onSubmit($event)"></mia-form>
 <button (click)="onClickSend()">Enviar</button>
+
+<h1>Elementos</h1>
+<mia-date-filter-range-button (changeRange)="onChangeDateFilter($event)"></mia-date-filter-range-button>
 <router-outlet></router-outlet>

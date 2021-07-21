@@ -38,6 +38,10 @@ export class AppComponent implements OnInit {
     });
   }
 
+  onChangeDateFilter(result: any) {
+    console.log(result);
+  }
+
   onSubmit(item: Entity) {
     console.log('--SUBMIT--');
     console.log(item);

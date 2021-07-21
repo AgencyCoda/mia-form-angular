@@ -64,6 +64,7 @@ import { PhotoHeaderFieldComponent } from './fields/photo-header-field/photo-hea
 import { DividerFieldComponent } from './fields/divider-field/divider-field.component';
 import { EventFieldComponent } from './fields/event-field/event-field.component';
 import { CustomFieldComponent } from './fields/custom-field/custom-field.component';
+import { DateFilterRangeButtonComponent } from './elements/date-filter-range-button/date-filter-range-button.component';
 
 @NgModule({
   declarations: [
@@ -100,7 +101,8 @@ import { CustomFieldComponent } from './fields/custom-field/custom-field.compone
     PhotoHeaderFieldComponent,
     DividerFieldComponent,
     EventFieldComponent,
-    CustomFieldComponent
+    CustomFieldComponent,
+    DateFilterRangeButtonComponent
   ],
   imports: [
     CommonModule,
@@ -144,7 +146,10 @@ import { CustomFieldComponent } from './fields/custom-field/custom-field.compone
     ChipsAndSelectFieldComponent,
     ChipsAndSelectServiceFieldComponent,
     TagsFieldComponent,
-    EventFieldComponent
+    EventFieldComponent,
+
+    /** ELEMENTS */
+    DateFilterRangeButtonComponent
   ],
   entryComponents: [
     MiaFormModalComponent

@@ -28,6 +28,7 @@ export class MiaField {
     static TYPE_DIVIDER = 'divider';
     static TYPE_EVENT = 'event';
     static TYPE_CUSTOM = 'custom';
+    static TYPE_DATE_FILTER_RANGE = 'date-filter-range';
 
     key: string = '';
     type: string = '';

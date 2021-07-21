@@ -28,6 +28,11 @@
  export * from './lib/fields/tags-field/tags-field.component';
  export * from './lib/fields/chips-and-select-service-field/chips-and-select-service-field.component';
  export * from './lib/fields/html-field/html-field.component';
+
+ /**
+  * Elements
+  */
+  export * from './lib/elements/date-filter-range-button/date-filter-range-button.component';
  
  /**
   * Components
