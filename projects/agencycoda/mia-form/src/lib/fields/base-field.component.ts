@@ -30,6 +30,10 @@ export class MiaBaseFieldComponent implements OnInit {
         if(this.field.validators != undefined && this.field.validators.length > 0){
             this.input.setValidators(this.field.validators);
         }
+        // If include default value
+        if(this.field.extra && this.field.extra.default_value){
+          this.input.setValue(this.field.extra.default_value);
+        }
         // Add in Group
         this.group.addControl(this.field.key, this.input);
     }
