@@ -65,10 +65,14 @@ import { DividerFieldComponent } from './fields/divider-field/divider-field.comp
 import { EventFieldComponent } from './fields/event-field/event-field.component';
 import { CustomFieldComponent } from './fields/custom-field/custom-field.component';
 import { DateFilterRangeButtonComponent } from './elements/date-filter-range-button/date-filter-range-button.component';
+import { MiaFilterBoxComponent } from './components/mia-filter-box/mia-filter-box.component';
 
 @NgModule({
   declarations: [
+    /** COMPONENTS */
     MiaFormComponent,
+    MiaFilterBoxComponent,
+
     /** FIELDS */
     MiaBaseFieldComponent,
     StringFieldComponent,
@@ -134,6 +138,9 @@ import { DateFilterRangeButtonComponent } from './elements/date-filter-range-but
     MiaFormComponent,
     MiaFormModalComponent,
     MatMomentDateModule,
+
+    /** COMPONENTS */
+    MiaFilterBoxComponent,
 
     // External Libraries
     QuillModule,

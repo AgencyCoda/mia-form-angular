@@ -8,6 +8,8 @@
 
  export * from './lib/entities/mia-form-config';
  export * from './lib/entities/mia-field';
+ export * from './lib/entities/mia-filter-box-config';
+ export * from './lib/entities/mia-filter-type';
  
  //export * from './lib/animations/table-animation';
  
@@ -38,6 +40,7 @@
   * Components
   */
  export * from './lib/components/mia-form/mia-form.component';
+ export * from './lib/components/mia-filter-box/mia-filter-box.component';
 
  /**
   * Components

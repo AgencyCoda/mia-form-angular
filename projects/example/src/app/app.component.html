@@ -2,6 +2,12 @@
 <mia-form #miaForm [config]="config" [item]="item" (save)="onSubmit($event)"></mia-form>
 <button (click)="onClickSend()">Enviar</button>
 
+<hr />
+<hr />
+
 <h1>Elementos</h1>
 <mia-date-filter-range-button (changeRange)="onChangeDateFilter($event)"></mia-date-filter-range-button>
+<hr />
+<mia-filter-box></mia-filter-box>
+
 <router-outlet></router-outlet>

@@ -1,0 +1,82 @@
+<button mat-button [matMenuTriggerFor]="filters" class="btn-date">
+    <mat-icon>tune</mat-icon>
+    <span fxHide.xs>Filters</span>
+    <mat-icon fxHide.xs>expand_more</mat-icon>
+</button>
+<button mat-button (click)="onClearFilters()">Clear Filter</button>
+
+<mat-menu #filters="matMenu" class="container-filters-menu">
+    <div class="filters-menu" (click)="$event.stopPropagation()">
+        <div class="header d-flex">
+            <h5><b>Active filters</b></h5>
+            <button mat-button color="primary" class="btn-add-filter" (click)="onAddFilter()">+ Add Filter</button>
+        </div>
+
+        <div class="filter" *ngFor="let filter of actives; let index = index;">
+            <div fxLayout="row" fxLayoutGap="0.5em" fxLayoutAlign="start center">
+                <div fxFlex fxFlex="80px">
+                    <p *ngIf="index <= 0">Where</p>
+                    <button #menuAndOr *ngIf="index >= 1" mat-stroked-button class="btn" [matMenuTriggerFor]="andOrFilter" (click)="$event.stopPropagation()">
+                        <div class="d-flex">
+                            <span *ngIf="andOrType == 0">AND</span>
+                            <span *ngIf="andOrType == 1">OR</span>
+                            <mat-icon>expand_more</mat-icon>
+                        </div>
+                    </button>
+                </div>
+                <div fxFlex="160px">
+                    <button mat-stroked-button class="btn" [matMenuTriggerFor]="addFilter">
+                        <div class="d-flex">[name_filter] <mat-icon>expand_more</mat-icon>
+                        </div>
+                    </button>
+                </div>
+                <!--<div fxFlex>
+                    <button mat-stroked-button class="btn" [matMenuTriggerFor]="includeFilter">
+                        <div class="d-flex">{{ include_filter }} <mat-icon>expand_more</mat-icon>
+                        </div>
+                    </button>
+                </div>-->
+                <!--<div fxFlex>-->
+                    <!-- btn-filter-date -->
+                    <!--<button mat-stroked-button class="btn btn-added-filter" [matMenuTriggerFor]="typeFilter">
+                        <div class="d-flex">[data_filter_selected] <mat-icon>expand_more</mat-icon>
+                        </div>
+                    </button>-->
+                    <!-- btn-filter-user -->
+                    <!--<button mat-stroked-button class="btn btn-added-filter" [matMenuTriggerFor]="typeFilter">
+                        <div class="d-flex">
+                            <div class="avatar"><img src="asd" alt=""
+                                    onerror="this.src='/assets/img/user-avatar-empty.svg';"></div>
+                            <div class="avatar"><img src="asd" alt=""
+                                    onerror="this.src='/assets/img/user-avatar-empty.svg';"></div>
+                            <div class="avatar"><img src="asd" alt=""
+                                    onerror="this.src='/assets/img/user-avatar-empty.svg';"></div>
+                            <mat-icon>expand_more</mat-icon>
+                        </div>
+                    </button>-->
+                <!--</div>-->
+                <div fxFlex="40px">
+                    <button mat-icon-button matTooltip="Remove Filter" (click)="onRemoveFilter(index)">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</mat-menu>
+
+<mat-menu #andOrFilter="matMenu">
+    <button mat-menu-item (click)="onSelectAdd(); $event.stopPropagation();">AND</button>
+    <button mat-menu-item (click)="onSelectOr(); $event.stopPropagation();">OR</button>
+</mat-menu>
+
+<mat-menu #addFilter="matMenu">
+    <div class="add-filter-menu">
+        <div class="header d-flex">
+            <h5><b>Add filter</b></h5>
+            <mat-icon matTooltip="Learn more about filtering tasks">info</mat-icon>
+        </div>
+        <!--<app-select-menu [isMultipleSelect]="false" [typeOfLists]="['Filter 1','Filter 2']"></app-select-menu>-->
+    </div>
+</mat-menu>

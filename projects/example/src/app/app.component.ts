@@ -1,7 +1,7 @@
 import { MiaQuery } from '@agencycoda/mia-core';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Validators } from '@angular/forms';
-import { MiaField, MiaFormComponent, MiaFormConfig } from 'projects/agencycoda/mia-form/src/public-api';
+import { MiaField, MiaFilterBoxConfig, MiaFormComponent, MiaFormConfig } from 'projects/agencycoda/mia-form/src/public-api';
 import { environment } from '../environments/environment';
 import { Entity } from './entitiy';
 import { ExampleCustomFieldComponent } from './fields/example-custom-field/example-custom-field.component';
@@ -19,6 +19,8 @@ export class AppComponent implements OnInit {
   config!: MiaFormConfig;
   item!: Entity;
 
+  filterBox!: MiaFilterBoxConfig;
+
   constructor(
     protected testService: TestService
   ) {
@@ -28,6 +30,7 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.loadItem();
     this.loadForm();
+    this.loadFilterBox();
     //this.loadFormMarketplace();
   }
 
@@ -146,6 +149,13 @@ export class AppComponent implements OnInit {
     ];
     this.config.errorMessages = [
       { key: 'required', message: 'The %label% is required.' }
+    ];
+  }
+
+  loadFilterBox() {
+    this.filterBox = new MiaFilterBoxConfig();
+    this.filterBox.filters = [
+      { title: 'Status is closed', value: 1 }
     ];
   }
 }
