@@ -7,3 +7,6 @@
 
     <mat-hint *ngIf="field.caption" [align]="'end'"> {{ field.caption }} </mat-hint>
 </mat-form-field>
+<p *ngIf="field.extra.can_add">
+    <button mat-button (click)="onClickNewItem(); $event.stopPropagation()">{{ field.extra.add_title }}</button>
+</p>

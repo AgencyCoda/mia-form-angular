@@ -38,7 +38,7 @@ export class MiaFormModalComponent implements OnInit {
   processWithBaseService(item: any) {
     let serviceSave: Promise<any> = this.data.service.save(item);
     serviceSave.then(result => {
-      this.dialogRef.close(true);
+      this.dialogRef.close(result);
       this.isSending = false;
     }).catch(error => {
       this.isSending = false;
@@ -49,7 +49,7 @@ export class MiaFormModalComponent implements OnInit {
     this.data.nextProcess!.next(item);
     this.data.resultProcess?.subscribe(result => {
       if(result){
-        this.dialogRef.close(true);
+        this.dialogRef.close(result);
       }
       this.isSending = false;
     }, error => {

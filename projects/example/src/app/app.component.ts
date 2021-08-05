@@ -2,6 +2,8 @@ import { MiaQuery } from '@agencycoda/mia-core';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Validators } from '@angular/forms';
 import { MiaField, MiaFilterBoxConfig, MiaFormComponent, MiaFormConfig } from 'projects/agencycoda/mia-form/src/public-api';
+import { of, Subject } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 import { environment } from '../environments/environment';
 import { Entity } from './entitiy';
 import { ExampleCustomFieldComponent } from './fields/example-custom-field/example-custom-field.component';
@@ -120,7 +122,10 @@ export class AppComponent implements OnInit {
           { id: 0, title: 'Estado 1' },
           { id: 1, title: 'Estado 2' },
           { id: 2, title: 'Estado 3' },
-        ]
+        ],
+        can_add: true,
+        add_title: 'Add new Status',
+        add_subject: new Subject<any>().pipe(switchMap(it => of({ id: 3, title: 'Estado 4'})))
       }},
       { key: 'vendor-select', type: 'select-service', extra: { service: this.testService, field_display: 'title', query: new MiaQuery() } },
       { key: 'avatars', type: 'avatar-list-service', extra: { service: this.testService, field_display: 'title', field_photo: 'photo', field_list: 'avatars-auto', query: new MiaQuery() } },

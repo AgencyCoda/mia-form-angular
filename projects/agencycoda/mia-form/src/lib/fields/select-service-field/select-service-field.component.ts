@@ -1,5 +1,6 @@
-import { MiaBaseCrudHttpService, MiaQuery } from '@agencycoda/mia-core';
+import { MiaBaseCrudHttpService, MiaQuery, nil } from '@agencycoda/mia-core';
 import { Component, OnInit } from '@angular/core';
+import { Subject } from 'rxjs';
 import { SelectFieldComponent } from '../select-field/select-field.component';
 
 @Component({
@@ -33,5 +34,19 @@ export class SelectServiceFieldComponent extends SelectFieldComponent implements
     service.listWithExtras(query, extraParams).then(result => {
       this.items = result.data;
     });
+  }
+
+  configSubject() {
+    if(!this.field.extra.can_add || this.configuredSubject){
+      return;
+    }
+
+    let subject: Subject<any> = this.field.extra.add_subject;
+    subject.pipe(nil()).subscribe(res => {
+      this.items.push(res);
+      this.input.setValue(res.id);
+    });
+
+    this.configuredSubject = true;
   }
 }
