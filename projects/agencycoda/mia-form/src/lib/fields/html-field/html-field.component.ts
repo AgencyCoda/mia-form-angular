@@ -9,6 +9,18 @@ import { MiaBaseFieldComponent } from '../base-field.component';
 export class HtmlFieldComponent extends MiaBaseFieldComponent implements OnInit {
 
   heightEditor = 250;
+  modules = {
+    formula: true,
+    toolbar: [
+      [{ header: [1, 2, 3, 4, 5, false] }],
+      [ 'bold', 'italic', 'underline', 'strike'],
+      [{ 'color': []}, { 'background': [] }],
+      [ 'blockquote', 'code-block' ],
+      [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+      [{ 'align': [] }],
+      [ 'image', 'link', 'video' ],
+    ]
+  }
 
   constructor() {
     super();
