@@ -29,6 +29,7 @@ export class MiaField {
     static TYPE_EVENT = 'event';
     static TYPE_CUSTOM = 'custom';
     static TYPE_DATE_FILTER_RANGE = 'date-filter-range';
+    static TYPE_EMAIL = 'email';
 
     key: string = '';
     type: string = '';

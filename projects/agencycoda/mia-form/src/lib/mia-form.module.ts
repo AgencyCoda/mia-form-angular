@@ -66,6 +66,7 @@ import { EventFieldComponent } from './fields/event-field/event-field.component'
 import { CustomFieldComponent } from './fields/custom-field/custom-field.component';
 import { DateFilterRangeButtonComponent } from './elements/date-filter-range-button/date-filter-range-button.component';
 import { MiaFilterBoxComponent } from './components/mia-filter-box/mia-filter-box.component';
+import { EmailFieldComponent } from './fields/email-field/email-field.component';
 
 @NgModule({
   declarations: [
@@ -106,7 +107,8 @@ import { MiaFilterBoxComponent } from './components/mia-filter-box/mia-filter-bo
     DividerFieldComponent,
     EventFieldComponent,
     CustomFieldComponent,
-    DateFilterRangeButtonComponent
+    DateFilterRangeButtonComponent,
+    EmailFieldComponent
   ],
   imports: [
     CommonModule,
@@ -154,6 +156,7 @@ import { MiaFilterBoxComponent } from './components/mia-filter-box/mia-filter-bo
     ChipsAndSelectServiceFieldComponent,
     TagsFieldComponent,
     EventFieldComponent,
+    EmailFieldComponent,
 
     /** ELEMENTS */
     DateFilterRangeButtonComponent
