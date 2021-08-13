@@ -68,6 +68,7 @@ import { DateFilterRangeButtonComponent } from './elements/date-filter-range-but
 import { MiaFilterBoxComponent } from './components/mia-filter-box/mia-filter-box.component';
 import { EmailFieldComponent } from './fields/email-field/email-field.component';
 import { PasswordFieldComponent } from './fields/password-field/password-field.component';
+import { FileOneFieldComponent } from './fields/file-one-field/file-one-field.component';
 
 @NgModule({
   declarations: [
@@ -110,7 +111,8 @@ import { PasswordFieldComponent } from './fields/password-field/password-field.c
     CustomFieldComponent,
     DateFilterRangeButtonComponent,
     EmailFieldComponent,
-    PasswordFieldComponent
+    PasswordFieldComponent,
+    FileOneFieldComponent
   ],
   imports: [
     CommonModule,

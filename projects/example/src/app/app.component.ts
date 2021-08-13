@@ -67,6 +67,7 @@ export class AppComponent implements OnInit {
     this.item.vendors = [
       { id: 1, title: 'Vendor 1' }
     ];
+    this.item.file_one = { name: 'File.pdf', url: '', size: 500, mediaLink: '' };
   }
 
   loadFormMarketplace() {
@@ -151,6 +152,7 @@ export class AppComponent implements OnInit {
       { key: 'photo-header', type: MiaField.TYPE_PHOTO_HEADER, label: 'Photo Header', caption: 'Foto del header.' },
       { key: 'event_start', type: MiaField.TYPE_EVENT, label: 'Fecha del evento', extra: { field_end_key: 'event_end'} },
       { key: 'custom_example', type: MiaField.TYPE_CUSTOM, extra: { component: ExampleCustomFieldComponent } },
+      { key: 'file_one', type: MiaField.TYPE_FILE_ONE, label: 'Propuesta' },
     ];
     this.config.errorMessages = [
       { key: 'required', message: 'The %label% is required.' }

@@ -31,6 +31,7 @@ export class MiaField {
     static TYPE_DATE_FILTER_RANGE = 'date-filter-range';
     static TYPE_EMAIL = 'email';
     static TYPE_PASSWORD = 'password';
+    static TYPE_FILE_ONE = 'file-one';
 
     key: string = '';
     type: string = '';
