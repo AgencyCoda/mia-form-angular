@@ -1,5 +1,5 @@
 import { MiaBaseCrudHttpService, MiaQuery, nil } from '@agencycoda/mia-core';
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
 import { SelectFieldComponent } from '../select-field/select-field.component';
 
@@ -12,7 +12,9 @@ export class SelectServiceFieldComponent extends SelectFieldComponent implements
 
   items: Array<any> = [];
 
-  constructor() {
+  constructor(
+    protected changeDetector: ChangeDetectorRef
+  ) {
     super();
   }
 
@@ -33,6 +35,7 @@ export class SelectServiceFieldComponent extends SelectFieldComponent implements
     let service: MiaBaseCrudHttpService<any> = this.field.extra.service;
     service.listWithExtras(query, extraParams).then(result => {
       this.items = result.data;
+      this.changeDetector.detectChanges();
     });
   }
 
@@ -45,6 +48,7 @@ export class SelectServiceFieldComponent extends SelectFieldComponent implements
     subject.pipe(nil()).subscribe(res => {
       this.items.push(res);
       this.input.setValue(res.id);
+      this.changeDetector.detectChanges();
     });
 
     this.configuredSubject = true;
