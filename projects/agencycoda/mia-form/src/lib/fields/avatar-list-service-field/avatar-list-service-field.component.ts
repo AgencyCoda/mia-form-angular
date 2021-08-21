@@ -1,5 +1,5 @@
 import { MiaBaseCrudHttpService, MiaQuery } from '@agencycoda/mia-core';
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormArray, FormControl } from '@angular/forms';
 import { SelectServiceFieldComponent } from '../select-service-field/select-service-field.component';
 
@@ -14,8 +14,10 @@ export class AvatarListServiceFieldComponent extends SelectServiceFieldComponent
 
   itemsFiltered: Array<any> = [];
 
-  constructor() {
-    super();
+  constructor(
+    protected changeDetector: ChangeDetectorRef
+  ) {
+    super(changeDetector);
   }
 
   applySearch() {
@@ -69,6 +71,7 @@ export class AvatarListServiceFieldComponent extends SelectServiceFieldComponent
     service.list(query).then(result => {
       this.items = result.data;
       this.itemsFiltered = result.data;
+      this.changeDetector.detectChanges();
     });
   }
 
