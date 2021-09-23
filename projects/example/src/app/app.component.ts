@@ -147,6 +147,16 @@ export class AppComponent implements OnInit {
       ] }  },
       { key: 'tags', type: MiaField.TYPE_TAGS, label: 'Tags', caption: '', appearance: 'outline' },
       { key: 'chips-service', type: MiaField.TYPE_CHIPS_AND_SELECT_SERVICE, label: 'Seleccionador multiple chip', caption: '', extra: { title: 'Multiple chips service', service: this.testService, field_display: 'title', field_list: 'chips-auto', query: new MiaQuery() } },
+      { key: 'chips-service-with-add', type: MiaField.TYPE_CHIPS_AND_SELECT_SERVICE, label: 'Seleccionador multiple chip', caption: '', extra: { 
+        title: 'Multiple chips service', 
+        service: this.testService, 
+        field_display: 'title', 
+        field_list: 'chips-auto', 
+        query: new MiaQuery(),
+        can_add: true,
+        add_title: 'Add new Status',
+        add_subject: new Subject<any>().pipe(switchMap(it => of({ id: 30, title: 'Estado 4'}))) } 
+      },
       { key: 'content-html', type: MiaField.TYPE_HTML, label: 'Contenido del post', caption: '', extra: { height: 400 } },
       { key: 'title-header', type: MiaField.TYPE_STRING_TITLE, placeholder: 'Write your title', caption: '' },
       { key: 'photo-header', type: MiaField.TYPE_PHOTO_HEADER, label: 'Photo Header', caption: 'Foto del header.' },

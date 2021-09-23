@@ -1,6 +1,8 @@
+import { nil } from '@agencycoda/mia-core';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormArray, FormControl } from '@angular/forms';
 import { MatSelectionList, MatSelectionListChange } from '@angular/material/list';
+import { Subject } from 'rxjs';
 import { MiaBaseFieldComponent } from '../base-field.component';
 
 @Component({
@@ -16,6 +18,8 @@ export class ChipsAndSelectFieldComponent extends MiaBaseFieldComponent implemen
 
   optionsFiltered = new Array<any>();
 
+  configuredSubject = false;
+
   constructor() {
     super();
   }
@@ -24,6 +28,12 @@ export class ChipsAndSelectFieldComponent extends MiaBaseFieldComponent implemen
     super.ngOnInit();
     this.configSearch();
     this.configOptions();
+    this.configSubject();
+  }
+
+  onClickNewItem() {
+    let subject: Subject<any> = this.field.extra.add_subject;
+    subject.next(true);
   }
 
   onClickAdd() {
@@ -91,7 +101,6 @@ export class ChipsAndSelectFieldComponent extends MiaBaseFieldComponent implemen
         this.cleanOptions();
         return;
       }
-      console.log(query);
 
       let options: Array<any> = this.field.extra.options;
       this.optionsFiltered = options.filter(o => {
@@ -118,5 +127,21 @@ export class ChipsAndSelectFieldComponent extends MiaBaseFieldComponent implemen
       }
       this.optionsFiltered.push(options[i]);
     }
+  }
+
+  configSubject() {
+    if(!this.field.extra.can_add || this.configuredSubject){
+      return;
+    }
+
+    let subject: Subject<any> = this.field.extra.add_subject;
+    subject.pipe(nil()).subscribe(res => {
+      res.isSelected = true;
+      res.isShow = true;
+      this.field.extra.options.push(res);
+      this.onClickAdd();
+    });
+
+    this.configuredSubject = true;
   }
 }

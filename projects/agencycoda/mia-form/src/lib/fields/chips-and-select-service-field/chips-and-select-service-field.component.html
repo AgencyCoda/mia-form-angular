@@ -30,5 +30,6 @@
     
     <div class="mat-dialog-actions" mat-dialog-actions (click)="$event.stopPropagation()">
         <button mat-raised-button color="primary" [disabled]="selectionList.selectedOptions.selected.length <= 0" (click)="onClickAdd()">Add</button>
+        <button *ngIf="field.extra.can_add" mat-raised-button (click)="onClickNewItem(); $event.stopPropagation()">{{ field.extra.add_title }}</button>
     </div>
 </mat-menu>
