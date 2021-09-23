@@ -33,6 +33,10 @@ export class SelectFieldComponent extends MiaBaseFieldComponent implements OnIni
 
     let subject: Subject<any> = this.field.extra.add_subject;
     subject.pipe(nil()).subscribe(res => {
+      if(res == undefined){
+        return;
+      }
+      
       this.field.extra.options.push(res);
       this.input.setValue(res.id);
     });

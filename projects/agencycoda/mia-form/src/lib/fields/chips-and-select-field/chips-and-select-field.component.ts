@@ -136,6 +136,9 @@ export class ChipsAndSelectFieldComponent extends MiaBaseFieldComponent implemen
 
     let subject: Subject<any> = this.field.extra.add_subject;
     subject.pipe(nil()).subscribe(res => {
+      if(res == undefined){
+        return;
+      }
       res.isSelected = true;
       res.isShow = true;
       this.field.extra.options.push(res);
