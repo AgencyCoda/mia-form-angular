@@ -31,6 +31,7 @@
  export * from './lib/fields/chips-and-select-service-field/chips-and-select-service-field.component';
  export * from './lib/fields/html-field/html-field.component';
  export * from './lib/fields/email-field/email-field.component';
+ export * from './lib/fields/event-field/event-field.component';
 
  /**
   * Elements

@@ -52,6 +52,7 @@ import { LabelFieldComponent } from './fields/label-field/label-field.component'
 import { BoxFieldComponent } from './fields/box-field/box-field.component';
 import { CityFieldComponent } from './fields/city-field/city-field.component';
 import { TagsFieldComponent } from './fields/tags-field/tags-field.component';
+import { EventFieldComponent } from './fields/event-field/event-field.component';
 
 
 /** COMPONENTS */
@@ -62,7 +63,6 @@ import { ChipsAndSelectServiceFieldComponent } from './fields/chips-and-select-s
 import { StringTitleFieldComponent } from './fields/string-title-field/string-title-field.component';
 import { PhotoHeaderFieldComponent } from './fields/photo-header-field/photo-header-field.component';
 import { DividerFieldComponent } from './fields/divider-field/divider-field.component';
-import { EventFieldComponent } from './fields/event-field/event-field.component';
 import { CustomFieldComponent } from './fields/custom-field/custom-field.component';
 import { DateFilterRangeButtonComponent } from './elements/date-filter-range-button/date-filter-range-button.component';
 import { MiaFilterBoxComponent } from './components/mia-filter-box/mia-filter-box.component';
