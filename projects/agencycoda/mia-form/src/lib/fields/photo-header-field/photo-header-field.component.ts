@@ -16,7 +16,11 @@ export class PhotoHeaderFieldComponent extends MiaBaseFieldComponent implements 
   }
 
   onUploadFile(file: MiaFile | any): void {
-    this.input.setValue(file.url);
+    if(this.field.extra && this.field.extra.saveObj){
+      this.input.setValue(file);
+    } else {
+      this.input.setValue(file.url);
+    }
     this.isUploading = false;
   }
 }
