@@ -32,6 +32,7 @@ export class MiaField {
     static TYPE_EMAIL = 'email';
     static TYPE_PASSWORD = 'password';
     static TYPE_FILE_ONE = 'file-one';
+    static TYPE_INPUT_WITH_CHIP_SERVICE = 'input-with-chip-service';
 
     key: string = '';
     type: string = '';

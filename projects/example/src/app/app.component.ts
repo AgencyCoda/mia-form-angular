@@ -163,6 +163,7 @@ export class AppComponent implements OnInit {
       { key: 'event_start', type: MiaField.TYPE_EVENT, label: 'Fecha del evento', extra: { field_end_key: 'event_end'} },
       { key: 'custom_example', type: MiaField.TYPE_CUSTOM, extra: { component: ExampleCustomFieldComponent } },
       { key: 'file_one', type: MiaField.TYPE_FILE_ONE, label: 'Propuesta' },
+      { key: 'input-with-chips', type: MiaField.TYPE_INPUT_WITH_CHIP_SERVICE, label: 'Escribir chips', caption: '', extra: { title: 'Escribir chips', service: this.testService, field_display: 'title', field_list: 'chips-auto', query: new MiaQuery() } },
     ];
     this.config.errorMessages = [
       { key: 'required', message: 'The %label% is required.' }

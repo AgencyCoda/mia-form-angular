@@ -32,6 +32,7 @@
  export * from './lib/fields/html-field/html-field.component';
  export * from './lib/fields/email-field/email-field.component';
  export * from './lib/fields/event-field/event-field.component';
+ export * from './lib/fields/input-with-chip-service-field/input-with-chip-service-field.component';
 
  /**
   * Elements

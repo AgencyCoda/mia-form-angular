@@ -53,6 +53,7 @@ import { BoxFieldComponent } from './fields/box-field/box-field.component';
 import { CityFieldComponent } from './fields/city-field/city-field.component';
 import { TagsFieldComponent } from './fields/tags-field/tags-field.component';
 import { EventFieldComponent } from './fields/event-field/event-field.component';
+import { InputWithChipServiceFieldComponent } from './fields/input-with-chip-service-field/input-with-chip-service-field.component';
 
 
 /** COMPONENTS */
@@ -112,7 +113,8 @@ import { FileOneFieldComponent } from './fields/file-one-field/file-one-field.co
     DateFilterRangeButtonComponent,
     EmailFieldComponent,
     PasswordFieldComponent,
-    FileOneFieldComponent
+    FileOneFieldComponent,
+    InputWithChipServiceFieldComponent
   ],
   imports: [
     CommonModule,
@@ -161,6 +163,7 @@ import { FileOneFieldComponent } from './fields/file-one-field/file-one-field.co
     TagsFieldComponent,
     EventFieldComponent,
     EmailFieldComponent,
+    InputWithChipServiceFieldComponent,
 
     /** ELEMENTS */
     DateFilterRangeButtonComponent
