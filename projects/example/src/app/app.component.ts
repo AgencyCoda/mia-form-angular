@@ -57,6 +57,7 @@ export class AppComponent implements OnInit {
     /*this.item.title = 'Noticia titue';
     this.item.subtitle = 'Subitulo';*/
     this.item.firstname = 'Matias';
+    this.item.firstname2 = 'Matias Ca';
     this.item.caption = 'asld jasld kjaslkdjaklj dakls jdalkjd aslkdj alkdj aklj dalkajslk jadlsk jakslsd lakj';
     this.item.status = 1;
     this.item.city_id = 1;
@@ -164,6 +165,18 @@ export class AppComponent implements OnInit {
       { key: 'custom_example', type: MiaField.TYPE_CUSTOM, extra: { component: ExampleCustomFieldComponent } },
       { key: 'file_one', type: MiaField.TYPE_FILE_ONE, label: 'Propuesta' },
       { key: 'input-with-chips', type: MiaField.TYPE_INPUT_WITH_CHIP_SERVICE, label: 'Escribir chips', caption: '', extra: { title: 'Escribir chips', service: this.testService, field_display: 'title', field_list: 'chips-auto', query: new MiaQuery() } },
+      { key: 'tabs-one', type: MiaField.TYPE_TABS, extra: { 
+        tabs: [
+          { title: 'Tab One', fields: [
+            { key: 'firstname2', type: 'string', label: 'Nombre' },
+            { key: 'lastname2', type: 'string', label: 'Apellido' },
+          ] },
+          { title: 'Tab Two', fields: [
+            { key: 'address', type: 'string', label: 'Address' },
+            { key: 'testing-two', type: 'string', label: 'Testing Two' },
+          ] }
+        ]}
+      },
     ];
     this.config.errorMessages = [
       { key: 'required', message: 'The %label% is required.' }

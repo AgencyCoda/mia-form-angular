@@ -23,6 +23,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatTabsModule } from '@angular/material/tabs';
 
 /** EXTERNAL LIBRARIES */
 import { QuillModule } from 'ngx-quill';
@@ -70,6 +71,7 @@ import { MiaFilterBoxComponent } from './components/mia-filter-box/mia-filter-bo
 import { EmailFieldComponent } from './fields/email-field/email-field.component';
 import { PasswordFieldComponent } from './fields/password-field/password-field.component';
 import { FileOneFieldComponent } from './fields/file-one-field/file-one-field.component';
+import { TabsFieldComponent } from './fields/tabs-field/tabs-field.component';
 
 @NgModule({
   declarations: [
@@ -114,7 +116,8 @@ import { FileOneFieldComponent } from './fields/file-one-field/file-one-field.co
     EmailFieldComponent,
     PasswordFieldComponent,
     FileOneFieldComponent,
-    InputWithChipServiceFieldComponent
+    InputWithChipServiceFieldComponent,
+    TabsFieldComponent
   ],
   imports: [
     CommonModule,
@@ -138,6 +141,7 @@ import { FileOneFieldComponent } from './fields/file-one-field/file-one-field.co
     MatListModule,
     FlexLayoutModule,
     MatDividerModule,
+    MatTabsModule,
 
     // External Libraries
     QuillModule

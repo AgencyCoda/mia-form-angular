@@ -17,7 +17,11 @@ export class MiaFormService {
 
   private updateValuesByItemFields(fields: Array<MiaField>, group: FormGroup, item: any) {
     for (const field of fields) {
-      if(field.type == MiaField.TYPE_ROW){
+      if(field.type == MiaField.TYPE_TABS){
+        for (const tab of field.extra.tabs) {
+          this.updateValuesByItemFields(tab.fields, group, item);
+        }
+      } else if(field.type == MiaField.TYPE_ROW){
         this.updateValuesByItemFields(field.extra.fields, group, item);
       } else {
         this.updateValuesByItemField(field, group, item);
@@ -66,7 +70,11 @@ export class MiaFormService {
 
   private updateItemByFormFields(fields: Array<MiaField>, group: FormGroup, item: any) {
     for (const field of fields) {
-      if(field.type == MiaField.TYPE_ROW){
+      if(field.type == MiaField.TYPE_TABS){
+        for (const tab of field.extra.tabs) {
+          this.updateItemByFormFields(tab.fields, group, item);
+        }
+      }else if(field.type == MiaField.TYPE_ROW){
         this.updateItemByFormFields(field.extra.fields, group, item);
       } else {
         this.updateItemByFormField(field, group, item);

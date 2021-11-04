@@ -3,6 +3,7 @@ import { MiaFile } from "@agencycoda/mia-core";
 export class Entity {
     id = 0;
     firstname = '';
+    firstname2 = '';
     title = '';
     subtitle = '';
     caption = '';

@@ -33,6 +33,7 @@ export class MiaField {
     static TYPE_PASSWORD = 'password';
     static TYPE_FILE_ONE = 'file-one';
     static TYPE_INPUT_WITH_CHIP_SERVICE = 'input-with-chip-service';
+    static TYPE_TABS = 'tabs';
 
     key: string = '';
     type: string = '';
