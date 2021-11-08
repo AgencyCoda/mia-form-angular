@@ -72,6 +72,7 @@ import { EmailFieldComponent } from './fields/email-field/email-field.component'
 import { PasswordFieldComponent } from './fields/password-field/password-field.component';
 import { FileOneFieldComponent } from './fields/file-one-field/file-one-field.component';
 import { TabsFieldComponent } from './fields/tabs-field/tabs-field.component';
+import { PositionFieldComponent } from './fields/position-field/position-field.component';
 
 @NgModule({
   declarations: [
@@ -117,7 +118,8 @@ import { TabsFieldComponent } from './fields/tabs-field/tabs-field.component';
     PasswordFieldComponent,
     FileOneFieldComponent,
     InputWithChipServiceFieldComponent,
-    TabsFieldComponent
+    TabsFieldComponent,
+    PositionFieldComponent
   ],
   imports: [
     CommonModule,

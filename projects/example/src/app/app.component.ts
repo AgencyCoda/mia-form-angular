@@ -1,6 +1,7 @@
 import { MiaQuery } from '@agencycoda/mia-core';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Validators } from '@angular/forms';
+import { PositionFieldComponent } from 'projects/agencycoda/mia-form/src/lib/fields/position-field/position-field.component';
 import { MiaField, MiaFilterBoxConfig, MiaFormComponent, MiaFormConfig } from 'projects/agencycoda/mia-form/src/public-api';
 import { of, Subject } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
@@ -40,6 +41,10 @@ export class AppComponent implements OnInit {
     this.miaForm.submit().subscribe(result => {
       console.log('--Observable--');
       console.log(result);
+      alert(result.margin.top);
+      alert(result.margin.right);
+      alert(result.margin.bottom);
+      alert(result.margin.left);
     });
   }
 
@@ -50,6 +55,7 @@ export class AppComponent implements OnInit {
   onSubmit(item: Entity) {
     console.log('--SUBMIT--');
     console.log(item);
+    alert('asddas');
   }
 
   loadItem() {
@@ -65,6 +71,7 @@ export class AppComponent implements OnInit {
     this.item.tags = ['tag1', 'tag2', 'tag3'];
     this.item.event_start = '2021-07-19 16:00:00';
     this.item.event_end = '2021-07-20 18:00:00';
+    this.item.margin = { top: 20, left: 30, bottom: 40, right: 0 };
     this.item.vendors = [
       { id: 1, title: 'Vendor 1' }
     ];
@@ -108,7 +115,8 @@ export class AppComponent implements OnInit {
     this.config = new MiaFormConfig();
     this.config.hasSubmit = false;
     this.config.fields = [
-      { key: 'photo', type: 'photo', label: 'Photo', caption: 'Foto del usuario.' },
+      { key: '', type: MiaField.TYPE_LABEL, label: '<h2>-- Photo --</h2>', classes: 'label-custom' },
+      { key: 'photo', type: MiaField.TYPE_PHOTO, label: 'Photo', caption: 'Foto del usuario.' },
       { key: 'title', type: 'string', label: 'Title', validators: [Validators.required], caption: 'El titulo de la noticia.' },
       { key: 'product', type: 'autocomplete', extra: { 
         options: ['One', 'Two', 'Three'] 
@@ -177,6 +185,9 @@ export class AppComponent implements OnInit {
           ] }
         ]}
       },
+
+      { key: '', type: MiaField.TYPE_LABEL, label: '<h2>-- Position Field --</h2>', classes: 'label-custom' },
+      { key: 'margin', type: MiaField.TYPE_CUSTOM, extra: { component: PositionFieldComponent } },
     ];
     this.config.errorMessages = [
       { key: 'required', message: 'The %label% is required.' }

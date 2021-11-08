@@ -13,6 +13,7 @@ export class Entity {
     status = 0;
     city_id?: number;
     file_one?: MiaFile;
+    margin?: any;
 
     vendors: Array<any> = [];
     tags: Array<string> = [];
