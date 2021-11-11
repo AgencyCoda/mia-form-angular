@@ -73,6 +73,7 @@ import { PasswordFieldComponent } from './fields/password-field/password-field.c
 import { FileOneFieldComponent } from './fields/file-one-field/file-one-field.component';
 import { TabsFieldComponent } from './fields/tabs-field/tabs-field.component';
 import { PositionFieldComponent } from './fields/position-field/position-field.component';
+import { GalleryFieldComponent } from './fields/gallery-field/gallery-field.component';
 
 @NgModule({
   declarations: [
@@ -119,7 +120,8 @@ import { PositionFieldComponent } from './fields/position-field/position-field.c
     FileOneFieldComponent,
     InputWithChipServiceFieldComponent,
     TabsFieldComponent,
-    PositionFieldComponent
+    PositionFieldComponent,
+    GalleryFieldComponent
   ],
   imports: [
     CommonModule,
