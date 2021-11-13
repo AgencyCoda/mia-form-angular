@@ -1,8 +1,9 @@
 import { MiaQuery } from '@agencycoda/mia-core';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { PositionFieldComponent } from 'projects/agencycoda/mia-form/src/lib/fields/position-field/position-field.component';
-import { MiaField, MiaFilterBoxConfig, MiaFormComponent, MiaFormConfig } from 'projects/agencycoda/mia-form/src/public-api';
+import { MiaField, MiaFilterBoxConfig, MiaFormComponent, MiaFormConfig, MiaFormModalComponent, MiaFormModalConfig } from 'projects/agencycoda/mia-form/src/public-api';
 import { of, Subject } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { environment } from '../environments/environment';
@@ -25,7 +26,8 @@ export class AppComponent implements OnInit {
   filterBox!: MiaFilterBoxConfig;
 
   constructor(
-    protected testService: TestService
+    protected testService: TestService,
+    protected dialog: MatDialog
   ) {
 
   }
@@ -192,6 +194,32 @@ export class AppComponent implements OnInit {
     this.config.errorMessages = [
       { key: 'required', message: 'The %label% is required.' }
     ];
+  }
+
+  onClickOpenForm() {
+    let data = new MiaFormModalConfig();
+    data.item = this.item;
+    data.titleNew = 'Settings';
+    data.titleEdit = 'Settings';
+    data.showButtons = false;
+
+    let config = new MiaFormConfig();
+    config.hasSubmit = false;
+    config.fields = [
+      { key: 'firstname', type: 'string', label: 'Nombre' },
+      { key: 'lastname', type: 'string', label: 'Apellido' },
+    ];
+    config.errorMessages = [
+      { key: 'required', message: 'The "%label%" is required.' }
+    ];
+
+    data.config = config;
+
+    return this.dialog.open(MiaFormModalComponent, {
+      width: '500px',
+      panelClass: 'modal-full-width-mobile',
+      data: data
+    }).afterClosed();
   }
 
   loadFilterBox() {

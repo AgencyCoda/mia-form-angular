@@ -13,6 +13,7 @@ export class MiaFormModalConfig {
   titleEdit = '';
   nextProcess?: Subject<any>;
   resultProcess?: Observable<boolean>;
+  showButtons = true;
 }
 
 @Component({
@@ -25,6 +26,7 @@ export class MiaFormModalComponent implements OnInit {
   @ViewChild('miaForm') miaForm!: MiaFormComponent;
 
   isSending = false;
+  isShowButtons = true;
 
   constructor(
     protected dialogRef: MatDialogRef<MiaFormModalComponent>,
@@ -32,7 +34,12 @@ export class MiaFormModalComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    
+    this.isShowButtons = this.data.showButtons;
+    if(this.isShowButtons == false){
+      this.dialogRef.beforeClosed().subscribe(res => {
+        this.miaForm.submit().subscribe();
+      });
+    }
   }
 
   processWithBaseService(item: any) {
