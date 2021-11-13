@@ -1,4 +1,4 @@
-<h4 mat-dialog-title>
+<h4 *ngIf="isShowHeader" mat-dialog-title>
     <span *ngIf="data.item.id == 0">{{ data.titleNew }}</span>
     <span *ngIf="data.item.id > 0">{{ data.titleEdit }}</span>
     <button mat-icon-button matTooltip="Close" mat-dialog-close><mat-icon>close</mat-icon></button>

@@ -14,6 +14,7 @@ export class MiaFormModalConfig {
   nextProcess?: Subject<any>;
   resultProcess?: Observable<boolean>;
   showButtons = true;
+  showHeader = true;
 }
 
 @Component({
@@ -27,6 +28,7 @@ export class MiaFormModalComponent implements OnInit {
 
   isSending = false;
   isShowButtons = true;
+  isShowHeader = true;
 
   constructor(
     protected dialogRef: MatDialogRef<MiaFormModalComponent>,
@@ -34,6 +36,7 @@ export class MiaFormModalComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.isShowHeader = this.data.showHeader;
     this.isShowButtons = this.data.showButtons;
     if(this.isShowButtons == false){
       this.dialogRef.beforeClosed().subscribe(res => {
