@@ -5,38 +5,55 @@
 </button>
 <button mat-button (click)="onClearFilters()">Clear Filter</button>
 
-<mat-menu #filters="matMenu" class="container-filters-menu">
+<mat-menu #filters="matMenu" class="container-filters-menu" (closed)="onApplyFilters()">
     <div class="filters-menu" (click)="$event.stopPropagation()">
         <div class="header d-flex">
             <h5><b>Active filters</b></h5>
-            <button mat-button color="primary" class="btn-add-filter" (click)="onAddFilter()">+ Add Filter</button>
+            <button #addFilterButton="matMenuTrigger" mat-button color="primary" class="btn-add-filter" [matMenuTriggerFor]="addFilter">+ Add Filter</button>
         </div>
 
         <div class="filter" *ngFor="let filter of actives; let index = index;">
             <div fxLayout="row" fxLayoutGap="0.5em" fxLayoutAlign="start center">
                 <div fxFlex fxFlex="80px">
                     <p *ngIf="index <= 0">Where</p>
-                    <button #menuAndOr *ngIf="index >= 1" mat-stroked-button class="btn" [matMenuTriggerFor]="andOrFilter" (click)="$event.stopPropagation()">
+                    <button #menuAndOr="matMenuTrigger" *ngIf="index >= 1" mat-stroked-button class="btn" [matMenuTriggerFor]="andOrFilter" (click)="$event.stopPropagation()">
                         <div class="d-flex">
-                            <span *ngIf="andOrType == 0">AND</span>
-                            <span *ngIf="andOrType == 1">OR</span>
+                            <span *ngIf="filter.andOrType == 0">AND</span>
+                            <span *ngIf="filter.andOrType == 1">OR</span>
                             <mat-icon>expand_more</mat-icon>
                         </div>
                     </button>
+                    <mat-menu #andOrFilter="matMenu">
+                        <button mat-menu-item (click)="filter.andOrType = 0; $event.stopPropagation(); closeAllMenuAndOr()">AND</button>
+                        <button mat-menu-item (click)="filter.andOrType = 1; $event.stopPropagation(); closeAllMenuAndOr()">OR</button>
+                    </mat-menu>
                 </div>
                 <div fxFlex="160px">
-                    <button mat-stroked-button class="btn" [matMenuTriggerFor]="addFilter">
-                        <div class="d-flex">[name_filter] <mat-icon>expand_more</mat-icon>
-                        </div>
-                    </button>
+                    <div class="d-flex">{{ filter.field?.title }}</div>
                 </div>
-                <!--<div fxFlex>
-                    <button mat-stroked-button class="btn" [matMenuTriggerFor]="includeFilter">
-                        <div class="d-flex">{{ include_filter }} <mat-icon>expand_more</mat-icon>
+                <div *ngIf="filter.field?.type != 1" fxFlex>
+                    <button mat-stroked-button class="btn" [matMenuTriggerFor]="conditionalFilter" #menuConditional="matMenuTrigger">
+                        <div class="d-flex">
+                            <span *ngIf="filter.conditional == 0">Is</span>
+                            <span *ngIf="filter.conditional == 1">Is not</span>
+                            <mat-icon>expand_more</mat-icon>
                         </div>
                     </button>
-                </div>-->
-                <!--<div fxFlex>-->
+                    <mat-menu #conditionalFilter="matMenu">
+                        <button mat-menu-item (click)="filter.conditional = 0; $event.stopPropagation(); closeAllMenuConditional()">Is</button>
+                        <button mat-menu-item (click)="filter.conditional = 1; $event.stopPropagation(); closeAllMenuConditional()">Is not</button>
+                    </mat-menu>
+                </div>
+                <div *ngIf="filter.field?.type != 1" fxFlex>
+                    <mat-form-field *ngIf="filter.field?.type == 2">
+                        <input matInput type="text" [(ngModel)]="filter.field!.value">
+                    </mat-form-field>
+                    <mat-select *ngIf="filter.field?.type == 5" [(ngModel)]="filter.field!.value">
+                        <mat-option *ngFor="let opt of filter.field?.options" [value]="opt.id"> {{ opt.title }} </mat-option>
+                    </mat-select>
+
+
+
                     <!-- btn-filter-date -->
                     <!--<button mat-stroked-button class="btn btn-added-filter" [matMenuTriggerFor]="typeFilter">
                         <div class="d-flex">[data_filter_selected] <mat-icon>expand_more</mat-icon>
@@ -54,7 +71,7 @@
                             <mat-icon>expand_more</mat-icon>
                         </div>
                     </button>-->
-                <!--</div>-->
+                </div>
                 <div fxFlex="40px">
                     <button mat-icon-button matTooltip="Remove Filter" (click)="onRemoveFilter(index)">
                         <mat-icon>close</mat-icon>
@@ -66,17 +83,14 @@
     </div>
 </mat-menu>
 
-<mat-menu #andOrFilter="matMenu">
-    <button mat-menu-item (click)="onSelectAdd(); $event.stopPropagation();">AND</button>
-    <button mat-menu-item (click)="onSelectOr(); $event.stopPropagation();">OR</button>
-</mat-menu>
-
 <mat-menu #addFilter="matMenu">
     <div class="add-filter-menu">
         <div class="header d-flex">
             <h5><b>Add filter</b></h5>
             <mat-icon matTooltip="Learn more about filtering tasks">info</mat-icon>
         </div>
-        <!--<app-select-menu [isMultipleSelect]="false" [typeOfLists]="['Filter 1','Filter 2']"></app-select-menu>-->
+        <mat-list>
+            <mat-list-item *ngFor="let filter of config.filters" (click)="onAddFilter(filter); $event.stopPropagation();">{{ filter.title }}</mat-list-item>
+        </mat-list>
     </div>
 </mat-menu>

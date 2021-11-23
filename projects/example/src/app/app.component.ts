@@ -3,7 +3,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { PositionFieldComponent } from 'projects/agencycoda/mia-form/src/lib/fields/position-field/position-field.component';
-import { MiaField, MiaFilterBoxConfig, MiaFormComponent, MiaFormConfig, MiaFormModalComponent, MiaFormModalConfig } from 'projects/agencycoda/mia-form/src/public-api';
+import { MiaField, MiaFilterBoxConfig, MiaFilterType, MiaFormComponent, MiaFormConfig, MiaFormModalComponent, MiaFormModalConfig } from 'projects/agencycoda/mia-form/src/public-api';
 import { of, Subject } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { environment } from '../environments/environment';
@@ -225,7 +225,13 @@ export class AppComponent implements OnInit {
   loadFilterBox() {
     this.filterBox = new MiaFilterBoxConfig();
     this.filterBox.filters = [
-      { title: 'Status is closed', value: 1 }
+      { key: 'title', title: 'Title', type: MiaFilterType.TYPE_WRITE },
+      { key: 'status', title: 'Status', value: 1, type: MiaFilterType.TYPE_OPTIONS, options: [
+        { id: 0, title: 'State 1' },
+        { id: 1, title: 'State 2' },
+        { id: 2, title: 'State 3' },
+      ] },
+      { key: 'status', title: 'Status is closed', value: 1, type: MiaFilterType.TYPE_WITHOUT_OPTIONS },
     ];
   }
 }
