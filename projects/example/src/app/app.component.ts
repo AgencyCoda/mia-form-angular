@@ -3,7 +3,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { PositionFieldComponent } from 'projects/agencycoda/mia-form/src/lib/fields/position-field/position-field.component';
-import { MiaField, MiaFilterBoxConfig, MiaFilterType, MiaFormComponent, MiaFormConfig, MiaFormModalComponent, MiaFormModalConfig } from 'projects/agencycoda/mia-form/src/public-api';
+import { MiaField, MiaFilterBoxConfig, MiaFilterSelected, MiaFilterType, MiaFormComponent, MiaFormConfig, MiaFormModalComponent, MiaFormModalConfig } from 'projects/agencycoda/mia-form/src/public-api';
 import { of, Subject } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { environment } from '../environments/environment';
@@ -24,6 +24,7 @@ export class AppComponent implements OnInit {
   item!: Entity;
 
   filterBox!: MiaFilterBoxConfig;
+  queryFilter!: MiaQuery;
 
   constructor(
     protected testService: TestService,
@@ -222,7 +223,13 @@ export class AppComponent implements OnInit {
     }).afterClosed();
   }
 
+  onFilterCustom(ac: MiaFilterSelected) {
+    
+  }
+
   loadFilterBox() {
+    this.queryFilter = new MiaQuery();
+
     this.filterBox = new MiaFilterBoxConfig();
     this.filterBox.filters = [
       { key: 'title', title: 'Title', type: MiaFilterType.TYPE_WRITE },
@@ -232,6 +239,19 @@ export class AppComponent implements OnInit {
         { id: 2, title: 'State 3' },
       ] },
       { key: 'status', title: 'Status is closed', value: 1, type: MiaFilterType.TYPE_WITHOUT_OPTIONS },
+      { key: 'deadline', title: 'Deadline', value: 0, type: MiaFilterType.TYPE_OPTIONS_CUSTOM, options: [
+        { id: 0, title: 'Ultimo mes' },
+        { id: 1, title: 'Ultima semana' },
+        { id: 2, title: 'Ultimo año' },
+        { id: 3, title: 'Ultimos 6 meses' },
+      ] },
+      { key: 'amount', title: 'Amount', value: 0, type: MiaFilterType.TYPE_OPTIONS_CUSTOM, options: [
+        { id: 0, title: '15000USD o menos' },
+        { id: 1, title: '15001USD a 30000USD' },
+        { id: 2, title: '30001 a 50000USD' },
+        { id: 3, title: '50000 a 100000USD' },
+        { id: 4, title: '100.000+' },
+      ] },
     ];
   }
 }
