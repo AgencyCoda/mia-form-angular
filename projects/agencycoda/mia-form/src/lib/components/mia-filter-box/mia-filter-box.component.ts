@@ -42,6 +42,8 @@ export class MiaFilterBoxComponent implements OnInit {
     if(!this.hasChange){
       return;
     }
+    // Reset where
+    this.query.resetWhere();
     // Process all filters selected
     this.actives.forEach(ac => {
       if(ac.field?.type == MiaFilterType.TYPE_WITHOUT_OPTIONS){
