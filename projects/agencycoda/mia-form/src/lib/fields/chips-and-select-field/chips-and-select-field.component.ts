@@ -139,8 +139,11 @@ export class ChipsAndSelectFieldComponent extends MiaBaseFieldComponent implemen
       if(res == undefined){
         return;
       }
-      res.isSelected = true;
-      res.isShow = true;
+
+      let obj: any = res;
+
+      obj.isSelected = true;
+      obj.isShow = true;
       this.field.extra.options.push(res);
       this.onClickAdd();
     });

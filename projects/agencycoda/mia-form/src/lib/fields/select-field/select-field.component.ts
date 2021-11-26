@@ -36,9 +36,9 @@ export class SelectFieldComponent extends MiaBaseFieldComponent implements OnIni
       if(res == undefined){
         return;
       }
-      
+      let obj: any = res;
       this.field.extra.options.push(res);
-      this.input.setValue(res.id);
+      this.input.setValue(obj.id);
     });
 
     this.configuredSubject = true;

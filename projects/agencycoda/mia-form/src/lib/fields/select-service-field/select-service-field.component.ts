@@ -46,8 +46,9 @@ export class SelectServiceFieldComponent extends SelectFieldComponent implements
 
     let subject: Subject<any> = this.field.extra.add_subject;
     subject.pipe(nil()).subscribe(res => {
+      let obj: any = res;
       this.items.push(res);
-      this.input.setValue(res.id);
+      this.input.setValue(obj.id);
       this.changeDetector.detectChanges();
     });
 
