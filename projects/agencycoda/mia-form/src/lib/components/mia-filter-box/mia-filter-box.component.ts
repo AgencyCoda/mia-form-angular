@@ -47,17 +47,17 @@ export class MiaFilterBoxComponent implements OnInit {
       if(ac.field?.type == MiaFilterType.TYPE_WITHOUT_OPTIONS){
         this.queryWithoutOptions(ac);
       } else if(ac.field?.type == MiaFilterType.TYPE_WRITE){
-        this.queryWithoutOptions(ac);
+        this.queryWrite(ac);
       } else if(ac.field?.type == MiaFilterType.TYPE_DATE_RANGE){
-        this.queryWithoutOptions(ac);
+        this.queryDateRange(ac);
       } else if(ac.field?.type == MiaFilterType.TYPE_USERS){
-        this.queryWithoutOptions(ac);
+        this.queryUsers(ac);
       } else if(ac.field?.type == MiaFilterType.TYPE_OPTIONS){
-        this.queryWithoutOptions(ac);
+        this.queryOptions(ac);
       } else if(ac.field?.type == MiaFilterType.TYPE_OPTIONS_SERVICE){
-        this.queryWithoutOptions(ac);
+        this.queryOptionsService(ac);
       } else if(ac.field?.type == MiaFilterType.TYPE_OPTIONS_CUSTOM){
-        this.queryWithoutOptions(ac);
+        this.queryOptionsCustom(ac);
       }
     });
     this.call.emit(this.actives);
