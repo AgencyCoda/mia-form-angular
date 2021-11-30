@@ -46,9 +46,10 @@
  export * from './lib/components/mia-filter-box/mia-filter-box.component';
 
  /**
-  * Components
+  * Modals
   */
   export * from './lib/modals/mia-form-modal/mia-form-modal.component';
+  export * from './lib/modals/mia-form-modal-v2/mia-form-modal-v2.component';
  
  /**
   * Modules

@@ -55,12 +55,6 @@ import { CityFieldComponent } from './fields/city-field/city-field.component';
 import { TagsFieldComponent } from './fields/tags-field/tags-field.component';
 import { EventFieldComponent } from './fields/event-field/event-field.component';
 import { InputWithChipServiceFieldComponent } from './fields/input-with-chip-service-field/input-with-chip-service-field.component';
-
-
-/** COMPONENTS */
-import { MiaFormComponent } from './components/mia-form/mia-form.component';
-import { MiaPrintFieldsComponent } from './components/mia-print-fields/mia-print-fields.component';
-import { MiaFormModalComponent } from './modals/mia-form-modal/mia-form-modal.component';
 import { ChipsAndSelectServiceFieldComponent } from './fields/chips-and-select-service-field/chips-and-select-service-field.component';
 import { StringTitleFieldComponent } from './fields/string-title-field/string-title-field.component';
 import { PhotoHeaderFieldComponent } from './fields/photo-header-field/photo-header-field.component';
@@ -74,13 +68,21 @@ import { FileOneFieldComponent } from './fields/file-one-field/file-one-field.co
 import { TabsFieldComponent } from './fields/tabs-field/tabs-field.component';
 import { PositionFieldComponent } from './fields/position-field/position-field.component';
 import { GalleryFieldComponent } from './fields/gallery-field/gallery-field.component';
+
+
+/** COMPONENTS */
+import { MiaFormComponent } from './components/mia-form/mia-form.component';
+import { MiaPrintFieldsComponent } from './components/mia-print-fields/mia-print-fields.component';
+import { MiaFormModalComponent } from './modals/mia-form-modal/mia-form-modal.component';
 import { MiaFormModalV2Component } from './modals/mia-form-modal-v2/mia-form-modal-v2.component';
+
 
 @NgModule({
   declarations: [
     /** COMPONENTS */
     MiaFormComponent,
     MiaFilterBoxComponent,
+    MiaFormModalV2Component,
 
     /** FIELDS */
     MiaBaseFieldComponent,
@@ -122,8 +124,7 @@ import { MiaFormModalV2Component } from './modals/mia-form-modal-v2/mia-form-mod
     InputWithChipServiceFieldComponent,
     TabsFieldComponent,
     PositionFieldComponent,
-    GalleryFieldComponent,
-    MiaFormModalV2Component
+    GalleryFieldComponent
   ],
   imports: [
     CommonModule,
@@ -155,6 +156,7 @@ import { MiaFormModalV2Component } from './modals/mia-form-modal-v2/mia-form-mod
   exports: [
     MiaFormComponent,
     MiaFormModalComponent,
+    MiaFormModalV2Component,
     MatMomentDateModule,
 
     /** COMPONENTS */
@@ -179,7 +181,8 @@ import { MiaFormModalV2Component } from './modals/mia-form-modal-v2/mia-form-mod
     DateFilterRangeButtonComponent
   ],
   entryComponents: [
-    MiaFormModalComponent
+    MiaFormModalComponent,
+    MiaFormModalV2Component
   ],
   providers: [
     { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE, MAT_MOMENT_DATE_ADAPTER_OPTIONS] },
