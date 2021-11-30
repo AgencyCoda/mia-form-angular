@@ -74,6 +74,7 @@ import { FileOneFieldComponent } from './fields/file-one-field/file-one-field.co
 import { TabsFieldComponent } from './fields/tabs-field/tabs-field.component';
 import { PositionFieldComponent } from './fields/position-field/position-field.component';
 import { GalleryFieldComponent } from './fields/gallery-field/gallery-field.component';
+import { MiaFormModalV2Component } from './modals/mia-form-modal-v2/mia-form-modal-v2.component';
 
 @NgModule({
   declarations: [
@@ -121,7 +122,8 @@ import { GalleryFieldComponent } from './fields/gallery-field/gallery-field.comp
     InputWithChipServiceFieldComponent,
     TabsFieldComponent,
     PositionFieldComponent,
-    GalleryFieldComponent
+    GalleryFieldComponent,
+    MiaFormModalV2Component
   ],
   imports: [
     CommonModule,
