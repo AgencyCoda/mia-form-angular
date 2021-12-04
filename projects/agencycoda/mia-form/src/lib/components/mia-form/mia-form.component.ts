@@ -35,6 +35,11 @@ export class MiaFormComponent implements OnInit, AfterViewInit {
 
   updateValuesToItem() {
     this.miaFormService.updateValuesByItem(this.config, this.group, this.item);
+    this.changeDetector.detectChanges();
+  }
+
+  updateItemByForm() {
+    this.miaFormService.updateItemByForm(this.config, this.group, this.item)
   }
 
   getErrors() {

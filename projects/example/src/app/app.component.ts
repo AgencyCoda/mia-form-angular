@@ -4,7 +4,7 @@ import { Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { PositionFieldComponent } from 'projects/agencycoda/mia-form/src/lib/fields/position-field/position-field.component';
 import { MiaFormModalV2Component, MiaFormModalV2Config } from 'projects/agencycoda/mia-form/src/lib/modals/mia-form-modal-v2/mia-form-modal-v2.component';
-import { MiaField, MiaFilterBoxConfig, MiaFilterSelected, MiaFilterType, MiaFormComponent, MiaFormConfig, MiaFormModalComponent, MiaFormModalConfig } from 'projects/agencycoda/mia-form/src/public-api';
+import { MiaField, MiaFilterBoxConfig, MiaFilterSelected, MiaFilterType, MiaFormComponent, MiaFormConfig, MiaFormModalComponent, MiaFormModalConfig, MiaFormModalsService, MiaFormModalV3Config } from 'projects/agencycoda/mia-form/src/public-api';
 import { of, Subject } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { environment } from '../environments/environment';
@@ -29,7 +29,8 @@ export class AppComponent implements OnInit {
 
   constructor(
     protected testService: TestService,
-    protected dialog: MatDialog
+    protected dialog: MatDialog,
+    protected formModals: MiaFormModalsService
   ) {
 
   }
@@ -251,6 +252,30 @@ export class AppComponent implements OnInit {
       //alert('Procesando');
       dialogRef.componentInstance.setErrorMessage('Problema no resuelto');
       //dialogRef.close();
+    });
+  }
+
+  onClickOpenFormV3() {
+    let config = new MiaFormModalV3Config();
+    config.item = this.item;
+    config.title = 'Page Settings';
+    config.tabs = [
+      { title: 'General', fields: [
+        { key: 'firstname', type: 'string', label: 'Nombre' },
+        { key: 'lastname', type: 'string', label: 'Apellido' },
+      ] },
+      { title: 'SEO', fields: [
+        { key: 'photo', type: MiaField.TYPE_PHOTO, label: 'Photo', caption: 'Foto del usuario.' },
+      ] },
+      { title: 'Advanced', fields: [
+        { key: 'email', type: MiaField.TYPE_EMAIL, label: 'Email' },
+      ] },
+    ];
+
+    this.formModals.openV3(config).subscribe(res => {
+      console.log(res);
+      res.modal.stopSending();
+      res.modal.close();
     });
   }
 

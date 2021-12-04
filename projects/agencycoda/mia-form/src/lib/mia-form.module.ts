@@ -75,6 +75,7 @@ import { MiaFormComponent } from './components/mia-form/mia-form.component';
 import { MiaPrintFieldsComponent } from './components/mia-print-fields/mia-print-fields.component';
 import { MiaFormModalComponent } from './modals/mia-form-modal/mia-form-modal.component';
 import { MiaFormModalV2Component } from './modals/mia-form-modal-v2/mia-form-modal-v2.component';
+import { MiaFormModalV3Component } from './modals/mia-form-modal-v3/mia-form-modal-v3.component';
 
 
 @NgModule({
@@ -83,6 +84,7 @@ import { MiaFormModalV2Component } from './modals/mia-form-modal-v2/mia-form-mod
     MiaFormComponent,
     MiaFilterBoxComponent,
     MiaFormModalV2Component,
+    MiaFormModalV3Component,
 
     /** FIELDS */
     MiaBaseFieldComponent,
@@ -157,6 +159,7 @@ import { MiaFormModalV2Component } from './modals/mia-form-modal-v2/mia-form-mod
     MiaFormComponent,
     MiaFormModalComponent,
     MiaFormModalV2Component,
+    MiaFormModalV3Component,
     MatMomentDateModule,
 
     /** COMPONENTS */
@@ -182,7 +185,8 @@ import { MiaFormModalV2Component } from './modals/mia-form-modal-v2/mia-form-mod
   ],
   entryComponents: [
     MiaFormModalComponent,
-    MiaFormModalV2Component
+    MiaFormModalV2Component,
+    MiaFormModalV3Component
   ],
   providers: [
     { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE, MAT_MOMENT_DATE_ADAPTER_OPTIONS] },

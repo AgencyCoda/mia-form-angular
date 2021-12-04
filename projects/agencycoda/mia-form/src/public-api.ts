@@ -17,6 +17,7 @@
   * Services
   */
  export * from './lib/mia-form.service';
+ export * from './lib/services/mia-form-modals.service';
  
  /**
   * Fields
@@ -50,6 +51,7 @@
   */
   export * from './lib/modals/mia-form-modal/mia-form-modal.component';
   export * from './lib/modals/mia-form-modal-v2/mia-form-modal-v2.component';
+  export * from './lib/modals/mia-form-modal-v3/mia-form-modal-v3.component';
  
  /**
   * Modules
