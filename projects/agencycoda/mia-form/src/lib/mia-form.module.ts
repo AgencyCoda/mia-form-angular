@@ -25,6 +25,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatCardModule } from '@angular/material/card';
 
 /** EXTERNAL LIBRARIES */
 import { QuillModule } from 'ngx-quill';
@@ -71,7 +73,7 @@ import { PositionFieldComponent } from './fields/position-field/position-field.c
 import { GalleryFieldComponent } from './fields/gallery-field/gallery-field.component';
 import { SwitchFieldComponent } from './fields/switch-field/switch-field.component';
 import { ColorSelectorFieldComponent } from './fields/color-selector-field/color-selector-field.component';
-
+import { SliderFieldComponent } from './fields/slider-field/slider-field.component';
 
 /** COMPONENTS */
 import { MiaFormComponent } from './components/mia-form/mia-form.component';
@@ -131,7 +133,8 @@ import { MiaFormModalV3Component } from './modals/mia-form-modal-v3/mia-form-mod
     PositionFieldComponent,
     GalleryFieldComponent,
     SwitchFieldComponent,
-    ColorSelectorFieldComponent
+    ColorSelectorFieldComponent,
+    SliderFieldComponent
   ],
   imports: [
     CommonModule,
@@ -157,6 +160,8 @@ import { MiaFormModalV3Component } from './modals/mia-form-modal-v3/mia-form-mod
     MatDividerModule,
     MatTabsModule,
     MatSlideToggleModule,
+    MatSliderModule,
+    MatCardModule,
 
     // External Libraries
     QuillModule
@@ -187,6 +192,7 @@ import { MiaFormModalV3Component } from './modals/mia-form-modal-v3/mia-form-mod
     InputWithChipServiceFieldComponent,
     SwitchFieldComponent,
     ColorSelectorFieldComponent,
+    SliderFieldComponent,
 
     /** ELEMENTS */
     DateFilterRangeButtonComponent

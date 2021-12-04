@@ -3,6 +3,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { PositionFieldComponent } from 'projects/agencycoda/mia-form/src/lib/fields/position-field/position-field.component';
+import { SliderFieldComponent } from 'projects/agencycoda/mia-form/src/lib/fields/slider-field/slider-field.component';
 import { MiaFormModalV2Component, MiaFormModalV2Config } from 'projects/agencycoda/mia-form/src/lib/modals/mia-form-modal-v2/mia-form-modal-v2.component';
 import { ColorSelectorFieldComponent, MiaField, MiaFilterBoxConfig, MiaFilterSelected, MiaFilterType, MiaFormComponent, MiaFormConfig, MiaFormModalComponent, MiaFormModalConfig, MiaFormModalsService, MiaFormModalV3Config, SwitchFieldComponent } from 'projects/agencycoda/mia-form/src/public-api';
 import { of, Subject } from 'rxjs';
@@ -195,6 +196,7 @@ export class AppComponent implements OnInit {
       { key: 'margin', type: MiaField.TYPE_CUSTOM, extra: { component: PositionFieldComponent } },
       { key: 'switch', type: MiaField.TYPE_CUSTOM, label: 'Display source code', extra: { component: SwitchFieldComponent } },
       { key: 'color_primary', type: MiaField.TYPE_CUSTOM, label: 'Color Primary', extra: { component: ColorSelectorFieldComponent, colors: ['#000', '#333', '#eee', '#ddd'] } },
+      { key: 'slider_percent', type: MiaField.TYPE_CUSTOM, label: 'Test Percent', extra: { component: SliderFieldComponent } },
     ];
     this.config.errorMessages = [
       { key: 'required', message: 'The %label% is required.' }
