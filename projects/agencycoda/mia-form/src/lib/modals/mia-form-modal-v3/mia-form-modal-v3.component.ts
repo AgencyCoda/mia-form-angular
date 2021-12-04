@@ -84,6 +84,7 @@ export class MiaFormModalV3Component implements OnInit {
     let config = new MiaFormConfig();
     config.hasSubmit = false;
     config.fields = tab.fields;
+    config.service = this.data.service;
     this.configForm = config;
 
     this.sectionSelectedIndex = index;
