@@ -36,6 +36,7 @@
  export * from './lib/fields/input-with-chip-service-field/input-with-chip-service-field.component';
  export * from './lib/fields/position-field/position-field.component';
  export * from './lib/fields/switch-field/switch-field.component';
+ export * from './lib/fields/color-selector-field/color-selector-field.component';
 
  /**
   * Elements

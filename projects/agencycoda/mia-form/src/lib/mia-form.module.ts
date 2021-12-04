@@ -70,6 +70,7 @@ import { TabsFieldComponent } from './fields/tabs-field/tabs-field.component';
 import { PositionFieldComponent } from './fields/position-field/position-field.component';
 import { GalleryFieldComponent } from './fields/gallery-field/gallery-field.component';
 import { SwitchFieldComponent } from './fields/switch-field/switch-field.component';
+import { ColorSelectorFieldComponent } from './fields/color-selector-field/color-selector-field.component';
 
 
 /** COMPONENTS */
@@ -129,7 +130,8 @@ import { MiaFormModalV3Component } from './modals/mia-form-modal-v3/mia-form-mod
     TabsFieldComponent,
     PositionFieldComponent,
     GalleryFieldComponent,
-    SwitchFieldComponent
+    SwitchFieldComponent,
+    ColorSelectorFieldComponent
   ],
   imports: [
     CommonModule,
@@ -184,6 +186,7 @@ import { MiaFormModalV3Component } from './modals/mia-form-modal-v3/mia-form-mod
     EmailFieldComponent,
     InputWithChipServiceFieldComponent,
     SwitchFieldComponent,
+    ColorSelectorFieldComponent,
 
     /** ELEMENTS */
     DateFilterRangeButtonComponent
