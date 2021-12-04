@@ -56,4 +56,12 @@ export class MiaBaseFieldComponent implements OnInit {
         }
         return valueFinal;
       }
+
+  static updateValuesByItem(group: FormGroup, item: any, field: MiaField) {
+    group.get(field.key)?.setValue(item[field.key]);
+  }
+
+  static updateItemByFormField(group: FormGroup, item: any, field: MiaField) {
+    item[field.key] = group.get(field.key)?.value;
+  }
 }

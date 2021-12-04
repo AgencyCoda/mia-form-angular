@@ -34,6 +34,7 @@ export class MiaField {
     static TYPE_FILE_ONE = 'file-one';
     static TYPE_INPUT_WITH_CHIP_SERVICE = 'input-with-chip-service';
     static TYPE_TABS = 'tabs';
+    static TYPE_SWITCH = 'switch';
 
     key: string = '';
     type: string = '';

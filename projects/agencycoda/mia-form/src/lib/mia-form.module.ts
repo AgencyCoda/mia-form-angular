@@ -24,6 +24,7 @@ import { MatListModule } from '@angular/material/list';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 /** EXTERNAL LIBRARIES */
 import { QuillModule } from 'ngx-quill';
@@ -68,6 +69,7 @@ import { FileOneFieldComponent } from './fields/file-one-field/file-one-field.co
 import { TabsFieldComponent } from './fields/tabs-field/tabs-field.component';
 import { PositionFieldComponent } from './fields/position-field/position-field.component';
 import { GalleryFieldComponent } from './fields/gallery-field/gallery-field.component';
+import { SwitchFieldComponent } from './fields/switch-field/switch-field.component';
 
 
 /** COMPONENTS */
@@ -126,7 +128,8 @@ import { MiaFormModalV3Component } from './modals/mia-form-modal-v3/mia-form-mod
     InputWithChipServiceFieldComponent,
     TabsFieldComponent,
     PositionFieldComponent,
-    GalleryFieldComponent
+    GalleryFieldComponent,
+    SwitchFieldComponent
   ],
   imports: [
     CommonModule,
@@ -151,6 +154,7 @@ import { MiaFormModalV3Component } from './modals/mia-form-modal-v3/mia-form-mod
     FlexLayoutModule,
     MatDividerModule,
     MatTabsModule,
+    MatSlideToggleModule,
 
     // External Libraries
     QuillModule
@@ -179,6 +183,7 @@ import { MiaFormModalV3Component } from './modals/mia-form-modal-v3/mia-form-mod
     EventFieldComponent,
     EmailFieldComponent,
     InputWithChipServiceFieldComponent,
+    SwitchFieldComponent,
 
     /** ELEMENTS */
     DateFilterRangeButtonComponent

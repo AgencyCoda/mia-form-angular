@@ -4,7 +4,7 @@ import { Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { PositionFieldComponent } from 'projects/agencycoda/mia-form/src/lib/fields/position-field/position-field.component';
 import { MiaFormModalV2Component, MiaFormModalV2Config } from 'projects/agencycoda/mia-form/src/lib/modals/mia-form-modal-v2/mia-form-modal-v2.component';
-import { MiaField, MiaFilterBoxConfig, MiaFilterSelected, MiaFilterType, MiaFormComponent, MiaFormConfig, MiaFormModalComponent, MiaFormModalConfig, MiaFormModalsService, MiaFormModalV3Config } from 'projects/agencycoda/mia-form/src/public-api';
+import { MiaField, MiaFilterBoxConfig, MiaFilterSelected, MiaFilterType, MiaFormComponent, MiaFormConfig, MiaFormModalComponent, MiaFormModalConfig, MiaFormModalsService, MiaFormModalV3Config, SwitchFieldComponent } from 'projects/agencycoda/mia-form/src/public-api';
 import { of, Subject } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { environment } from '../environments/environment';
@@ -46,10 +46,10 @@ export class AppComponent implements OnInit {
     this.miaForm.submit().subscribe(result => {
       console.log('--Observable--');
       console.log(result);
-      alert(result.margin.top);
+      /*alert(result.margin.top);
       alert(result.margin.right);
       alert(result.margin.bottom);
-      alert(result.margin.left);
+      alert(result.margin.left);*/
     });
   }
 
@@ -193,6 +193,7 @@ export class AppComponent implements OnInit {
 
       { key: '', type: MiaField.TYPE_LABEL, label: '<h2>-- Position Field --</h2>', classes: 'label-custom' },
       { key: 'margin', type: MiaField.TYPE_CUSTOM, extra: { component: PositionFieldComponent } },
+      { key: 'switch', type: MiaField.TYPE_CUSTOM, label: 'Display source code', extra: { component: SwitchFieldComponent } },
     ];
     this.config.errorMessages = [
       { key: 'required', message: 'The %label% is required.' }
