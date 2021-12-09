@@ -2,6 +2,7 @@ import { MiaQuery } from '@agencycoda/mia-core';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
+import { ImagesFieldComponent } from 'projects/agencycoda/mia-form/src/lib/fields/images-field/images-field.component';
 import { PositionFieldComponent } from 'projects/agencycoda/mia-form/src/lib/fields/position-field/position-field.component';
 import { SliderFieldComponent } from 'projects/agencycoda/mia-form/src/lib/fields/slider-field/slider-field.component';
 import { MiaFormModalV2Component, MiaFormModalV2Config } from 'projects/agencycoda/mia-form/src/lib/modals/mia-form-modal-v2/mia-form-modal-v2.component';
@@ -197,6 +198,7 @@ export class AppComponent implements OnInit {
       { key: 'switch', type: MiaField.TYPE_CUSTOM, label: 'Display source code', extra: { component: SwitchFieldComponent } },
       { key: 'color_primary', type: MiaField.TYPE_CUSTOM, label: 'Color Primary', extra: { component: ColorSelectorFieldComponent, colors: ['#000', '#333', '#eee', '#ddd'] } },
       { key: 'slider_percent', type: MiaField.TYPE_CUSTOM, label: 'Test Percent', extra: { component: SliderFieldComponent } },
+      { key: 'photos', type: MiaField.TYPE_CUSTOM, label: 'Photos', extra: { component: ImagesFieldComponent, limit: 5 } },
     ];
     this.config.errorMessages = [
       { key: 'required', message: 'The %label% is required.' }

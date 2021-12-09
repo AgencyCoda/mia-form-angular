@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { QuillModule } from 'ngx-quill';
 import { ExampleCustomFieldComponent } from './fields/example-custom-field/example-custom-field.component';
+import { MIA_GOOGLE_STORAGE_PROVIDER } from '@agencycoda/mia-core';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,14 @@ import { ExampleCustomFieldComponent } from './fields/example-custom-field/examp
     QuillModule.forRoot(),
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: MIA_GOOGLE_STORAGE_PROVIDER,
+      useValue: {
+        bucket: 'yoypr-files'
+      }
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

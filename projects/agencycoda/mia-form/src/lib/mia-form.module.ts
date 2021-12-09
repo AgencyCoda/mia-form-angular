@@ -198,6 +198,7 @@ import { MiaFormWizardComponent } from './modals/mia-form-wizard/mia-form-wizard
     SwitchFieldComponent,
     ColorSelectorFieldComponent,
     SliderFieldComponent,
+    ImagesFieldComponent,
 
     /** ELEMENTS */
     DateFilterRangeButtonComponent
