@@ -81,6 +81,7 @@ import { MiaPrintFieldsComponent } from './components/mia-print-fields/mia-print
 import { MiaFormModalComponent } from './modals/mia-form-modal/mia-form-modal.component';
 import { MiaFormModalV2Component } from './modals/mia-form-modal-v2/mia-form-modal-v2.component';
 import { MiaFormModalV3Component } from './modals/mia-form-modal-v3/mia-form-modal-v3.component';
+import { MiaFormWizardComponent } from './modals/mia-form-wizard/mia-form-wizard.component';
 
 
 @NgModule({
@@ -90,6 +91,7 @@ import { MiaFormModalV3Component } from './modals/mia-form-modal-v3/mia-form-mod
     MiaFilterBoxComponent,
     MiaFormModalV2Component,
     MiaFormModalV3Component,
+    MiaFormWizardComponent,
 
     /** FIELDS */
     MiaBaseFieldComponent,
@@ -168,13 +170,16 @@ import { MiaFormModalV3Component } from './modals/mia-form-modal-v3/mia-form-mod
   ],
   exports: [
     MiaFormComponent,
-    MiaFormModalComponent,
-    MiaFormModalV2Component,
-    MiaFormModalV3Component,
     MatMomentDateModule,
 
     /** COMPONENTS */
     MiaFilterBoxComponent,
+
+    /** MODALS */
+    MiaFormModalComponent,
+    MiaFormModalV2Component,
+    MiaFormModalV3Component,
+    MiaFormWizardComponent,
 
     // External Libraries
     QuillModule,
@@ -200,7 +205,8 @@ import { MiaFormModalV3Component } from './modals/mia-form-modal-v3/mia-form-mod
   entryComponents: [
     MiaFormModalComponent,
     MiaFormModalV2Component,
-    MiaFormModalV3Component
+    MiaFormModalV3Component,
+    MiaFormWizardComponent
   ],
   providers: [
     { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE, MAT_MOMENT_DATE_ADAPTER_OPTIONS] },

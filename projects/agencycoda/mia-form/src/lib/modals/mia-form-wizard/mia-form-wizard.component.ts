@@ -1,30 +1,30 @@
 import { Component, Inject, OnInit, ViewChild } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { Subject } from 'rxjs';
-import { MiaFormComponent } from '../../components/mia-form/mia-form.component';
 import { MiaField } from '../../entities/mia-field';
+import { MiaFormComponent } from '../../components/mia-form/mia-form.component';
+import { Subject } from 'rxjs';
 import { MiaFormConfig } from '../../entities/mia-form-config';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
-export class MiaFormModalV3Config {
+export class MiaFormWizardConfig {
   service: any;
   item: any;
   tabs: Array<{ title: string, fields: Array<MiaField> }> = [];
   title = '';
 }
 
-export class MiaFormModalV3Interaction {
+export class MiaFormWizardInteraction {
   action: string = '';
   item: any;
   extras?: any;
-  modal!: MiaFormModalV3Component;
+  modal!: MiaFormWizardComponent;
 }
 
 @Component({
-  selector: 'mia-form-modal-v3',
-  templateUrl: './mia-form-modal-v3.component.html',
-  styleUrls: ['./mia-form-modal-v3.component.scss']
+  selector: 'mia-form-wizard',
+  templateUrl: './mia-form-wizard.component.html',
+  styleUrls: ['./mia-form-wizard.component.scss']
 })
-export class MiaFormModalV3Component implements OnInit {
+export class MiaFormWizardComponent implements OnInit {
 
   @ViewChild('miaForm') miaForm!: MiaFormComponent;
 
@@ -34,11 +34,11 @@ export class MiaFormModalV3Component implements OnInit {
   configForm?: MiaFormConfig;
   errorMessage = '';
 
-  actions = new Subject<MiaFormModalV3Interaction>();
+  actions = new Subject<MiaFormWizardInteraction>();
 
   constructor(
-    protected dialogRef: MatDialogRef<MiaFormModalV3Component>,
-    @Inject(MAT_DIALOG_DATA) public data: MiaFormModalV3Config
+    protected dialogRef: MatDialogRef<MiaFormWizardComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: MiaFormWizardConfig
   ) { }
 
   ngOnInit(): void {
@@ -88,6 +88,11 @@ export class MiaFormModalV3Component implements OnInit {
     this.configForm = config;
 
     this.sectionSelectedIndex = index;
+  }
+
+  onClickContinue() {
+    this.sectionSelectedIndex++;
+    this.onClickTab(this.data.tabs[this.sectionSelectedIndex], this.sectionSelectedIndex);
   }
 
   close() {

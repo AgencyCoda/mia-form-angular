@@ -56,6 +56,7 @@
   export * from './lib/modals/mia-form-modal/mia-form-modal.component';
   export * from './lib/modals/mia-form-modal-v2/mia-form-modal-v2.component';
   export * from './lib/modals/mia-form-modal-v3/mia-form-modal-v3.component';
+  export * from './lib/modals/mia-form-wizard/mia-form-wizard.component';
  
  /**
   * Modules
