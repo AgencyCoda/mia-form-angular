@@ -20,6 +20,7 @@ export class HtmlFieldComponent extends MiaBaseFieldComponent implements OnInit 
       [ 'image', 'link', 'video' ],
     ]
   }
+  theme?: string;
 
   constructor() {
     super();
@@ -33,6 +34,9 @@ export class HtmlFieldComponent extends MiaBaseFieldComponent implements OnInit 
   loadConfig() {
     if(this.field.extra.height != undefined){
       this.heightEditor = this.field.extra.height;
+    }
+    if(this.field.extra.theme != undefined){
+      this.theme = this.field.extra.theme;
     }
   }
 }
