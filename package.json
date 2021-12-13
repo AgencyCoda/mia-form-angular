@@ -12,7 +12,7 @@
   },
   "private": true,
   "dependencies": {
-    "@agencycoda/mia-core": "^12.2.15",
+    "@agencycoda/mia-core": "^13.1.0",
     "@angular/animations": "^12.2.13",
     "@angular/cdk": "^12.2.13",
     "@angular/common": "~12.2.13",
@@ -26,7 +26,7 @@
     "@angular/platform-browser-dynamic": "~12.2.13",
     "@angular/router": "~12.2.13",
     "moment": "^2.29.1",
-    "ngx-quill": "^14.0.0",
+    "ngx-quill": "^16.1.1",
     "quill": "^1.3.7",
     "quill-image-resize": "^3.0.9",
     "quill-image-resize-module": "^3.0.0",
