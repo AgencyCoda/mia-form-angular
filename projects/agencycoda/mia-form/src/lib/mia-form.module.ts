@@ -178,6 +178,7 @@ import { MiaFormWizardComponent } from './modals/mia-form-wizard/mia-form-wizard
         // External Libraries
         QuillModule,
         /** FIELDS */
+        MiaPrintFieldsComponent,
         SelectServiceFieldComponent,
         AutocompleteServiceFieldComponent,
         ListServiceFieldComponent,

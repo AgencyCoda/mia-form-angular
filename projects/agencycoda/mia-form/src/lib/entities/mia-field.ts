@@ -17,9 +17,7 @@ export class MiaField {
     static TYPE_AVATAR_LIST_SERVICE = 'avatar-list-service';
     static TYPE_CHIPS_AND_SELECT = 'chips-and-select';
     static TYPE_CHIPS_AND_SELECT_SERVICE = 'chips-and-select-service';
-    static TYPE_ROW = 'row';
     static TYPE_LABEL = 'label';
-    static TYPE_BOX = 'box';
     static TYPE_CITY = 'city';
     static TYPE_TAGS = 'tags';
     static TYPE_HTML = 'html';
@@ -33,7 +31,6 @@ export class MiaField {
     static TYPE_PASSWORD = 'password';
     static TYPE_FILE_ONE = 'file-one';
     static TYPE_INPUT_WITH_CHIP_SERVICE = 'input-with-chip-service';
-    static TYPE_TABS = 'tabs';
 
     key: string = '';
     type: string = '';

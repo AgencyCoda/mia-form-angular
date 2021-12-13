@@ -6,7 +6,7 @@ import { ImagesFieldComponent } from 'projects/agencycoda/mia-form/src/lib/field
 import { PositionFieldComponent } from 'projects/agencycoda/mia-form/src/lib/fields/position-field/position-field.component';
 import { SliderFieldComponent } from 'projects/agencycoda/mia-form/src/lib/fields/slider-field/slider-field.component';
 import { MiaFormModalV2Component, MiaFormModalV2Config } from 'projects/agencycoda/mia-form/src/lib/modals/mia-form-modal-v2/mia-form-modal-v2.component';
-import { ColorSelectorFieldComponent, MiaField, MiaFilterBoxConfig, MiaFilterSelected, MiaFilterType, MiaFormComponent, MiaFormConfig, MiaFormModalComponent, MiaFormModalConfig, MiaFormModalsService, MiaFormModalV3Config, MiaFormWizardConfig, SwitchFieldComponent } from 'projects/agencycoda/mia-form/src/public-api';
+import { BoxFieldComponent, ColorSelectorFieldComponent, MiaField, MiaFilterBoxConfig, MiaFilterSelected, MiaFilterType, MiaFormComponent, MiaFormConfig, MiaFormModalComponent, MiaFormModalConfig, MiaFormModalsService, MiaFormModalV3Config, MiaFormWizardConfig, RowFieldComponent, SwitchFieldComponent, TabsFieldComponent } from 'projects/agencycoda/mia-form/src/public-api';
 import { of, Subject } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { environment } from '../environments/environment';
@@ -89,7 +89,9 @@ export class AppComponent implements OnInit {
     this.config = new MiaFormConfig();
     this.config.hasSubmit = false;
     this.config.fields = [
-      { key: 'box-one', type: MiaField.TYPE_BOX, extra: { fields: [
+      { key: 'box-one', type: MiaField.TYPE_CUSTOM, extra: {
+        component: BoxFieldComponent,
+        fields: [
         { key: 'features', type: MiaField.TYPE_CHIPS_AND_SELECT, label: '', caption: '', extra: { 
           title: 'Valores del producto', field_display: 'title',
           options: [
@@ -102,11 +104,15 @@ export class AppComponent implements OnInit {
         { key: '', type: MiaField.TYPE_LABEL, label: 'Marca del producto', classes: 'label-form' },
         { key: 'brand', type: 'string', label: 'Marca del producto' },
         { key: 'caption', type: MiaField.TYPE_TEXT, label: 'Descripcion del producto' },
-        { key: 'row-one', type: MiaField.TYPE_ROW, extra: { fields: [
+        { key: 'row-one', type: MiaField.TYPE_CUSTOM, extra: { 
+          component: RowFieldComponent,
+          fields: [
           { key: '', type: MiaField.TYPE_LABEL, label: 'Precio' },
           { key: '', type: MiaField.TYPE_LABEL, label: 'Categoría' },
         ] }  },
-        { key: 'row-one', type: MiaField.TYPE_ROW, extra: { fields: [
+        { key: 'row-one', type: MiaField.TYPE_CUSTOM, extra: {
+          component: RowFieldComponent,
+          fields: [
           { key: 'price', type: 'string', label: 'Precio' },
           { key: 'category', type: 'string', label: 'Categoria' },
         ] }  }
@@ -157,7 +163,9 @@ export class AppComponent implements OnInit {
       } },
       { key: 'tag', type: MiaField.TYPE_STRING_WITH_COLOR, label: 'Tag name', caption: '', appearance: 'outline', extra: { key_color: 'color' } },
       { key: 'divider-1', type: MiaField.TYPE_DIVIDER },
-      { key: 'row-one', type: MiaField.TYPE_ROW, extra: { fields: [
+      { key: 'row-one', type: MiaField.TYPE_CUSTOM, extra: { 
+        component: RowFieldComponent,
+        fields: [
         { key: 'firstname', type: 'string', label: 'Nombre' },
         { key: 'lastname', type: 'string', label: 'Apellido' },
       ] }  },
@@ -180,7 +188,8 @@ export class AppComponent implements OnInit {
       { key: 'custom_example', type: MiaField.TYPE_CUSTOM, extra: { component: ExampleCustomFieldComponent } },
       { key: 'file_one', type: MiaField.TYPE_FILE_ONE, label: 'Propuesta' },
       { key: 'input-with-chips', type: MiaField.TYPE_INPUT_WITH_CHIP_SERVICE, label: 'Escribir chips', caption: '', extra: { title: 'Escribir chips', service: this.testService, field_display: 'title', field_list: 'chips-auto', query: new MiaQuery() } },
-      { key: 'tabs-one', type: MiaField.TYPE_TABS, extra: { 
+      { key: 'tabs-one', type: MiaField.TYPE_CUSTOM, extra: { 
+        component: TabsFieldComponent,
         tabs: [
           { title: 'Tab One', fields: [
             { key: 'firstname2', type: 'string', label: 'Nombre' },
