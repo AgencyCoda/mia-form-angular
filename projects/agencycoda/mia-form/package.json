@@ -1,12 +1,12 @@
 {
   "name": "@agencycoda/mia-form",
-  "version": "12.2.13",
+  "version": "13.1.0",
   "peerDependencies": {
-    "@angular/common": ">=12.2.13",
-    "@angular/core": ">=12.2.13",
-    "@angular/forms": ">=12.2.13",
-    "@angular/material": ">=12.2.13",
-    "@angular/material-moment-adapter": ">=12.2.13",
+    "@angular/common": ">=13.1.0",
+    "@angular/core": ">=13.1.0",
+    "@angular/forms": ">=13.1.0",
+    "@angular/material": ">=13.1.0",
+    "@angular/material-moment-adapter": ">=13.1.0",
     "@agencycoda/mia-core": ">=13.1.0",
     "@angular/flex-layout": ">=11.0.0-beta.33 || >=12.0.0-beta.34 || >=13.0.0-beta.36",
     "moment": "^2.29.1",
