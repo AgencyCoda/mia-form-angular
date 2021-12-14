@@ -22,6 +22,8 @@ export class EventFieldComponent extends MiaBaseFieldComponent implements OnInit
 
   inputEnd = new FormControl();
 
+  hour:string[] = [moment().format('HH'), moment().format('mm')];
+
   constructor() {
     super();
   }
@@ -38,7 +40,7 @@ export class EventFieldComponent extends MiaBaseFieldComponent implements OnInit
     this.group.addControl(this.field.key, this.input);
     // Add in Group
     this.group.addControl(this.field.extra.field_end_key, this.inputEnd);
-    
+
     this.input.valueChanges.subscribe(item => {
       if(!this.isFirstLoad || item == undefined){
         return;
@@ -46,8 +48,8 @@ export class EventFieldComponent extends MiaBaseFieldComponent implements OnInit
 
       this.isFirstLoad = false;
 
-      this.internalStartDate.setValue(item);
       this.internalStartHour.setValue(item.format('HH:mm'));
+      this.internalStartDate.setValue(item);
     });
 
     this.inputEnd.valueChanges.subscribe(item => {
@@ -57,8 +59,8 @@ export class EventFieldComponent extends MiaBaseFieldComponent implements OnInit
 
       this.isFirstLoadEnd = false;
 
-      this.internalEndDate.setValue(item);
       this.internalEndHour.setValue(item.format('HH:mm'));
+      this.internalEndDate.setValue(item);
     });
   }
 
@@ -68,8 +70,9 @@ export class EventFieldComponent extends MiaBaseFieldComponent implements OnInit
       this.hours.push({ value: item.format('HH:mm'), title: item.format('hh:mma') });
       item.add(15, 'minutes');
     }
-
+    // Start Date
     this.internalStartDate.valueChanges.subscribe(item => {
+      this.updateStartDate();
       if(item == undefined || this.internalEndDate.value != undefined){
         return;
       }
@@ -77,38 +80,61 @@ export class EventFieldComponent extends MiaBaseFieldComponent implements OnInit
       this.internalEndDate.setValue(moment(item));
     });
 
-    this.internalStartHour.valueChanges.subscribe(hour => {
-      if(hour == '' || hour == undefined){
-        return;
-      }
+    // End Date
+    this.internalEndDate.valueChanges.subscribe(item => {
+      this.updateEndDate();
+    });
 
+    // Start Hour
+    this.internalStartHour.valueChanges.subscribe(hour => {
+      this.updateStartDate();
+    });
+
+    // End Hour
+    this.internalEndHour.valueChanges.subscribe(hour => {
+      this.updateEndDate();
+    });
+  }
+
+  updateStartDate()
+	{
+    if( !this.isFirstLoad )
+    {
       let dateFull = this.internalStartDate.value;
       if(dateFull == undefined){
         return;
       }
 
-      let data = hour.split(':');
+      let data = this.hour;
+      if(this.internalStartHour.value)
+      {
+        data = this.internalStartHour.value.split(':');
+      }
 
       dateFull.hour(parseInt(data[0]));
       dateFull.minutes(parseInt(data[1]));
       this.input.setValue(dateFull);
-    });
+    }
+	}
 
-    this.internalEndHour.valueChanges.subscribe(hour => {
-      if(hour == '' || hour == undefined){
-        return;
-      }
-
+	updateEndDate()
+	{
+    if( !this.isFirstLoadEnd )
+    {
       let dateFull = this.internalEndDate.value;
       if(dateFull == undefined){
         return;
       }
 
-      let data = hour.split(':');
+      let data = this.hour;
+      if(this.internalEndHour.value)
+      {
+        data = this.internalEndHour.value.split(':');
+      }
 
       dateFull.hour(parseInt(data[0]));
       dateFull.minutes(parseInt(data[1]));
       this.inputEnd.setValue(dateFull);
-    });
-  }
+    }
+	}
 }
