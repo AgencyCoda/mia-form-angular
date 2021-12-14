@@ -85,134 +85,121 @@ import { MiaFormWizardComponent } from './modals/mia-form-wizard/mia-form-wizard
 
 
 @NgModule({
-  declarations: [
-    /** COMPONENTS */
-    MiaFormComponent,
-    MiaFilterBoxComponent,
-    MiaFormModalV2Component,
-    MiaFormModalV3Component,
-    MiaFormWizardComponent,
-
-    /** FIELDS */
-    MiaBaseFieldComponent,
-    StringFieldComponent,
-    DateFieldComponent,
-    DateRangeFieldComponent,
-    CheckboxFieldComponent,
-    SelectFieldComponent,
-    TextFieldComponent,
-    HtmlFieldComponent,
-    FilesFieldComponent,
-    ImagesFieldComponent,
-    ListStringFieldComponent,
-    MiaPrintFieldsComponent,
-    MiaFormModalComponent,
-    ListServiceFieldComponent,
-    AutocompleteServiceFieldComponent,
-    AutocompleteFieldComponent,
-    SelectServiceFieldComponent,
-    PhotoFieldComponent,
-    AvatarListServiceFieldComponent,
-    ChipsAndSelectFieldComponent,
-    StringWithColorFieldComponent,
-    RowFieldComponent,
-    LabelFieldComponent,
-    BoxFieldComponent,
-    CityFieldComponent,
-    TagsFieldComponent,
-    ChipsAndSelectServiceFieldComponent,
-    StringTitleFieldComponent,
-    PhotoHeaderFieldComponent,
-    DividerFieldComponent,
-    EventFieldComponent,
-    CustomFieldComponent,
-    DateFilterRangeButtonComponent,
-    EmailFieldComponent,
-    PasswordFieldComponent,
-    FileOneFieldComponent,
-    InputWithChipServiceFieldComponent,
-    TabsFieldComponent,
-    PositionFieldComponent,
-    GalleryFieldComponent,
-    SwitchFieldComponent,
-    ColorSelectorFieldComponent,
-    SliderFieldComponent
-  ],
-  imports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MiaCoreModule,
-
-    /** MATERIAL */
-    MatFormFieldModule,
-    MatInputModule,
-    MatSelectModule,
-    MatDialogModule,
-    MatAutocompleteModule,
-    MatIconModule,
-    MatDatepickerModule,
-    MatMomentDateModule,
-    MatProgressSpinnerModule,
-    MatMenuModule,
-    MatChipsModule,
-    MatButtonModule,
-    MatListModule,
-    FlexLayoutModule,
-    MatDividerModule,
-    MatTabsModule,
-    MatSlideToggleModule,
-    MatSliderModule,
-    MatCardModule,
-
-    // External Libraries
-    QuillModule
-  ],
-  exports: [
-    MiaFormComponent,
-    MatMomentDateModule,
-
-    /** COMPONENTS */
-    MiaFilterBoxComponent,
-
-    /** MODALS */
-    MiaFormModalComponent,
-    MiaFormModalV2Component,
-    MiaFormModalV3Component,
-    MiaFormWizardComponent,
-
-    // External Libraries
-    QuillModule,
-
-    /** FIELDS */
-    SelectServiceFieldComponent,
-    AutocompleteServiceFieldComponent,
-    ListServiceFieldComponent,
-    AvatarListServiceFieldComponent,
-    ChipsAndSelectFieldComponent,
-    ChipsAndSelectServiceFieldComponent,
-    TagsFieldComponent,
-    EventFieldComponent,
-    EmailFieldComponent,
-    InputWithChipServiceFieldComponent,
-    SwitchFieldComponent,
-    ColorSelectorFieldComponent,
-    SliderFieldComponent,
-    ImagesFieldComponent,
-
-    /** ELEMENTS */
-    DateFilterRangeButtonComponent
-  ],
-  entryComponents: [
-    MiaFormModalComponent,
-    MiaFormModalV2Component,
-    MiaFormModalV3Component,
-    MiaFormWizardComponent
-  ],
-  providers: [
-    { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE, MAT_MOMENT_DATE_ADAPTER_OPTIONS] },
-    { provide: MAT_DATE_LOCALE, useValue: 'en-Us' },
-    { provide: MAT_MOMENT_DATE_ADAPTER_OPTIONS, useValue: {useUtc: true, strict: true} },
-  ]
+    declarations: [
+        /** COMPONENTS */
+        MiaFormComponent,
+        MiaFilterBoxComponent,
+        MiaFormModalV2Component,
+        MiaFormModalV3Component,
+        MiaFormWizardComponent,
+        /** FIELDS */
+        MiaBaseFieldComponent,
+        StringFieldComponent,
+        DateFieldComponent,
+        DateRangeFieldComponent,
+        CheckboxFieldComponent,
+        SelectFieldComponent,
+        TextFieldComponent,
+        HtmlFieldComponent,
+        FilesFieldComponent,
+        ImagesFieldComponent,
+        ListStringFieldComponent,
+        MiaPrintFieldsComponent,
+        MiaFormModalComponent,
+        ListServiceFieldComponent,
+        AutocompleteServiceFieldComponent,
+        AutocompleteFieldComponent,
+        SelectServiceFieldComponent,
+        PhotoFieldComponent,
+        AvatarListServiceFieldComponent,
+        ChipsAndSelectFieldComponent,
+        StringWithColorFieldComponent,
+        RowFieldComponent,
+        LabelFieldComponent,
+        BoxFieldComponent,
+        CityFieldComponent,
+        TagsFieldComponent,
+        ChipsAndSelectServiceFieldComponent,
+        StringTitleFieldComponent,
+        PhotoHeaderFieldComponent,
+        DividerFieldComponent,
+        EventFieldComponent,
+        CustomFieldComponent,
+        DateFilterRangeButtonComponent,
+        EmailFieldComponent,
+        PasswordFieldComponent,
+        FileOneFieldComponent,
+        InputWithChipServiceFieldComponent,
+        TabsFieldComponent,
+        PositionFieldComponent,
+        GalleryFieldComponent,
+        SwitchFieldComponent,
+        ColorSelectorFieldComponent,
+        SliderFieldComponent
+    ],
+    imports: [
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MiaCoreModule,
+        /** MATERIAL */
+        MatFormFieldModule,
+        MatInputModule,
+        MatSelectModule,
+        MatDialogModule,
+        MatAutocompleteModule,
+        MatIconModule,
+        MatDatepickerModule,
+        MatMomentDateModule,
+        MatProgressSpinnerModule,
+        MatMenuModule,
+        MatChipsModule,
+        MatButtonModule,
+        MatListModule,
+        FlexLayoutModule,
+        MatDividerModule,
+        MatTabsModule,
+        MatSlideToggleModule,
+        MatSliderModule,
+        MatCardModule,
+        // External Libraries
+        QuillModule
+    ],
+    exports: [
+        MiaFormComponent,
+        MatMomentDateModule,
+        /** COMPONENTS */
+        MiaFilterBoxComponent,
+        /** MODALS */
+        MiaFormModalComponent,
+        MiaFormModalV2Component,
+        MiaFormModalV3Component,
+        MiaFormWizardComponent,
+        // External Libraries
+        QuillModule,
+        /** FIELDS */
+        MiaPrintFieldsComponent,
+        SelectServiceFieldComponent,
+        AutocompleteServiceFieldComponent,
+        ListServiceFieldComponent,
+        AvatarListServiceFieldComponent,
+        ChipsAndSelectFieldComponent,
+        ChipsAndSelectServiceFieldComponent,
+        TagsFieldComponent,
+        EventFieldComponent,
+        EmailFieldComponent,
+        InputWithChipServiceFieldComponent,
+        SwitchFieldComponent,
+        ColorSelectorFieldComponent,
+        SliderFieldComponent,
+        ImagesFieldComponent,
+        /** ELEMENTS */
+        DateFilterRangeButtonComponent
+    ],
+    providers: [
+        { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE, MAT_MOMENT_DATE_ADAPTER_OPTIONS] },
+        { provide: MAT_DATE_LOCALE, useValue: 'en-Us' },
+        { provide: MAT_MOMENT_DATE_ADAPTER_OPTIONS, useValue: { useUtc: true, strict: true } },
+    ]
 })
 export class MiaFormModule { }

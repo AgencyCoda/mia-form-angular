@@ -19,6 +19,14 @@
  export * from './lib/mia-form.service';
  export * from './lib/services/mia-form-modals.service';
  
+/**
+  * Fields Group
+  */
+ export * from './lib/components/mia-print-fields/mia-print-fields.component';
+ export * from './lib/fields/tabs-field/tabs-field.component';
+ export * from './lib/fields/box-field/box-field.component';
+ export * from './lib/fields/row-field/row-field.component';
+
  /**
   * Fields
   */
@@ -39,6 +47,7 @@
  export * from './lib/fields/color-selector-field/color-selector-field.component';
  export * from './lib/fields/position-field/position-field.component';
  export * from './lib/fields/images-field/images-field.component';
+ export * from './lib/fields/slider-field/slider-field.component';
 
  /**
   * Elements
