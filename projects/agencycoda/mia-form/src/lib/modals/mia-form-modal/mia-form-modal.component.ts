@@ -15,6 +15,9 @@ export class MiaFormModalConfig {
   resultProcess?: Observable<boolean>;
   showButtons = true;
   showHeader = true;
+
+  textButtonCancel? = 'Cancel';
+  textButtonSave? = 'Save';
 }
 
 @Component({
