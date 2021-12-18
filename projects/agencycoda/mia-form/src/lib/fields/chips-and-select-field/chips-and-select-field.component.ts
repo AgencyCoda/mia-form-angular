@@ -38,6 +38,19 @@ export class ChipsAndSelectFieldComponent extends MiaBaseFieldComponent implemen
 
   onClickAdd() {
     let options: Array<any> = this.field.extra.options;
+
+    if(this.field.extra.limit != undefined){
+      // Verify limit quantity
+      let newItemsCount = options.filter(opt => opt.isSelected).length;
+      let selectedItemsCount = this.inputList.length;
+
+      if(newItemsCount + selectedItemsCount > this.field.extra.limit){
+        alert(this.field.extra.limit_message_error);
+        return;
+      }
+    }
+
+    
     for (const opt of options) {
       if(!opt.isSelected){
         continue;

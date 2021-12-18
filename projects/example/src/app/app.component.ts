@@ -62,7 +62,7 @@ export class AppComponent implements OnInit {
   onSubmit(item: Entity) {
     console.log('--SUBMIT--');
     console.log(item);
-    alert('asddas');
+    //alert('asddas');
   }
 
   loadItem() {
@@ -170,7 +170,7 @@ export class AppComponent implements OnInit {
         { key: 'lastname', type: 'string', label: 'Apellido' },
       ] }  },
       { key: 'tags', type: MiaField.TYPE_TAGS, label: 'Tags', caption: '', appearance: 'outline' },
-      { key: 'chips-service', type: MiaField.TYPE_CHIPS_AND_SELECT_SERVICE, label: 'Seleccionador multiple chip', caption: '', extra: { title: 'Multiple chips service', service: this.testService, field_display: 'title', field_list: 'chips-auto', query: new MiaQuery() } },
+      { key: 'chips-service', type: MiaField.TYPE_CHIPS_AND_SELECT_SERVICE, label: 'Seleccionador multiple chip', caption: '', extra: { title: 'Multiple chips service', service: this.testService, field_display: 'title', field_list: 'chips-auto', query: new MiaQuery(), limit: 2, limit_message_error: 'Ha superado el limite' } },
       { key: 'chips-service-with-add', type: MiaField.TYPE_CHIPS_AND_SELECT_SERVICE, label: 'Seleccionador multiple chip', caption: '', extra: { 
         title: 'Multiple chips service', 
         service: this.testService, 
