@@ -29,12 +29,14 @@ export class SelectServiceFieldComponent extends SelectFieldComponent implements
     if(extraParams == undefined){
       extraParams = {};
     }
-
     let query: MiaQuery = this.field.extra.query;
     query.itemPerPage = 5000;
     let service: MiaBaseCrudHttpService<any> = this.field.extra.service;
     service.listWithExtras(query, extraParams).then(result => {
       this.items = result.data;
+      if(this.items.length > 0){
+        this.input.setValue(this.items[0].id);
+      }
       this.changeDetector.detectChanges();
     });
   }
