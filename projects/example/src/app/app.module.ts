@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { QuillModule } from 'ngx-quill';
 import { ExampleCustomFieldComponent } from './fields/example-custom-field/example-custom-field.component';
 import { MIA_GOOGLE_STORAGE_PROVIDER } from '@agencycoda/mia-core';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { MIA_GOOGLE_STORAGE_PROVIDER } from '@agencycoda/mia-core';
     HttpClientModule,
     MiaFormModule,
     QuillModule.forRoot(),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatButtonModule,
   ],
   providers: [
     {
