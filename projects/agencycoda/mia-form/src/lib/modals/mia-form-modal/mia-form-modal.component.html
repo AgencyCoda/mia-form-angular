@@ -1,18 +1,15 @@
-<h4 *ngIf="isShowHeader" mat-dialog-title>
-    <span *ngIf="data.item.id == 0">{{ data.titleNew }}</span>
-    <span *ngIf="data.item.id > 0">{{ data.titleEdit }}</span>
-    <button mat-icon-button matTooltip="Close" mat-dialog-close><mat-icon>close</mat-icon></button>
-</h4>
+<h5 *ngIf="data.item.id == 0" mat-dialog-title class="mat-dialog-title">{{ data.titleNew }}</h5>
+<h5 *ngIf="data.item.id > 0" mat-dialog-title class="mat-dialog-title">{{ data.titleEdit }}</h5>
 
-<mat-dialog-content>
-    <div class="form-modal">
-        <div fxLayout="column" fxLayoutGap="16px">
-            <mia-form #miaForm [config]="data.config" [item]="data.item"></mia-form>
-        </div>
-    </div>
+<mat-dialog-content class="form-modal">
+  <div class="content">
+    <mia-form #miaForm [config]="data.config" [item]="data.item"></mia-form>
+  </div>
 </mat-dialog-content>
 
-<div *ngIf="isShowButtons" class="mat-dialog-actions" mat-dialog-actions>
-    <button *ngIf="!isSending" mat-stroked-button matDialogClose>{{ data.textButtonCancel }}</button>
-    <button *ngIf="!isSending" mat-raised-button color="primary" (click)="onClickSave()">{{ data.textButtonSave }}</button>
+<div class="mat-dialog-actions" mat-dialog-actions>
+  <button *ngIf="!isSending" mat-stroked-button mat-dialog-close>Close</button>
+  <button *ngIf="!isSending" mat-raised-button color="primary" (click)="onClickSave()">Save</button>
 </div>
+
+<!-- Example Request -->
