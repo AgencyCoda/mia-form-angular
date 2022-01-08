@@ -92,7 +92,7 @@ export class AppComponent implements OnInit {
       { key: 'box-one', type: MiaField.TYPE_CUSTOM, extra: {
         component: BoxFieldComponent,
         fields: [
-        { key: 'features', type: MiaField.TYPE_CHIPS_AND_SELECT, label: '', caption: '', extra: { 
+        { key: 'features', type: MiaField.TYPE_CHIPS_AND_SELECT, label: '', caption: '', extra: {
           title: 'Valores del producto', field_display: 'title',
           options: [
             { id: 0, title: 'Reciclado' },
@@ -104,7 +104,7 @@ export class AppComponent implements OnInit {
         { key: '', type: MiaField.TYPE_LABEL, label: 'Marca del producto', classes: 'label-form' },
         { key: 'brand', type: 'string', label: 'Marca del producto' },
         { key: 'caption', type: MiaField.TYPE_TEXT, label: 'Descripcion del producto' },
-        { key: 'row-one', type: MiaField.TYPE_CUSTOM, extra: { 
+        { key: 'row-one', type: MiaField.TYPE_CUSTOM, extra: {
           component: RowFieldComponent,
           fields: [
           { key: '', type: MiaField.TYPE_LABEL, label: 'Precio' },
@@ -130,30 +130,48 @@ export class AppComponent implements OnInit {
     this.config.fields = [
       { key: '', type: MiaField.TYPE_LABEL, label: '<h2>-- Photo --</h2>', classes: 'label-custom' },
       { key: 'photo', type: MiaField.TYPE_PHOTO, label: 'Photo', caption: 'Foto del usuario.' },
+
+      { key: '', type: MiaField.TYPE_LABEL, label: '<p><b>Input text (type: "string")</b></p>', },
       { key: 'title', type: 'string', label: 'Title', validators: [Validators.required], caption: 'El titulo de la noticia.' },
-      { key: 'product', type: 'autocomplete', extra: { 
-        options: ['One', 'Two', 'Three'] 
+
+      { key: '', type: MiaField.TYPE_LABEL, label: '<p><b>Input autocomplete (type: "MiaField.TYPE_LABEL")</b></p>', },
+      { key: 'product', type: 'autocomplete', label: 'Write something', extra: {
+        options: ['One', 'Two', 'Three']
       }},
-      { key: 'vendor', type: 'autocomplete-service', extra: { service: this.testService, field_display: 'title', query: new MiaQuery() } },
-      { key: 'caption', type: 'string' },
+      { key: '', type: MiaField.TYPE_LABEL, label: '<p><small>Input autocomplete service (type: "autocomplete-service")</small></p>', },
+      { key: 'vendor', type: 'autocomplete-service', label: 'Write something', extra: { service: this.testService, field_display: 'title', query: new MiaQuery() } },
+
+      /* { key: 'caption', type: 'string' }, */
+      /* { key: 'subtitle', type: 'string', }, */
+
+      { key: '', type: MiaField.TYPE_LABEL, label: '<p><b>Input date (type: "date")</b></p>', },
       { key: 'date', type: 'date', label: 'Fecha' },
-      { key: 'subtitle', type: 'string', },
+
+      { key: '', type: MiaField.TYPE_LABEL, label: '<p><b>Input autocomplete Add element (type: "list-service")</b></p>', },
       { key: 'vendors', type: 'list-service', extra: { service: this.testService, field_display: 'title', field_list: 'vendors-auto', query: new MiaQuery() } },
+
+      { key: '', type: MiaField.TYPE_LABEL, label: '<p><b>Text HTML (type: "MiaField.TYPE_LABEL")</b></p>', },
       { key: '', type: MiaField.TYPE_LABEL, label: 'Esto es una <strong>prueba</strong> texto plano sin funcionalidad, admite HTML.', classes: 'label-custom' },
-      { key: 'status', type: 'select', label: 'Estado', extra: {
+
+      { key: '', type: MiaField.TYPE_LABEL, label: '<p><b>Input Selector (type: "select")</b></p>', },
+      { key: 'status', type: 'select', label: 'Select a choice', extra: {
         options: [
-          { id: 0, title: 'Estado 1' },
-          { id: 1, title: 'Estado 2' },
-          { id: 2, title: 'Estado 3' },
+          { id: 0, title: 'Status 1' },
+          { id: 1, title: 'Status 2' },
+          { id: 2, title: 'Status 3' },
         ],
         can_add: true,
         add_title: 'Add new Status',
         add_subject: new Subject<any>().pipe(switchMap(it => of({ id: 3, title: 'Estado 4'})))
       }},
-      { key: 'vendor-select', type: 'select-service', extra: { service: this.testService, field_display: 'title', query: new MiaQuery() } },
+      { key: '', type: MiaField.TYPE_LABEL, label: '<p><small>Input Selector service (type: "select-service")</small></p>', },
+      { key: 'vendor-select', type: 'select-service', label: 'Select a choice', extra: { service: this.testService, field_display: 'title', query: new MiaQuery() } },
+
+      { key: '', type: MiaField.TYPE_LABEL, label: '<p><b>Add users (type: "avatars")</b></p>', },
       { key: 'avatars', type: 'avatar-list-service', extra: { service: this.testService, field_display: 'title', field_photo: 'photo', field_list: 'avatars-auto', query: new MiaQuery() } },
+
       { key: 'data', type: MiaField.TYPE_LIST_STRING, label: 'Items:', caption: '' },
-      { key: 'chips', type: MiaField.TYPE_CHIPS_AND_SELECT, label: '', caption: '', extra: { 
+      { key: 'chips', type: MiaField.TYPE_CHIPS_AND_SELECT, label: '', caption: '', extra: {
         title: 'State', field_display: 'title',
         options: [
           { id: 0, title: 'State 1' },
@@ -163,7 +181,7 @@ export class AppComponent implements OnInit {
       } },
       { key: 'tag', type: MiaField.TYPE_STRING_WITH_COLOR, label: 'Tag name', caption: '', appearance: 'outline', extra: { key_color: 'color' } },
       { key: 'divider-1', type: MiaField.TYPE_DIVIDER },
-      { key: 'row-one', type: MiaField.TYPE_CUSTOM, extra: { 
+      { key: 'row-one', type: MiaField.TYPE_CUSTOM, extra: {
         component: RowFieldComponent,
         fields: [
         { key: 'firstname', type: 'string', label: 'Nombre' },
@@ -171,15 +189,15 @@ export class AppComponent implements OnInit {
       ] }  },
       { key: 'tags', type: MiaField.TYPE_TAGS, label: 'Tags', caption: '', appearance: 'outline' },
       { key: 'chips-service', type: MiaField.TYPE_CHIPS_AND_SELECT_SERVICE, label: 'Seleccionador multiple chip', caption: '', extra: { title: 'Multiple chips service', service: this.testService, field_display: 'title', field_list: 'chips-auto', query: new MiaQuery(), limit: 2, limit_message_error: 'Ha superado el limite' } },
-      { key: 'chips-service-with-add', type: MiaField.TYPE_CHIPS_AND_SELECT_SERVICE, label: 'Seleccionador multiple chip', caption: '', extra: { 
-        title: 'Multiple chips service', 
-        service: this.testService, 
-        field_display: 'title', 
-        field_list: 'chips-auto', 
+      { key: 'chips-service-with-add', type: MiaField.TYPE_CHIPS_AND_SELECT_SERVICE, label: 'Seleccionador multiple chip', caption: '', extra: {
+        title: 'Multiple chips service',
+        service: this.testService,
+        field_display: 'title',
+        field_list: 'chips-auto',
         query: new MiaQuery(),
         can_add: true,
         add_title: 'Add new Status',
-        add_subject: new Subject<any>().pipe(switchMap(it => of({ id: 30, title: 'Estado 4'}))) } 
+        add_subject: new Subject<any>().pipe(switchMap(it => of({ id: 30, title: 'Estado 4'}))) }
       },
       { key: 'content-html', type: MiaField.TYPE_HTML, label: 'Contenido del post', caption: '', extra: { height: 400 } },
       { key: 'title-header', type: MiaField.TYPE_STRING_TITLE, placeholder: 'Write your title', caption: '' },
@@ -188,7 +206,7 @@ export class AppComponent implements OnInit {
       { key: 'custom_example', type: MiaField.TYPE_CUSTOM, extra: { component: ExampleCustomFieldComponent } },
       { key: 'file_one', type: MiaField.TYPE_FILE_ONE, label: 'Propuesta' },
       { key: 'input-with-chips', type: MiaField.TYPE_INPUT_WITH_CHIP_SERVICE, label: 'Escribir chips', caption: '', extra: { title: 'Escribir chips', service: this.testService, field_display: 'title', field_list: 'chips-auto', query: new MiaQuery() } },
-      { key: 'tabs-one', type: MiaField.TYPE_CUSTOM, extra: { 
+      { key: 'tabs-one', type: MiaField.TYPE_CUSTOM, extra: {
         component: TabsFieldComponent,
         tabs: [
           { title: 'Tab One', fields: [
@@ -319,7 +337,7 @@ export class AppComponent implements OnInit {
   }
 
   onFilterCustom(ac: MiaFilterSelected) {
-    
+
   }
 
   loadFilterBox() {

@@ -1,25 +1,29 @@
+<br><br><br>
+
 <h1>Formulario example</h1>
-<mia-form #miaForm [config]="config" [item]="item" (save)="onSubmit($event)"></mia-form>
-<button (click)="onClickSend()">Enviar</button>
+<div class="content">
+  <mia-form #miaForm [config]="config" [item]="item" (save)="onSubmit($event)"></mia-form>
+  <button (click)="onClickSend()">Enviar</button>
+</div>
 
-<hr />
-<hr />
-<hr />
 
-<h1>Formulario en Modal</h1>
-Test: {{ item.firstname }}
-<button (click)="onClickOpenForm()">Open Form</button>
-<button (click)="onClickOpenFormV2()">Open Form V2</button>
-<button (click)="onClickOpenFormV3()">Open Form V3</button>
-<button (click)="onClickOpenFormWizard()">Open Form Wizard</button>
+<div class="content">
+  <h2>Formulario en Modal</h2>
+  Test: {{ item.firstname }} &nbsp;
+  <button mat-stroked-button (click)="onClickOpenForm()">Open Form</button>&nbsp;
+  <button mat-stroked-button (click)="onClickOpenFormV2()">Open Form V2</button>&nbsp;
+  <button mat-stroked-button (click)="onClickOpenFormV3()">Open Form V3</button>&nbsp;
+  <button mat-stroked-button (click)="onClickOpenFormWizard()">Open Form Wizard</button>
+</div>
 
-<hr />
-<hr />
-<hr />
 
-<h1>Elementos</h1>
-<mia-date-filter-range-button (changeRange)="onChangeDateFilter($event)"></mia-date-filter-range-button>
-<hr />
-<mia-filter-box [config]="filterBox" [query]="queryFilter" (execCustom)="onFilterCustom($event)"></mia-filter-box>
+<div class="content">
+  <h2>Elementos</h2>
+  <mia-date-filter-range-button (changeRange)="onChangeDateFilter($event)"></mia-date-filter-range-button>
+  <hr />
+  <mia-filter-box [config]="filterBox" [query]="queryFilter" (execCustom)="onFilterCustom($event)"></mia-filter-box>
 
-<router-outlet></router-outlet>
+  <router-outlet></router-outlet>
+</div>
+
+<br><br><br>
