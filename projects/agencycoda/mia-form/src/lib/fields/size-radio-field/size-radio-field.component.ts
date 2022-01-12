@@ -1,6 +1,6 @@
-import { MiaField } from '@agencycoda/mia-form';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { MiaField } from '../../entities/mia-field';
 import { MiaBaseFieldComponent } from '../base-field.component';
 
 @Component({
