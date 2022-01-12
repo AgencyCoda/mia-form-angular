@@ -6,7 +6,7 @@ import { ImagesFieldComponent } from 'projects/agencycoda/mia-form/src/lib/field
 import { PositionFieldComponent } from 'projects/agencycoda/mia-form/src/lib/fields/position-field/position-field.component';
 import { SliderFieldComponent } from 'projects/agencycoda/mia-form/src/lib/fields/slider-field/slider-field.component';
 import { MiaFormModalV2Component, MiaFormModalV2Config } from 'projects/agencycoda/mia-form/src/lib/modals/mia-form-modal-v2/mia-form-modal-v2.component';
-import { BoxFieldComponent, ColorSelectorFieldComponent, MiaField, MiaFilterBoxConfig, MiaFilterSelected, MiaFilterType, MiaFormComponent, MiaFormConfig, MiaFormModalComponent, MiaFormModalConfig, MiaFormModalsService, MiaFormModalV3Config, MiaFormWizardConfig, RowFieldComponent, SwitchFieldComponent, TabsFieldComponent } from 'projects/agencycoda/mia-form/src/public-api';
+import { BoxFieldComponent, ColorSelectorFieldComponent, MiaField, MiaFilterBoxConfig, MiaFilterSelected, MiaFilterType, MiaFormComponent, MiaFormConfig, MiaFormModalComponent, MiaFormModalConfig, MiaFormModalsService, MiaFormModalV3Config, MiaFormWizardConfig, RowFieldComponent, SizeRadioFieldComponent, SwitchFieldComponent, TabsFieldComponent } from 'projects/agencycoda/mia-form/src/public-api';
 import { of, Subject } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { environment } from '../environments/environment';
@@ -226,6 +226,7 @@ export class AppComponent implements OnInit {
       { key: 'color_primary', type: MiaField.TYPE_CUSTOM, label: 'Color Primary', extra: { component: ColorSelectorFieldComponent, colors: ['#000', '#333', '#eee', '#ddd'] } },
       { key: 'slider_percent', type: MiaField.TYPE_CUSTOM, label: 'Test Percent', extra: { component: SliderFieldComponent } },
       { key: 'photos', type: MiaField.TYPE_CUSTOM, label: 'Photos', extra: { component: ImagesFieldComponent, limit: 5 } },
+      { key: 'section_height', type: MiaField.TYPE_CUSTOM, label: 'Section Height', extra: { component: SizeRadioFieldComponent, key_custom: 'section_height_custom', class_name: 'section', default_value: 'section-large' } },
     ];
     this.config.errorMessages = [
       { key: 'required', message: 'The %label% is required.' }

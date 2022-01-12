@@ -1,0 +1,12 @@
+<div>
+    <label *ngIf="field.label">{{ field.label }}</label>
+    <button (click)="onClickWithString('small')">S</button>
+    <button (click)="onClickWithString('medium')">M</button>
+    <button (click)="onClickWithString('large')">L</button>
+    <button (click)="onClickCustom()">...</button>
+
+    <mat-form-field *ngIf="input.value == undefined">
+        <mat-label *ngIf="field.label">Custom</mat-label>
+        <input matInput type="text" [formControl]="inputCustom" />
+    </mat-form-field>
+</div>

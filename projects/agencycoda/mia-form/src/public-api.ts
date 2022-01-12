@@ -48,6 +48,7 @@
  export * from './lib/fields/position-field/position-field.component';
  export * from './lib/fields/images-field/images-field.component';
  export * from './lib/fields/slider-field/slider-field.component';
+ export * from './lib/fields/size-radio-field/size-radio-field.component';
 
  /**
   * Elements
