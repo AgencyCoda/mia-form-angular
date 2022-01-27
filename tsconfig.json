@@ -23,6 +23,10 @@
       "@agencycoda/mia-form": [
         "dist/agencycoda/mia-form/agencycoda-mia-form",
         "dist/agencycoda/mia-form"
+      ],
+      "@agencycoda/mia-form-google-places-field": [
+        "dist/agencycoda/mia-form-google-places-field/agencycoda-mia-form-google-places-field",
+        "dist/agencycoda/mia-form-google-places-field"
       ]
     }
   },

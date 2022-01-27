@@ -2,6 +2,7 @@ import { MiaQuery } from '@agencycoda/mia-core';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
+import { GooglePlacesFieldComponent } from 'projects/agencycoda/mia-form-google-places-field/src/public-api';
 import { ImagesFieldComponent } from 'projects/agencycoda/mia-form/src/lib/fields/images-field/images-field.component';
 import { PositionFieldComponent } from 'projects/agencycoda/mia-form/src/lib/fields/position-field/position-field.component';
 import { SliderFieldComponent } from 'projects/agencycoda/mia-form/src/lib/fields/slider-field/slider-field.component';
@@ -139,7 +140,7 @@ export class AppComponent implements OnInit {
         options: ['One', 'Two', 'Three']
       }},
       { key: '', type: MiaField.TYPE_LABEL, label: '<p><small>Input autocomplete service (type: "autocomplete-service")</small></p>', },
-      { key: 'vendor', type: 'autocomplete-service', label: 'Write something', extra: { service: this.testService, field_display: 'title', query: new MiaQuery() } },
+      //{ key: 'vendor', type: 'autocomplete-service', label: 'Write something', extra: { service: this.testService, field_display: 'title', query: new MiaQuery() } },
 
       /* { key: 'caption', type: 'string' }, */
       /* { key: 'subtitle', type: 'string', }, */
@@ -148,7 +149,7 @@ export class AppComponent implements OnInit {
       { key: 'date', type: 'date', label: 'Fecha' },
 
       { key: '', type: MiaField.TYPE_LABEL, label: '<p><b>Input autocomplete Add element (type: "list-service")</b></p>', },
-      { key: 'vendors', type: 'list-service', extra: { service: this.testService, field_display: 'title', field_list: 'vendors-auto', query: new MiaQuery() } },
+      //{ key: 'vendors', type: 'list-service', extra: { service: this.testService, field_display: 'title', field_list: 'vendors-auto', query: new MiaQuery() } },
 
       { key: '', type: MiaField.TYPE_LABEL, label: '<p><b>Text HTML (type: "MiaField.TYPE_LABEL")</b></p>', },
       { key: '', type: MiaField.TYPE_LABEL, label: 'Esto es una <strong>prueba</strong> texto plano sin funcionalidad, admite HTML.', classes: 'label-custom' },
@@ -165,10 +166,10 @@ export class AppComponent implements OnInit {
         add_subject: new Subject<any>().pipe(switchMap(it => of({ id: 3, title: 'Estado 4'})))
       }},
       { key: '', type: MiaField.TYPE_LABEL, label: '<p><small>Input Selector service (type: "select-service")</small></p>', },
-      { key: 'vendor-select', type: 'select-service', label: 'Select a choice', extra: { service: this.testService, field_display: 'title', query: new MiaQuery() } },
+      //{ key: 'vendor-select', type: 'select-service', label: 'Select a choice', extra: { service: this.testService, field_display: 'title', query: new MiaQuery() } },
 
       { key: '', type: MiaField.TYPE_LABEL, label: '<p><b>Add users (type: "avatars")</b></p>', },
-      { key: 'avatars', type: 'avatar-list-service', extra: { service: this.testService, field_display: 'title', field_photo: 'photo', field_list: 'avatars-auto', query: new MiaQuery() } },
+      //{ key: 'avatars', type: 'avatar-list-service', extra: { service: this.testService, field_display: 'title', field_photo: 'photo', field_list: 'avatars-auto', query: new MiaQuery() } },
 
       { key: 'data', type: MiaField.TYPE_LIST_STRING, label: 'Items:', caption: '' },
       { key: 'chips', type: MiaField.TYPE_CHIPS_AND_SELECT, label: '', caption: '', extra: {
@@ -227,6 +228,8 @@ export class AppComponent implements OnInit {
       { key: 'slider_percent', type: MiaField.TYPE_CUSTOM, label: 'Test Percent', extra: { component: SliderFieldComponent } },
       { key: 'photos', type: MiaField.TYPE_CUSTOM, label: 'Photos', extra: { component: ImagesFieldComponent, limit: 5 } },
       { key: 'section_height', type: MiaField.TYPE_CUSTOM, label: 'Section Height', extra: { component: SizeRadioFieldComponent, key_custom: 'section_height_custom', class_name: 'section', default_value: 'section-large' } },
+      { key: '', type: MiaField.TYPE_LABEL, label: '<h2>-- Google Maps --</h2>', classes: 'label-custom' },
+      { key: 'address_google', type: MiaField.TYPE_CUSTOM, label: 'Address', extra: { component: GooglePlacesFieldComponent, key_latitude: 'latitude', key_longitude: 'longitude' } },
     ];
     this.config.errorMessages = [
       { key: 'required', message: 'The %label% is required.' }

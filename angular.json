@@ -150,6 +150,37 @@
           }
         }
       }
+    },
+    "@agencycoda/mia-form-google-places-field": {
+      "projectType": "library",
+      "root": "projects/agencycoda/mia-form-google-places-field",
+      "sourceRoot": "projects/agencycoda/mia-form-google-places-field/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/agencycoda/mia-form-google-places-field/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/agencycoda/mia-form-google-places-field/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/agencycoda/mia-form-google-places-field/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/agencycoda/mia-form-google-places-field/src/test.ts",
+            "tsConfig": "projects/agencycoda/mia-form-google-places-field/tsconfig.spec.json",
+            "karmaConfig": "projects/agencycoda/mia-form-google-places-field/karma.conf.js"
+          }
+        }
+      }
     }},
   "cli": {
     "analytics": "96483828-2ce5-4766-b76f-bb78064aec76"
