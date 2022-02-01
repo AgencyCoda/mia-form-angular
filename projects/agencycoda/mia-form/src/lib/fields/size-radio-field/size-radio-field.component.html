@@ -5,7 +5,7 @@
     <button (click)="onClickWithString('large')">L</button>
     <button (click)="onClickCustom()">...</button>
 
-    <mat-form-field *ngIf="input.value == undefined">
+    <mat-form-field *ngIf="input.value == undefined" [appearance]="getAppearance()">
         <mat-label *ngIf="field.label">Custom</mat-label>
         <input matInput type="text" [formControl]="inputCustom" />
     </mat-form-field>

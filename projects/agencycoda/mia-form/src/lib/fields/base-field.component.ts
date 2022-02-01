@@ -59,6 +59,14 @@ export class MiaBaseFieldComponent implements OnInit {
         return valueFinal;
       }
 
+      getAppearance() {
+        if(this.field.extra.appearance){
+          return this.field.extra.appearance;
+        }
+    
+        return 'standard';
+      }
+
   static updateValuesByItem(group: FormGroup, item: any, field: MiaField) {
     group.get(field.key)?.setValue(item[field.key]);
   }

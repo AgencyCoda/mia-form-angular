@@ -13,7 +13,7 @@
   </div>
 
   <div class="row">
-    <mat-form-field *ngIf="input">
+    <mat-form-field *ngIf="input" [appearance]="getAppearance()">
         <mat-label *ngIf="field.label"> {{ field.label }} </mat-label>
         <input matInput type="text" [formControl]="input" [placeholder]="field.placeholder ? field.placeholder : ''" [disabled]="field.isDisabled ? field.isDisabled : false" [matAutocomplete]="auto">
         <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" [displayWith]="displayFn.bind(this)">
