@@ -1,6 +1,6 @@
-import { MiaBaseCrudHttpService, MiaPagination, MiaQuery } from '@agencycoda/mia-core';
+import { MiaBaseCrudHttpService, MiaCoreConfig, MiaPagination, MiaQuery, MIA_CORE_PROVIDER } from '@agencycoda/mia-core';
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -9,9 +9,10 @@ import { Observable } from 'rxjs';
 export class TestService extends MiaBaseCrudHttpService<any> {
 
   constructor(
+    @Inject(MIA_CORE_PROVIDER) protected config: MiaCoreConfig,
     protected http: HttpClient
   ) { 
-    super(http);
+    super(config, http);
     this.basePathUrl = 'https://vulnwatch-development.ts.r.appspot.com/device-list';
   }
 
