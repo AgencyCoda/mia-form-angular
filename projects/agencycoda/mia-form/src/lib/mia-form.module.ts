@@ -27,6 +27,8 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatCardModule } from '@angular/material/card';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+
 
 /** EXTERNAL LIBRARIES */
 import { QuillModule } from 'ngx-quill';
@@ -165,6 +167,7 @@ import { MiaFormWizardComponent } from './modals/mia-form-wizard/mia-form-wizard
         MatSlideToggleModule,
         MatSliderModule,
         MatCardModule,
+        MatButtonToggleModule,
         // External Libraries
         QuillModule
     ],
