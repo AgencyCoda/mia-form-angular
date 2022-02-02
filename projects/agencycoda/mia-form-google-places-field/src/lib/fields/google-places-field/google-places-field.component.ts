@@ -9,7 +9,7 @@ import { Address } from 'ngx-google-places-autocomplete/objects/address';
   templateUrl: './google-places-field.component.html',
   styleUrls: ['./google-places-field.component.css']
 })
-export class GooglePlacesFieldComponent extends MiaBaseFieldComponent implements OnInit {
+export class GooglePlacesFieldComponent extends MiaBaseFieldComponent {
 
   @ViewChild("placesRef") placesRef!: GooglePlaceDirective;
 

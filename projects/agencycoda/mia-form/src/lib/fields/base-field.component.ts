@@ -60,7 +60,7 @@ export class MiaBaseFieldComponent implements OnInit {
       }
 
       getAppearance() {
-        if(this.field.extra.appearance){
+        if(this.field.extra && this.field.extra.appearance){
           return this.field.extra.appearance;
         }
     
