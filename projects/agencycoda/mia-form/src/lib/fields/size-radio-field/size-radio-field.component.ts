@@ -21,13 +21,17 @@ export class SizeRadioFieldComponent extends MiaBaseFieldComponent implements On
     this.inputCustom.setValue(undefined);
   }
 
+  onClickResetCustom() {
+    this.inputCustom.setValue(undefined);
+  }
+
   onClickCustom() {
     this.input.setValue(undefined);
   }
 
   createFormControl() {
     // Create Control
-    this.input = new FormControl(undefined);
+    this.input = new FormControl();
     // Config validators
     if(this.field.validators != undefined && this.field.validators.length > 0){
         this.input.setValidators(this.field.validators);
@@ -36,7 +40,7 @@ export class SizeRadioFieldComponent extends MiaBaseFieldComponent implements On
     this.group.addControl(this.field.key, this.input);
 
     // Create Control
-    this.inputCustom = new FormControl(undefined);
+    this.inputCustom = new FormControl();
     // Add in Group
     this.group.addControl(this.field.extra.key_custom, this.inputCustom);
   }
