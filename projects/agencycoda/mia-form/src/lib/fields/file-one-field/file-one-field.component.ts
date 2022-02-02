@@ -19,4 +19,12 @@ export class FileOneFieldComponent extends MiaBaseFieldComponent implements OnIn
     this.input.setValue(file);
     this.isUploading = false;
   }
+
+  getButtonText() {
+    if(this.field.extra && this.field.extra.button_text){
+      return this.field.extra.button_text;
+    }
+
+    return 'Upload photo here';
+  }
 }
