@@ -28,6 +28,8 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatTooltipModule } from '@angular/material/tooltip';
+
 
 
 /** EXTERNAL LIBRARIES */
@@ -168,6 +170,7 @@ import { MiaFormWizardComponent } from './modals/mia-form-wizard/mia-form-wizard
         MatSliderModule,
         MatCardModule,
         MatButtonToggleModule,
+        MatTooltipModule,
         // External Libraries
         QuillModule
     ],
