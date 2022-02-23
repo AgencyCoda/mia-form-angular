@@ -34,7 +34,7 @@ export class SelectServiceFieldComponent extends SelectFieldComponent implements
     let service: MiaBaseCrudHttpService<any> = this.field.extra.service;
     service.listWithExtras(query, extraParams).then(result => {
       this.items = result.data;
-      if(this.items.length > 0){
+      if(this.items.length > 0 && this.input.value == undefined){
         this.input.setValue(this.items[0].id);
       }
       this.changeDetector.detectChanges();
