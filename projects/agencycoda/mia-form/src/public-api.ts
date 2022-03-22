@@ -50,6 +50,7 @@
  export * from './lib/fields/slider-field/slider-field.component';
  export * from './lib/fields/size-radio-field/size-radio-field.component';
  export * from './lib/fields/files-field/files-field.component';
+ export * from './lib/fields/properties-field/properties-field.component';
 
  /**
   * Elements

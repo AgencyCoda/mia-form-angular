@@ -6,6 +6,7 @@ import { GooglePlacesFieldComponent } from 'projects/agencycoda/mia-form-google-
 import { FilesFieldComponent } from 'projects/agencycoda/mia-form/src/lib/fields/files-field/files-field.component';
 import { ImagesFieldComponent } from 'projects/agencycoda/mia-form/src/lib/fields/images-field/images-field.component';
 import { PositionFieldComponent } from 'projects/agencycoda/mia-form/src/lib/fields/position-field/position-field.component';
+import { PropertiesFieldComponent } from 'projects/agencycoda/mia-form/src/lib/fields/properties-field/properties-field.component';
 import { SliderFieldComponent } from 'projects/agencycoda/mia-form/src/lib/fields/slider-field/slider-field.component';
 import { MiaFormModalV2Component, MiaFormModalV2Config } from 'projects/agencycoda/mia-form/src/lib/modals/mia-form-modal-v2/mia-form-modal-v2.component';
 import { BoxFieldComponent, ColorSelectorFieldComponent, MiaField, MiaFilterBoxConfig, MiaFilterSelected, MiaFilterType, MiaFormComponent, MiaFormConfig, MiaFormModalComponent, MiaFormModalConfig, MiaFormModalsService, MiaFormModalV3Config, MiaFormWizardConfig, RowFieldComponent, SizeRadioFieldComponent, SwitchFieldComponent, TabsFieldComponent } from 'projects/agencycoda/mia-form/src/public-api';
@@ -232,6 +233,21 @@ export class AppComponent implements OnInit {
       { key: '', type: MiaField.TYPE_LABEL, label: '<h2>-- Google Maps --</h2>', classes: 'label-custom' },
       { key: 'address_google', type: MiaField.TYPE_CUSTOM, label: 'Address', extra: { component: GooglePlacesFieldComponent, key_latitude: 'latitude', key_longitude: 'longitude' } },
       { key: 'files_more', type: MiaField.TYPE_CUSTOM, label: 'Documentation Files', extra: { component: FilesFieldComponent, button_text: 'Subir Documentación' } },
+      { key: 'properties', type: MiaField.TYPE_CUSTOM, label: 'Caracteristicas generales', extra: { component: PropertiesFieldComponent, elements: [
+        { icon: '', key: 'area', title: 'Area', type: 1, type_val: 0, append_text: 'm2' }, 
+        { icon: 'sensor_door', key: 'estudio', title: 'Estudio', type: 7, type_val: 1 }, 
+        { icon: '', key: 'year', title: 'Año', type: 11, type_val: 2 }, 
+        { icon: '', key: 'terraza', title: 'Terraza', type: 7, type_val: 3 }, 
+      ] } },
+      /**
+       * Type_val:
+       * 0 = String
+       * 1 = metros
+       * 2 = Quantity
+       * 3 = Boolean
+       * 4 = Years
+       * 5 = Numeros
+       */
     ];
     this.config.errorMessages = [
       { key: 'required', message: 'The %label% is required.' }

@@ -1,0 +1,37 @@
+<div class="properties-block">
+    <div *ngFor="let item of input.value" class="property-item">
+        <mat-icon *ngIf="item.icon && item.icon != ''">{{ item.icon }}</mat-icon>
+        <span>{{ item.title }}</span>
+        <!-- String -->
+        <ng-container *ngIf="item.type_val == 0">
+            <input type="text" [(ngModel)]="item.val" class="property-string" />
+            <p *ngIf="item.append_text && item.append_text != ''">{{item.append_text}}</p>
+        </ng-container>
+        <!-- Metros2 m2 -->
+        <ng-container *ngIf="item.type_val == 1">
+            <input type="number" [(ngModel)]="item.val" />
+            <p *ngIf="item.append_text && item.append_text != ''">{{item.append_text}}</p>
+        </ng-container>
+        <!-- Quantity -->
+        <ng-container *ngIf="item.type_val == 2">
+            <input type="number" [(ngModel)]="item.val" />
+            <p *ngIf="item.append_text && item.append_text != ''">{{item.append_text}}</p>
+        </ng-container>
+        <!-- Boolean - Yes or No -->
+        <ng-container *ngIf="item.type_val == 3">
+            <button>NO</button>
+            <button>SI</button>
+        </ng-container>
+        <!-- Years -->
+        <ng-container *ngIf="item.type_val == 4">
+            <input type="year" [(ngModel)]="item.val" />
+            <p *ngIf="item.append_text && item.append_text != ''">{{item.append_text}}</p>
+        </ng-container>
+        <!-- Numbers -->
+        <ng-container *ngIf="item.type_val == 5">
+            <input type="number" [(ngModel)]="item.val" />
+            <p *ngIf="item.append_text && item.append_text != ''">{{item.append_text}}</p>
+        </ng-container>
+        
+    </div>
+</div>

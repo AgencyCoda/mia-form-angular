@@ -1,8 +1,8 @@
-import { MiaFile } from '@agencycoda/mia-core';
-import { MiaField } from '@agencycoda/mia-form';
+import { MiaFile } from '@agencycoda/mia-core';;
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MiaBaseFieldComponent } from '../base-field.component';
+import { MiaField } from '../../entities/mia-field';
 
 @Component({
   selector: 'mia-files-field',
