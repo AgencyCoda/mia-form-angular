@@ -80,6 +80,7 @@ import { ColorSelectorFieldComponent } from './fields/color-selector-field/color
 import { SliderFieldComponent } from './fields/slider-field/slider-field.component';
 import { SizeRadioFieldComponent } from './fields/size-radio-field/size-radio-field.component';
 import { PropertiesFieldComponent } from './fields/properties-field/properties-field.component';
+import { PropertiesCustomFieldComponent } from './fields/properties-custom-field/properties-custom-field.component';
 
 /** COMPONENTS */
 import { MiaFormComponent } from './components/mia-form/mia-form.component';
@@ -88,6 +89,7 @@ import { MiaFormModalComponent } from './modals/mia-form-modal/mia-form-modal.co
 import { MiaFormModalV2Component } from './modals/mia-form-modal-v2/mia-form-modal-v2.component';
 import { MiaFormModalV3Component } from './modals/mia-form-modal-v3/mia-form-modal-v3.component';
 import { MiaFormWizardComponent } from './modals/mia-form-wizard/mia-form-wizard.component';
+
 
 
 
@@ -145,7 +147,8 @@ import { MiaFormWizardComponent } from './modals/mia-form-wizard/mia-form-wizard
         ColorSelectorFieldComponent,
         SliderFieldComponent,
         SizeRadioFieldComponent,
-        PropertiesFieldComponent
+        PropertiesFieldComponent,
+        PropertiesCustomFieldComponent
     ],
     imports: [
         CommonModule,
@@ -207,6 +210,7 @@ import { MiaFormWizardComponent } from './modals/mia-form-wizard/mia-form-wizard
         ImagesFieldComponent,
         SizeRadioFieldComponent,
         PropertiesFieldComponent,
+        PropertiesCustomFieldComponent,
         /** ELEMENTS */
         DateFilterRangeButtonComponent
     ],

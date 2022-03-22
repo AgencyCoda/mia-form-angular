@@ -51,6 +51,7 @@
  export * from './lib/fields/size-radio-field/size-radio-field.component';
  export * from './lib/fields/files-field/files-field.component';
  export * from './lib/fields/properties-field/properties-field.component';
+ export * from './lib/fields/properties-custom-field/properties-custom-field.component';
 
  /**
   * Elements

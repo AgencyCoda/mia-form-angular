@@ -1,0 +1,14 @@
+<div class="properties-block">
+    <button mat-stroked-button class="container-file btn-upload" (click)="onCreate()">
+        Agregar Item
+    </button>
+
+    <div class="properties-list">
+        <div *ngFor="let item of input.value; let index = index" class="property-custom-item">
+            <input type="text" [(ngModel)]="item.title" />
+            <input type="text" [(ngModel)]="item.val" />
+            <button mat-icon-button matTooltip="Delete File" class="btn-delete" color="warn" (click)="onClickRemove(index)"><mat-icon>delete</mat-icon></button>
+        </div>
+    </div>
+    
+</div>
