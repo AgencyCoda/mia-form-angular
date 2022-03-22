@@ -1,1 +1,20 @@
-<p>files-field works!</p>
+<mat-label *ngIf="field.label"> {{ field.label }} </mat-label>
+<div class="file-block">
+    <input type="hidden" [formControl]="input" />
+
+    <input #inputFile type="file" style="display: none;" miaFileGoogle (fileUploaded)="onUploadFile($event)" (startUpload)="isUploading = true" (endUpload)="isUploading = false">
+
+    <button *ngIf="!isUploading" mat-stroked-button class="container-file btn-upload" (click)="inputFile.click()">
+        {{ getButtonText() }}
+    </button>
+
+    <mat-spinner *ngIf="isUploading" [diameter]="50"></mat-spinner>
+
+    <div class="files-block-list">
+        <div *ngFor="let item of input.value; let index = index" class="file-item">
+            <p>{{ item.name }}</p>
+            <button mat-icon-button matTooltip="Delete File" class="btn-delete" color="warn" (click)="onClickRemove(index)"><mat-icon>delete</mat-icon></button>
+        </div>
+    </div>
+    
+</div>

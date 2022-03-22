@@ -3,6 +3,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { GooglePlacesFieldComponent } from 'projects/agencycoda/mia-form-google-places-field/src/public-api';
+import { FilesFieldComponent } from 'projects/agencycoda/mia-form/src/lib/fields/files-field/files-field.component';
 import { ImagesFieldComponent } from 'projects/agencycoda/mia-form/src/lib/fields/images-field/images-field.component';
 import { PositionFieldComponent } from 'projects/agencycoda/mia-form/src/lib/fields/position-field/position-field.component';
 import { SliderFieldComponent } from 'projects/agencycoda/mia-form/src/lib/fields/slider-field/slider-field.component';
@@ -230,6 +231,7 @@ export class AppComponent implements OnInit {
       { key: 'section_height', type: MiaField.TYPE_CUSTOM, label: 'Section Height', extra: { component: SizeRadioFieldComponent, key_custom: 'section_height_custom', class_name: 'section', default_value: 'section-large' } },
       { key: '', type: MiaField.TYPE_LABEL, label: '<h2>-- Google Maps --</h2>', classes: 'label-custom' },
       { key: 'address_google', type: MiaField.TYPE_CUSTOM, label: 'Address', extra: { component: GooglePlacesFieldComponent, key_latitude: 'latitude', key_longitude: 'longitude' } },
+      { key: 'files_more', type: MiaField.TYPE_CUSTOM, label: 'Documentation Files', extra: { component: FilesFieldComponent, button_text: 'Subir Documentación' } },
     ];
     this.config.errorMessages = [
       { key: 'required', message: 'The %label% is required.' }
