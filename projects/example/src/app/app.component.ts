@@ -9,7 +9,7 @@ import { PositionFieldComponent } from 'projects/agencycoda/mia-form/src/lib/fie
 import { PropertiesFieldComponent } from 'projects/agencycoda/mia-form/src/lib/fields/properties-field/properties-field.component';
 import { SliderFieldComponent } from 'projects/agencycoda/mia-form/src/lib/fields/slider-field/slider-field.component';
 import { MiaFormModalV2Component, MiaFormModalV2Config } from 'projects/agencycoda/mia-form/src/lib/modals/mia-form-modal-v2/mia-form-modal-v2.component';
-import { BoxFieldComponent, ColorSelectorFieldComponent, MiaField, MiaFilterBoxConfig, MiaFilterSelected, MiaFilterType, MiaFormComponent, MiaFormConfig, MiaFormModalComponent, MiaFormModalConfig, MiaFormModalsService, MiaFormModalV3Config, MiaFormWizardConfig, PropertiesCustomFieldComponent, RowFieldComponent, SizeRadioFieldComponent, SwitchFieldComponent, TabsFieldComponent } from 'projects/agencycoda/mia-form/src/public-api';
+import { BoxFieldComponent, ColorSelectorFieldComponent, MiaField, MiaFilterBoxConfig, MiaFilterSelected, MiaFilterType, MiaFormComponent, MiaFormConfig, MiaFormModalComponent, MiaFormModalConfig, MiaFormModalsService, MiaFormModalV3Config, MiaFormWizardConfig, PropertiesCustomFieldComponent, PropertiesLabelFieldComponent, RowFieldComponent, SizeRadioFieldComponent, SwitchFieldComponent, TabsFieldComponent } from 'projects/agencycoda/mia-form/src/public-api';
 import { of, Subject } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { environment } from '../environments/environment';
@@ -249,6 +249,12 @@ export class AppComponent implements OnInit {
        * 5 = Numeros
        */
        { key: 'properties_custom', type: MiaField.TYPE_CUSTOM, label: 'Caracteristicas Custom', extra: { component: PropertiesCustomFieldComponent, button_text: 'Subir Documentación' } },
+       { key: 'properties_labels', type: MiaField.TYPE_CUSTOM, label: 'Multimedia', extra: { component: PropertiesLabelFieldComponent, options: [
+         { title: 'Dimensiones', val: '<strong>2048px ancho, min 1024px</strong>' },
+         { title: 'Habitaciones', val: '<strong>1 por habitación</strong>' },
+         { title: 'Baño', val: '<strong>1 por baño</strong>' },
+         { title: 'Marca de agua', val: '<strong>Client</strong> <a href="">(download)</a>' },
+       ] } },
     ];
     this.config.errorMessages = [
       { key: 'required', message: 'The %label% is required.' }

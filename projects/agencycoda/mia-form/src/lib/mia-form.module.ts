@@ -89,6 +89,7 @@ import { MiaFormModalComponent } from './modals/mia-form-modal/mia-form-modal.co
 import { MiaFormModalV2Component } from './modals/mia-form-modal-v2/mia-form-modal-v2.component';
 import { MiaFormModalV3Component } from './modals/mia-form-modal-v3/mia-form-modal-v3.component';
 import { MiaFormWizardComponent } from './modals/mia-form-wizard/mia-form-wizard.component';
+import { PropertiesLabelFieldComponent } from './fields/properties-label-field/properties-label-field.component';
 
 
 
@@ -148,7 +149,8 @@ import { MiaFormWizardComponent } from './modals/mia-form-wizard/mia-form-wizard
         SliderFieldComponent,
         SizeRadioFieldComponent,
         PropertiesFieldComponent,
-        PropertiesCustomFieldComponent
+        PropertiesCustomFieldComponent,
+        PropertiesLabelFieldComponent
     ],
     imports: [
         CommonModule,

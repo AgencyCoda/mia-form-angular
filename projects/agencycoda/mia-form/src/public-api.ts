@@ -52,6 +52,7 @@
  export * from './lib/fields/files-field/files-field.component';
  export * from './lib/fields/properties-field/properties-field.component';
  export * from './lib/fields/properties-custom-field/properties-custom-field.component';
+ export * from './lib/fields/properties-label-field/properties-label-field.component';
 
  /**
   * Elements

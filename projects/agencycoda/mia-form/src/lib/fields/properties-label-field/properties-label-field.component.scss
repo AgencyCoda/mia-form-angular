@@ -1,0 +1,26 @@
+.properties-block {
+    display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: stretch;
+	align-content: stretch;
+}
+.property-item {
+    width: 49%;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: stretch;
+	align-content: stretch;
+
+    input {
+        width: 40px;
+        height: 20px;
+    }
+
+    .property-string {
+        width: 100px;
+    }
+}
