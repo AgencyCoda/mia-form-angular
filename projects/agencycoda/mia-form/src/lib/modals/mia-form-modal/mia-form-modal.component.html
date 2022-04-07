@@ -8,8 +8,8 @@
 </mat-dialog-content>
 
 <div *ngIf="isShowButtons" class="mat-dialog-actions" mat-dialog-actions>
-  <button *ngIf="!isSending" mat-stroked-button mat-dialog-close>Close</button>
-  <button *ngIf="!isSending" mat-raised-button color="primary" (click)="onClickSave()">Save</button>
+  <button *ngIf="!isSending" mat-stroked-button mat-dialog-close>{{ data.textButtonCancel?data.textButtonCancel:'Close' }}</button>
+  <button *ngIf="!isSending" mat-raised-button color="primary" (click)="onClickSave()">{{ data.textButtonSave?data.textButtonSave:'Save' }}</button>
 </div>
 
 <!-- Example Request -->
