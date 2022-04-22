@@ -4,6 +4,8 @@
 <mat-dialog-content class="form-modal">
   <div class="content">
     <mia-form #miaForm [config]="data.config" [item]="data.item"></mia-form>
+
+    <div *ngIf="errorMessage != ''">{{ errorMessage }}</div>
   </div>
 </mat-dialog-content>
 

@@ -33,6 +33,8 @@ export class MiaFormModalComponent implements OnInit {
   isShowButtons = true;
   isShowHeader = true;
 
+  errorMessage = '';
+
   constructor(
     protected dialogRef: MatDialogRef<MiaFormModalComponent>,
     @Inject(MAT_DIALOG_DATA) public data: MiaFormModalConfig
@@ -54,6 +56,11 @@ export class MiaFormModalComponent implements OnInit {
       this.dialogRef.close(result);
       this.isSending = false;
     }).catch(error => {
+      if(error.error && error.error.message){
+        this.errorMessage = error.error.message;
+      } else if (error.message) {
+        this.errorMessage = error.message;
+      }
       this.isSending = false;
     });
   }
@@ -66,6 +73,11 @@ export class MiaFormModalComponent implements OnInit {
       }
       this.isSending = false;
     }, error => {
+      if(error.error && error.error.message){
+        this.errorMessage = error.error.message;
+      } else if (error.message) {
+        this.errorMessage = error.message;
+      }
       this.isSending = false;
     });
   }
@@ -91,5 +103,14 @@ export class MiaFormModalComponent implements OnInit {
     this.miaForm.submit().subscribe(result => {
       this.save(result);
     });
+  }
+
+  setErrorMessage(error: string) {
+    this.errorMessage = error;
+    this.isSending = false;
+  }
+
+  cleanErrors() {
+    this.errorMessage = '';
   }
 }
