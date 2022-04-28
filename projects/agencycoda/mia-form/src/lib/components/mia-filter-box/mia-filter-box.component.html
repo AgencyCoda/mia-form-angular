@@ -90,7 +90,7 @@
     <div class="add-filter-menu">
         <div class="header d-flex">
             <h5><b>Add filter</b></h5>
-            <mat-icon matTooltip="Learn more about filtering tasks">info</mat-icon>
+            <!--<mat-icon matTooltip="Learn more about filtering tasks">info</mat-icon>-->
         </div>
         <mat-list>
             <mat-list-item *ngFor="let filter of config.filters" (click)="onAddFilter(filter); $event.stopPropagation();">{{ filter.title }}</mat-list-item>
