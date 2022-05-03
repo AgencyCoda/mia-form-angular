@@ -1,8 +1,10 @@
 import { MiaQuery } from '@agencycoda/mia-core';
 import { Component, EventEmitter, Input, OnInit, Output, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { MatMenuTrigger } from '@angular/material/menu';
+import { MatSelectChange } from '@angular/material/select';
 import { MiaFilterBoxConfig } from '../../entities/mia-filter-box-config';
 import { MiaFilterSelected, MiaFilterType } from '../../entities/mia-filter-type';
+import * as moment from 'moment';
 
 @Component({
   selector: 'mia-filter-box',
@@ -75,7 +77,7 @@ export class MiaFilterBoxComponent implements OnInit {
   }
 
   queryDateRange(ac: MiaFilterSelected) {
-
+    this.query.addWhereBetween(ac.field!.key, ac.field!.value.start, ac.field!.value.end);
   }
 
   queryUsers(ac: MiaFilterSelected) {
@@ -124,5 +126,53 @@ export class MiaFilterBoxComponent implements OnInit {
 
   closeAllMenuConditional() {
     this.menuConditional.forEach(t => t.closeMenu());
+  }
+
+
+
+  onChangeFieldDateRange(select: MatSelectChange, field: MiaFilterType) {
+    console.log(select);
+    console.log(field);
+    if(field.value.type == 1){
+      this.filterByDay(field);
+    } else if (field.value.type == 2) {
+      this.filterByWeek(field);
+    } else if (field.value.type == 3) {
+      this.filterByMonth(field);
+    } else if (field.value.type == 4) {
+      this.filterByYear(field);
+    }
+    this.hasChange = true;
+  }
+
+  filterByDay(field: any) {
+    this.onFilterRange(field, moment(), moment());
+    //this.range.get('start')?.setValue(undefined);
+    //this.range.get('end')?.setValue(undefined);
+  }
+
+  filterByWeek(field: any) {
+    this.onFilterRange(field, moment().startOf('week'), moment().endOf('week'));
+    //this.range.get('start')?.setValue(undefined);
+    //this.range.get('end')?.setValue(undefined);
+  }
+
+  filterByMonth(field: any) {
+    this.onFilterRange(field, moment().startOf('month'), moment().endOf('month'));
+    //this.range.get('start')?.setValue(undefined);
+    //this.range.get('end')?.setValue(undefined);
+  }
+
+  filterByYear(field: any) {
+    this.onFilterRange(field, moment().startOf('year'), moment().endOf('year'));
+    //this.range.get('start')?.setValue(undefined);
+    //this.range.get('end')?.setValue(undefined);
+  }
+
+  onFilterRange(field: MiaFilterType, start: any, end: any) {
+    field.value.rangeString = start.format('YYYY-MM-DD') + ' - ' + end.format('YYYY-MM-DD');
+    field.value.start = start.format('YYYY-MM-DD');
+    field.value.end = end.format('YYYY-MM-DD');
+    //this.changeRange.emit({ start: start.format('YYYY-MM-DD'), end: end.format('YYYY-MM-DD')});
   }
 }

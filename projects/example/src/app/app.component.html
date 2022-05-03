@@ -1,5 +1,12 @@
 <br><br><br>
 
+<div class="content">
+  <h2>Elementos</h2>
+  <mia-date-filter-range-button (changeRange)="onChangeDateFilter($event)"></mia-date-filter-range-button>
+  <hr />
+  <mia-filter-box [config]="filterBox" [query]="queryFilter" (execCustom)="onFilterCustom($event)"></mia-filter-box>
+</div>
+
 <h1>Formulario example</h1>
 <div class="content">
   <mia-form #miaForm [config]="config" [item]="item" (save)="onSubmit($event)"></mia-form>
@@ -17,13 +24,11 @@
 </div>-->
 
 
-<!--<div class="content">
+<div class="content">
   <h2>Elementos</h2>
   <mia-date-filter-range-button (changeRange)="onChangeDateFilter($event)"></mia-date-filter-range-button>
   <hr />
   <mia-filter-box [config]="filterBox" [query]="queryFilter" (execCustom)="onFilterCustom($event)"></mia-filter-box>
-
-  <router-outlet></router-outlet>
-</div>-->
+</div>
 
 <br><br><br>
