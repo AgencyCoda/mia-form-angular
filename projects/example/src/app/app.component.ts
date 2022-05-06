@@ -396,6 +396,12 @@ export class AppComponent implements OnInit {
         { id: 3, title: '50000 a 100000USD' },
         { id: 4, title: '100.000+' },
       ] },
+      { key: 'multiple_option', title: 'Multi Options', value: [2], type: MiaFilterType.TYPE_MULTIPLE_OPTIONS, options: [
+        { id: 2, title: 'Opcion 0' },
+        { id: 3, title: 'Opcion 1' },
+        { id: 5, title: 'Opcion 2' },
+        { id: 8, title: 'Opcion 3' },
+      ] },
     ];
   }
 }

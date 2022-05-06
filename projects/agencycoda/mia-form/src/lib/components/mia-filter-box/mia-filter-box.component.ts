@@ -70,6 +70,8 @@ export class MiaFilterBoxComponent implements OnInit {
         this.queryOptionsCustom(ac);
       } else if(ac.field?.type == MiaFilterType.TYPE_DATE_LIST){
         this.queryDateRange(ac);
+      } else if(ac.field?.type == MiaFilterType.TYPE_MULTIPLE_OPTIONS){
+        this.queryMultipleOptions(ac);
       }
     });
     this.call.emit(this.actives);
@@ -108,6 +110,10 @@ export class MiaFilterBoxComponent implements OnInit {
 
   queryOptionsCustom(ac: MiaFilterSelected) {
     this.execCustom.emit(ac);
+  }
+
+  queryMultipleOptions(ac: MiaFilterSelected) {
+    this.query.addwhereIn(ac.field!.key, ac.field?.value)
   }
 
   onAddFilter(filter: MiaFilterType) {

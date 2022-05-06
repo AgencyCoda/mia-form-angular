@@ -35,7 +35,7 @@
                     <button mat-stroked-button class="btn" [matMenuTriggerFor]="conditionalFilter" #menuConditional="matMenuTrigger">
                         <div class="d-flex">
                             <span *ngIf="filter.conditional == 0">Is</span>
-                            <span *ngIf="filter.conditional == 1">Is not</span>
+                            <!--<span *ngIf="filter.conditional == 1">Is not</span>-->
                             <mat-icon>expand_more</mat-icon>
                         </div>
                     </button>
@@ -79,6 +79,9 @@
                         </mat-select>
                     </ng-container>
 
+                    <mat-select *ngIf="filter.field?.type == 9" [(ngModel)]="filter.field!.value" (selectionChange)="onChange()" multiple>
+                        <mat-option *ngFor="let opt of filter.field?.options" [value]="opt.id"> {{ opt.title }} </mat-option>
+                    </mat-select>
 
 
                     <!-- btn-filter-date -->
