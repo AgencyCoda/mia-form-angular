@@ -376,6 +376,7 @@ export class AppComponent implements OnInit {
     this.filterBox.filters = [
       { key: 'title', title: 'Title', type: MiaFilterType.TYPE_WRITE },
       { key: 'created_at', title: 'Created At', type: MiaFilterType.TYPE_DATE_RANGE, value: { type: 3 } },
+      { key: 'created_at', title: 'Created At List', type: MiaFilterType.TYPE_DATE_LIST, value: { type: 3 } },
       { key: 'status', title: 'Status', value: 1, type: MiaFilterType.TYPE_OPTIONS, options: [
         { id: 0, title: 'State 1' },
         { id: 1, title: 'State 2' },

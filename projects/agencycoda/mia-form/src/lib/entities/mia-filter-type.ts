@@ -7,6 +7,7 @@ export class MiaFilterType {
     static TYPE_OPTIONS = 5;
     static TYPE_OPTIONS_SERVICE = 6;
     static TYPE_OPTIONS_CUSTOM = 7;
+    static TYPE_DATE_LIST = 8;
 
     title: string = '';
     value?: any = '';

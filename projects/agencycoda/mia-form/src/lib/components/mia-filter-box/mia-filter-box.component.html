@@ -5,7 +5,7 @@
 </button>
 <button *ngIf="actives.length > 0" mat-button (click)="onClearFilters()">Clear Filter</button>
 
-<mat-menu #filters="matMenu" [class]="'container-filters-menu'" (closed)="onApplyFilters()">
+<mat-menu #filters="matMenu" [class]="'container-filters-menu'" (closed)="onApplyFilters()" style="width: 600px; max-width: 100%;">
     <div class="filters-menu" (click)="$event.stopPropagation()">
         <div class="header d-flex">
             <h5><b>Active filters</b></h5>
@@ -19,7 +19,7 @@
                     <button #menuAndOr="matMenuTrigger" *ngIf="index >= 1" mat-stroked-button class="btn" [matMenuTriggerFor]="andOrFilter" (click)="$event.stopPropagation()">
                         <div class="d-flex">
                             <span *ngIf="filter.andOrType == 0">AND</span>
-                            <span *ngIf="filter.andOrType == 1">OR</span>
+                            <!--<span *ngIf="filter.andOrType == 1">OR</span>-->
                             <mat-icon>expand_more</mat-icon>
                         </div>
                     </button>
@@ -31,7 +31,7 @@
                 <div fxFlex="160px">
                     <div class="d-flex">{{ filter.field?.title }}</div>
                 </div>
-                <div *ngIf="filter.field?.type != 1 && filter.field?.type != 7" fxFlex>
+                <div *ngIf="filter.field?.type != 1 && filter.field?.type != 3 && filter.field?.type != 7 && filter.field?.type != 8" fxFlex>
                     <button mat-stroked-button class="btn" [matMenuTriggerFor]="conditionalFilter" #menuConditional="matMenuTrigger">
                         <div class="d-flex">
                             <span *ngIf="filter.conditional == 0">Is</span>
@@ -45,10 +45,32 @@
                     </mat-menu>
                 </div>
                 <div *ngIf="filter.field?.type != 1" fxFlex>
+
                     <mat-form-field *ngIf="filter.field?.type == 2">
                         <input matInput type="text" [(ngModel)]="filter.field!.value">
                     </mat-form-field>
+
                     <ng-container *ngIf="filter.field?.type == 3">
+                        <mat-form-field appearance="outline" (click)="picker.open()">
+                            <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
+                              <input matStartDate formControlName="start" placeholder="Start date">
+                              <input matEndDate formControlName="end" placeholder="End date">
+                            </mat-date-range-input>
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-date-range-picker #picker (closed)="onFilterRangeCustom(filter.field!)"></mat-date-range-picker>
+                          </mat-form-field>
+                    </ng-container>
+                    
+                    
+                    <mat-select *ngIf="filter.field?.type == 5" [(ngModel)]="filter.field!.value" (selectionChange)="onChange()">
+                        <mat-option *ngFor="let opt of filter.field?.options" [value]="opt.id"> {{ opt.title }} </mat-option>
+                    </mat-select>
+
+                    <mat-select *ngIf="filter.field?.type == 7" [(ngModel)]="filter.field!.value" (selectionChange)="onChange()">
+                        <mat-option *ngFor="let opt of filter.field?.options" [value]="opt.id"> {{ opt.title }} </mat-option>
+                    </mat-select>
+
+                    <ng-container *ngIf="filter.field?.type == 8">
                         <mat-select [(ngModel)]="filter.field!.value.type" (selectionChange)="onChangeFieldDateRange($event, filter.field!)">
                             <mat-option [value]="1"> This day </mat-option>
                             <mat-option [value]="2"> This week </mat-option>
@@ -56,13 +78,6 @@
                             <mat-option [value]="4"> This year </mat-option>
                         </mat-select>
                     </ng-container>
-                    
-                    <mat-select *ngIf="filter.field?.type == 5" [(ngModel)]="filter.field!.value" (selectionChange)="onChange()">
-                        <mat-option *ngFor="let opt of filter.field?.options" [value]="opt.id"> {{ opt.title }} </mat-option>
-                    </mat-select>
-                    <mat-select *ngIf="filter.field?.type == 7" [(ngModel)]="filter.field!.value" (selectionChange)="onChange()">
-                        <mat-option *ngFor="let opt of filter.field?.options" [value]="opt.id"> {{ opt.title }} </mat-option>
-                    </mat-select>
 
 
 

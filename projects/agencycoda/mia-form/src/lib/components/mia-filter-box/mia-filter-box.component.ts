@@ -5,6 +5,7 @@ import { MatSelectChange } from '@angular/material/select';
 import { MiaFilterBoxConfig } from '../../entities/mia-filter-box-config';
 import { MiaFilterSelected, MiaFilterType } from '../../entities/mia-filter-type';
 import * as moment from 'moment';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'mia-filter-box',
@@ -34,6 +35,11 @@ export class MiaFilterBoxComponent implements OnInit {
    */
   hasChange = false;
 
+  range = new FormGroup({
+    start: new FormControl(),
+    end: new FormControl()
+  });
+
   constructor() { }
 
   ngOnInit(): void {
@@ -62,6 +68,8 @@ export class MiaFilterBoxComponent implements OnInit {
         this.queryOptionsService(ac);
       } else if(ac.field?.type == MiaFilterType.TYPE_OPTIONS_CUSTOM){
         this.queryOptionsCustom(ac);
+      } else if(ac.field?.type == MiaFilterType.TYPE_DATE_LIST){
+        this.queryDateRange(ac);
       }
     });
     this.call.emit(this.actives);
@@ -77,6 +85,12 @@ export class MiaFilterBoxComponent implements OnInit {
   }
 
   queryDateRange(ac: MiaFilterSelected) {
+    if(ac.field!.value.start == undefined){
+      ac.field!.value.start = moment().startOf('month');
+    }
+    if(ac.field!.value.end == undefined){
+      ac.field!.value.end = moment().endOf('month');
+    }
     this.query.addWhereBetween(ac.field!.key, ac.field!.value.start, ac.field!.value.end);
   }
 
@@ -131,8 +145,6 @@ export class MiaFilterBoxComponent implements OnInit {
 
 
   onChangeFieldDateRange(select: MatSelectChange, field: MiaFilterType) {
-    console.log(select);
-    console.log(field);
     if(field.value.type == 1){
       this.filterByDay(field);
     } else if (field.value.type == 2) {
@@ -147,26 +159,29 @@ export class MiaFilterBoxComponent implements OnInit {
 
   filterByDay(field: any) {
     this.onFilterRange(field, moment(), moment());
-    //this.range.get('start')?.setValue(undefined);
-    //this.range.get('end')?.setValue(undefined);
   }
 
   filterByWeek(field: any) {
     this.onFilterRange(field, moment().startOf('week'), moment().endOf('week'));
-    //this.range.get('start')?.setValue(undefined);
-    //this.range.get('end')?.setValue(undefined);
   }
 
   filterByMonth(field: any) {
     this.onFilterRange(field, moment().startOf('month'), moment().endOf('month'));
-    //this.range.get('start')?.setValue(undefined);
-    //this.range.get('end')?.setValue(undefined);
   }
 
   filterByYear(field: any) {
     this.onFilterRange(field, moment().startOf('year'), moment().endOf('year'));
-    //this.range.get('start')?.setValue(undefined);
-    //this.range.get('end')?.setValue(undefined);
+  }
+
+  onFilterRangeCustom(field: MiaFilterType) {
+    if(this.range.value && this.range.value.start == undefined){
+      field.value.rangeString = undefined;
+      field.value.start = undefined;
+      field.value.end = undefined;
+      return;
+    }
+    
+    this.onFilterRange(field, this.range.value.start, this.range.value.end);
   }
 
   onFilterRange(field: MiaFilterType, start: any, end: any) {
