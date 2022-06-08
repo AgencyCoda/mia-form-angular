@@ -19,8 +19,8 @@
         </ng-container>
         <!-- Boolean - Yes or No -->
         <ng-container *ngIf="item.type_val == 3">
-            <button>NO</button>
-            <button>SI</button>
+            <button [ngClass]="{'btn-active-property-button': item.val == 0}" (click)="item.val = 0">NO</button>
+            <button [ngClass]="{'btn-active-property-button': item.val == 1}" (click)="item.val = 1">SI</button>
         </ng-container>
         <!-- Years -->
         <ng-container *ngIf="item.type_val == 4">
