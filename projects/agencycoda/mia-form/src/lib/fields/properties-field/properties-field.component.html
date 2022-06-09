@@ -14,7 +14,7 @@
         </ng-container>
         <!-- Quantity -->
         <ng-container *ngIf="item.type_val == 2">
-            <input type="number" [(ngModel)]="item.val" />
+            <input type="number" [(ngModel)]="item.val" [min]="0" />
             <p *ngIf="item.append_text && item.append_text != ''">{{item.append_text}}</p>
         </ng-container>
         <!-- Boolean - Yes or No -->
