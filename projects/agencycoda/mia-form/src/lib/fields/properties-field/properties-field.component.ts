@@ -17,13 +17,12 @@ export class PropertiesFieldComponent extends MiaBaseFieldComponent {
   createFormControl() {
     // Create Control
     this.input = new FormControl();
-    this.input.setValue([]);
     // Add in Group
     this.group.addControl(this.field.key, this.input);
   }
 
   static updateValuesByItem(group: FormGroup, item: any, field: MiaField) {
-    let elements = field.extra.elements ?? [];
+    let elements = (group.get(field.key)?.value == undefined || group.get(field.key)?.value.length == 0) ? field.extra.elements : group.get(field.key)?.value;
     if(elements.length <= 0){
       return;
     }
@@ -38,16 +37,7 @@ export class PropertiesFieldComponent extends MiaBaseFieldComponent {
 
   static processElement(element: any, values: Array<any>) {
     element.id = 0;
-    element.val = '';
-
-    for (const value of values) {
-      if(value.type != element.type){
-        continue;
-      }
-
-      element.id = value.id;
-      element.val = value.val;
-    }
+    element.val = values.find(i => i.type == element.type)?.val ?? '';
   }
 
   static updateItemByFormField(group: FormGroup, item: any, field: MiaField) {
