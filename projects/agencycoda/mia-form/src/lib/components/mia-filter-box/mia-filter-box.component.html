@@ -34,14 +34,14 @@
                 <div *ngIf="filter.field?.type != 1 && filter.field?.type != 3 && filter.field?.type != 7 && filter.field?.type != 8" fxFlex>
                     <button mat-stroked-button class="btn" [matMenuTriggerFor]="conditionalFilter" #menuConditional="matMenuTrigger">
                         <div class="d-flex">
-                            <span *ngIf="filter.conditional == 0">Is</span>
+                            <span *ngIf="filter.conditional == 0">{{lang == 'es' ? 'Es' : 'Is'}}</span>
                             <!--<span *ngIf="filter.conditional == 1">Is not</span>-->
                             <mat-icon>expand_more</mat-icon>
                         </div>
                     </button>
                     <mat-menu #conditionalFilter="matMenu">
                         <button mat-menu-item (click)="filter.conditional = 0; onChange(); $event.stopPropagation(); closeAllMenuConditional()">{{lang == 'es' ? 'Es' : 'Is'}}</button>
-                        <button mat-menu-item (click)="filter.conditional = 1; onChange(); $event.stopPropagation(); closeAllMenuConditional()">{{lang == 'es' ? 'No es' : 'Is not'}}</button>
+                        <!--<button mat-menu-item (click)="filter.conditional = 1; onChange(); $event.stopPropagation(); closeAllMenuConditional()">{{lang == 'es' ? 'No es' : 'Is not'}}</button>-->
                     </mat-menu>
                 </div>
                 <div *ngIf="filter.field?.type != 1" fxFlex>
