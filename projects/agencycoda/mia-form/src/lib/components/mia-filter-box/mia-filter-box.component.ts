@@ -20,6 +20,7 @@ export class MiaFilterBoxComponent implements OnInit {
 
   @Input() config!: MiaFilterBoxConfig;
   @Input() query!: MiaQuery;
+  @Input() lang: string = 'en';
 
   @Output() execCustom = new EventEmitter<MiaFilterSelected>();
   @Output() call = new EventEmitter<Array<MiaFilterSelected>>();
