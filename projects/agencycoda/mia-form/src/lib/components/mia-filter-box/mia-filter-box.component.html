@@ -18,13 +18,13 @@
                     <p *ngIf="index <= 0">{{lang == 'es' ? 'Donde' : 'Where'}}</p>
                     <button #menuAndOr="matMenuTrigger" *ngIf="index >= 1" mat-stroked-button class="btn" [matMenuTriggerFor]="andOrFilter" (click)="$event.stopPropagation()">
                         <div class="d-flex">
-                            <span *ngIf="filter.andOrType == 0">{{lang == 'es' ? 'ES' : 'AND'}}</span>
+                            <span *ngIf="filter.andOrType == 0">{{lang == 'es' ? 'Y' : 'AND'}}</span>
                             <!--<span *ngIf="filter.andOrType == 1">OR</span>-->
                             <mat-icon>expand_more</mat-icon>
                         </div>
                     </button>
                     <mat-menu #andOrFilter="matMenu">
-                        <button mat-menu-item (click)="filter.andOrType = 0; onChange(); $event.stopPropagation(); closeAllMenuAndOr()">{{lang == 'es' ? 'ES' : 'AND'}}</button>
+                        <button mat-menu-item (click)="filter.andOrType = 0; onChange(); $event.stopPropagation(); closeAllMenuAndOr()">{{lang == 'es' ? 'Y' : 'AND'}}</button>
                         <button mat-menu-item (click)="filter.andOrType = 1; onChange(); $event.stopPropagation(); closeAllMenuAndOr()">{{lang == 'es' ? 'O' : 'OR'}}</button>
                     </mat-menu>
                 </div>
