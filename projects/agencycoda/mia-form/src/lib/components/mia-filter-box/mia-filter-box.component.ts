@@ -84,7 +84,8 @@ export class MiaFilterBoxComponent implements OnInit {
   }
 
   queryWrite(ac: MiaFilterSelected) {
-    this.query.addWhere(ac.field!.key, ac.field?.value);
+    this.query.addWhereLikes([ac.field!.key], ac.field?.value)
+    //this.query.addWhere(ac.field!.key, ac.field?.value);
   }
 
   queryDateRange(ac: MiaFilterSelected) {
