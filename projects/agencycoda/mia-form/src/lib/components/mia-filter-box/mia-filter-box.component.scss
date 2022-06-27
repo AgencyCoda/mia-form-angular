@@ -1,24 +1,56 @@
+.btn-filter{
+}
+
 .container-filters-menu {
-    width: 600px;
-    max-width: 100% !important;
-    padding: 0px 20px 0px 20px !important;
+  width: 500px !important;
+  max-width: 100% !important;
 
-    h5{
-        margin-right: 15px;
-      }
-}
+  .filters-menu{
+    padding: 0 1em;
+  }
 
-.add-filter-menu {
-    padding: 0px 20px 0px 20px !important;
-  
-    mat-list-item {
-      cursor: pointer;
-      border: 1px solid #ddd;
-      border-radius: 5px;
+  .header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1em;
+
+    h5 {
+      margin: 0;
     }
+  }
+
+
+  &::ng-deep .mat-form-field-wrapper{
+    padding-bottom: 0 !important;
+  }
 }
+
+.add-filter-menu{
+  width: 220px !important;
+  max-width: 100% !important;
+}
+
 
 .mat-menu-panel {
-    width: 600px;
-    max-width: 100% !important;
+  width: 600px;
+  max-width: 100% !important;
 }
+
+@media (max-width: 600px) {
+  .btn-filter{
+    width: 40px;
+    min-width: 40px;
+    height: 40px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+
+    span{
+      display: none;
+    }
+  }
+}
+
