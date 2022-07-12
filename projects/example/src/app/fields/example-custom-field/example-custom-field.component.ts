@@ -17,12 +17,10 @@ export class ExampleCustomFieldComponent extends MiaBaseFieldComponent implement
   }
 
   static updateValuesByItem(group: FormGroup, item: any, field: MiaField) {
-    //group.setValue();
-    console.log('llego aqui2');
+    group.get(field.extra)?.setValue(item[field.extra]);
   }
 
   static updateItemByFormField(group: FormGroup, item: any, field: MiaField) {
-    item['custom_var'] = 'example';
-    console.log('llego aqui');
+    item[field.extra] = group.get(field.extra)?.value;
   }
 }

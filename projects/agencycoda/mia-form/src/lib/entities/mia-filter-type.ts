@@ -15,6 +15,7 @@ export class MiaFilterType {
     key: string = '';
     type: number = 1;
     options?: Array<any>;
+    extra?: any;
 }
 
 export class MiaFilterSelected {

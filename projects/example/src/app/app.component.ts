@@ -402,6 +402,7 @@ export class AppComponent implements OnInit {
         { id: 5, title: 'Opcion 2' },
         { id: 8, title: 'Opcion 3' },
       ] },
+      { key: 'option_service', title: 'Test Service', type: MiaFilterType.TYPE_OPTIONS_SERVICE, extra: {  service: this.testService, field_display: 'title', field_value: 'id', query: new MiaQuery() } },
     ];
   }
 }

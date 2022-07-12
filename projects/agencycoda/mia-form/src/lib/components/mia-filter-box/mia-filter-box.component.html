@@ -65,6 +65,12 @@
                 </mat-select>
               </mat-form-field>
 
+              <mat-form-field *ngIf="filter.field?.type == 6">
+                <mat-select [(ngModel)]="filter.field!.value" (selectionChange)="onChange()">
+                    <mat-option *ngFor="let opt of filter.field?.options" [value]="opt[filter.field?.extra.field_value]"> {{ opt[filter.field?.extra.field_display] }} </mat-option>
+                </mat-select>
+              </mat-form-field>
+
               <mat-form-field *ngIf="filter.field?.type == 7">
                 <mat-select [(ngModel)]="filter.field!.value" (selectionChange)="onChange()">
                     <mat-option *ngFor="let opt of filter.field?.options" [value]="opt.id"> {{ opt.title }} </mat-option>

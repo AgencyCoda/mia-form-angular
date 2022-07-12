@@ -1,4 +1,4 @@
-import { MiaQuery } from '@agencycoda/mia-core';
+import { MiaBaseCrudHttpService, MiaQuery } from '@agencycoda/mia-core';
 import { Component, EventEmitter, Input, OnInit, Output, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { MatMenuTrigger } from '@angular/material/menu';
 import { MatSelectChange } from '@angular/material/select';
@@ -107,7 +107,7 @@ export class MiaFilterBoxComponent implements OnInit {
   }
 
   queryOptionsService(ac: MiaFilterSelected) {
-
+    this.query.addWhere(ac.field!.key, ac.field?.value);
   }
 
   queryOptionsCustom(ac: MiaFilterSelected) {
@@ -121,7 +121,19 @@ export class MiaFilterBoxComponent implements OnInit {
   onAddFilter(filter: MiaFilterType) {
     this.hasChange = true;
     this.actives.push({ andOrType: 0, field: filter, conditional: 0 });
+    this.loadOptionsExternal(filter);
     this.addFilterButton.closeMenu();
+  }
+
+  loadOptionsExternal(filter: MiaFilterType) {
+    if(filter.type != MiaFilterType.TYPE_OPTIONS_SERVICE){
+      return;
+    }
+
+    let service: MiaBaseCrudHttpService<any> = filter.extra.service;
+    service.listOb(filter.extra.query).subscribe(result => {
+      filter.options = result.data;
+    });
   }
 
   onChange() {
