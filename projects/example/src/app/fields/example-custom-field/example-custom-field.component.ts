@@ -17,10 +17,10 @@ export class ExampleCustomFieldComponent extends MiaBaseFieldComponent implement
   }
 
   static updateValuesByItem(group: FormGroup, item: any, field: MiaField) {
-    group.get(field.extra)?.setValue(item[field.extra]);
+    group.get(field.key)?.setValue(item[field.key]);
   }
 
   static updateItemByFormField(group: FormGroup, item: any, field: MiaField) {
-    item[field.extra] = group.get(field.extra)?.value;
+    item[field.key] = group.get(field.key)?.value;
   }
 }

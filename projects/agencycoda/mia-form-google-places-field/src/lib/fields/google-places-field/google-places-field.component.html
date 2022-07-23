@@ -1,5 +1,23 @@
 <mat-form-field *ngIf="input" class="{{ field.classes }}" [appearance]="getAppearance()">
+    <mat-label>{{ (field.extra.lang && field.extra.lang == 'es') ? 'Buscar información en Google Maps' : 'Search info in Google Maps' }}</mat-label>
+    <input matInput #placesRef="ngx-places" ngx-google-places-autocomplete type="text" (onAddressChange)="handleAddressChange($event)" [formControl]="inputMaps" [disabled]="field.isDisabled ? field.isDisabled : false" autocomplete="off" />
+</mat-form-field>
+
+<mat-form-field *ngIf="input" class="{{ field.classes }}" [appearance]="getAppearance()">
     <mat-label *ngIf="field.label"> {{ field.label }} </mat-label>
-    <input matInput #placesRef="ngx-places" ngx-google-places-autocomplete type="text" (onAddressChange)="handleAddressChange($event)" [formControl]="input" [placeholder]="field.placeholder ? field.placeholder : ''" [disabled]="field.isDisabled ? field.isDisabled : false" autocomplete="off" />
+    <input matInput type="text" [formControl]="input" [placeholder]="field.placeholder ? field.placeholder : ''" [disabled]="field.isDisabled ? field.isDisabled : false" autocomplete="off" />
     <mat-hint *ngIf="field.caption" [align]="'end'"> {{ field.caption }} </mat-hint>
 </mat-form-field>
+
+<div class="container-coords">
+    <mat-form-field *ngIf="inputLatitude" [appearance]="getAppearance()">
+        <mat-label> {{ (field.extra.lang && field.extra.lang == 'es') ? 'Latitud' : 'Latitude' }} </mat-label>
+        <input matInput type="text" [formControl]="inputLatitude" [disabled]="true" />
+    </mat-form-field>
+
+    <mat-form-field *ngIf="inputLongitude" [appearance]="getAppearance()">
+        <mat-label> {{ (field.extra.lang && field.extra.lang == 'es') ? 'Longitud' : 'Longitude' }} </mat-label>
+        <input matInput type="text" [formControl]="inputLongitude" [disabled]="true" />
+    </mat-form-field>
+
+</div>

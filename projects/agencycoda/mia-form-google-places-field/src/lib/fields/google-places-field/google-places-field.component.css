@@ -1,0 +1,10 @@
+mat-form-field {
+    width: 100%;
+}
+
+.container-coords {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+

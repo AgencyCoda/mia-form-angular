@@ -13,6 +13,7 @@ export class GooglePlacesFieldComponent extends MiaBaseFieldComponent {
 
   @ViewChild("placesRef") placesRef!: GooglePlaceDirective;
 
+  inputMaps: FormControl = new FormControl();
   inputLatitude!: FormControl;
   inputLongitude!: FormControl;
 
@@ -40,10 +41,10 @@ export class GooglePlacesFieldComponent extends MiaBaseFieldComponent {
     // Add in Group
     this.group.addControl(this.field.key, this.input);
 
-    this.inputLatitude = new FormControl();
+    this.inputLatitude = new FormControl({ value: '', disabled: true});
     this.group.addControl(this.field.extra.key_latitude, this.inputLatitude);
 
-    this.inputLongitude = new FormControl();
+    this.inputLongitude = new FormControl({ value: '', disabled: true});
     this.group.addControl(this.field.extra.key_longitude, this.inputLongitude);
 }
 
