@@ -56,7 +56,7 @@ export class GooglePlacesFieldComponent extends MiaBaseFieldComponent {
 
   static updateItemByFormField(group: FormGroup, item: any, field: MiaField) {
     item[field.key] = group.get(field.key)?.value;
-    item[field.extra.key_latitude] = group.get(field.extra.key_longitude)?.value;
+    item[field.extra.key_latitude] = group.get(field.extra.key_latitude)?.value;
     item[field.extra.key_longitude] = group.get(field.extra.key_longitude)?.value;
   }
 }
