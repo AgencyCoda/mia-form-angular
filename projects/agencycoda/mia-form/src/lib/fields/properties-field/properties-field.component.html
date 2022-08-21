@@ -32,6 +32,14 @@
             <input type="number" [(ngModel)]="item.val" />
             <p *ngIf="item.append_text && item.append_text != ''">{{item.append_text}}</p>
         </ng-container>
+        <!-- Selector -->
+        <ng-container *ngIf="item.type_val == 6">
+            <mat-form-field>
+                <mat-select [(ngModel)]="item.val">
+                    <mat-option *ngFor="let opt of item.options" [value]="opt"> {{ opt }} </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </ng-container>
         
     </div>
 </div>
