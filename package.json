@@ -9,6 +9,7 @@
     "lint": "ng lint",
     "build2": "ng build --prod --project=@agencycoda/mia-form && cd dist/agencycoda/mia-form && npm publish",
     "build-google-places-field": "ng build --prod --project=@agencycoda/mia-form-google-places-field && cd dist/agencycoda/mia-form-google-places-field/ && npm publish --access public",
+    "build-phone-field": "ng build --prod --project=@agencycoda/mia-phone-field && cd dist/agencycoda/mia-phone-field/ && npm publish --access public",
     "e2e": "ng e2e"
   },
   "private": true,

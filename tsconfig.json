@@ -27,6 +27,10 @@
       "@agencycoda/mia-form-google-places-field": [
         "dist/agencycoda/mia-form-google-places-field/agencycoda-mia-form-google-places-field",
         "dist/agencycoda/mia-form-google-places-field"
+      ],
+      "@agencycoda/mia-phone-field": [
+        "dist/agencycoda/mia-phone-field/agencycoda-mia-phone-field",
+        "dist/agencycoda/mia-phone-field"
       ]
     }
   },
