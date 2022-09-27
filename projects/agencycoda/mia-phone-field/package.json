@@ -3,7 +3,10 @@
   "version": "13.1.0",
   "peerDependencies": {
     "@angular/common": "^13.1.0",
-    "@angular/core": "^13.1.0"
+    "@angular/core": "^13.1.0",
+    "google-libphonenumber": "^3.2.30",
+    "intl-tel-input": "^17.0.3",
+    "ngx-intl-tel-input": "^3.2.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"

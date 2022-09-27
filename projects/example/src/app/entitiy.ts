@@ -10,6 +10,7 @@ export class Entity {
     date = '';
     event_start = '';
     event_end = '';
+    custom_phone = '';
     status = 0;
     city_id?: number;
     file_one?: MiaFile;

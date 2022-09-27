@@ -60,6 +60,7 @@
               "projects/example/src/assets"
             ],
             "styles": [
+              "./node_modules/intl-tel-input/build/css/intlTelInput.css",
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "projects/example/src/styles.scss"
             ],

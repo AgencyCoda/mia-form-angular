@@ -1,1 +1,12 @@
-<p>phone-field works!</p>
+<ngx-intl-tel-input
+#phoneInput
+		[cssClass]="'custom-phone-field'"
+		[enablePlaceholder]="true"
+		[searchCountryFlag]="true"
+		[selectFirstCountry]="false"
+		[selectedCountryISO]="CountryISO.Argentina"
+		[maxLength]="15"
+		[phoneValidation]="true"
+		[inputId]="field.key"
+		[formControl]="input"
+	></ngx-intl-tel-input>

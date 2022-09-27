@@ -12,6 +12,7 @@ import { MIA_GOOGLE_STORAGE_PROVIDER } from '@agencycoda/mia-core';
 import { MatButtonModule } from '@angular/material/button';
 import { MiaFormGooglePlacesFieldModule } from 'projects/agencycoda/mia-form-google-places-field/src/public-api';
 import { GooglePlaceModule } from 'ngx-google-places-autocomplete';
+import { MiaPhoneFieldModule } from 'projects/agencycoda/mia-phone-field/src/public-api';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { GooglePlaceModule } from 'ngx-google-places-autocomplete';
     MiaFormGooglePlacesFieldModule,
     QuillModule.forRoot(),
     BrowserAnimationsModule,
-    MatButtonModule
+    MatButtonModule,
+    MiaPhoneFieldModule
   ],
   providers: [
     {

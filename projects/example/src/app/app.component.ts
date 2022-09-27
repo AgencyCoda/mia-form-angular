@@ -10,6 +10,7 @@ import { PropertiesFieldComponent } from 'projects/agencycoda/mia-form/src/lib/f
 import { SliderFieldComponent } from 'projects/agencycoda/mia-form/src/lib/fields/slider-field/slider-field.component';
 import { MiaFormModalV2Component, MiaFormModalV2Config } from 'projects/agencycoda/mia-form/src/lib/modals/mia-form-modal-v2/mia-form-modal-v2.component';
 import { BoxFieldComponent, ColorSelectorFieldComponent, MiaField, MiaFilterBoxConfig, MiaFilterSelected, MiaFilterType, MiaFormComponent, MiaFormConfig, MiaFormModalComponent, MiaFormModalConfig, MiaFormModalsService, MiaFormModalV3Config, MiaFormWizardConfig, PropertiesCustomFieldComponent, PropertiesLabelFieldComponent, RowFieldComponent, SizeRadioFieldComponent, SwitchFieldComponent, TabsFieldComponent } from 'projects/agencycoda/mia-form/src/public-api';
+import { PhoneFieldComponent } from 'projects/agencycoda/mia-phone-field/src/public-api';
 import { of, Subject } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { environment } from '../environments/environment';
@@ -81,6 +82,7 @@ export class AppComponent implements OnInit {
     this.item.tags = ['tag1', 'tag2', 'tag3'];
     this.item.event_start = '2021-07-19 16:00:00';
     this.item.event_end = '2021-07-20 18:00:00';
+    this.item.custom_phone = '+541155699837';
     this.item.margin = { top: 20, left: 30, bottom: 40, right: 0 };
     this.item.vendors = [
       { id: 1, title: 'Vendor 1' }
@@ -255,6 +257,7 @@ export class AppComponent implements OnInit {
          { title: 'Baño', val: '<strong>1 por baño</strong>' },
          { title: 'Marca de agua', val: '<strong>Client</strong> <a href="">(download)</a>' },
        ] } },
+       { key: 'phone_custom', type: MiaField.TYPE_CUSTOM, label: 'Phone', extra: { component: PhoneFieldComponent } },
     ];
     this.config.errorMessages = [
       { key: 'required', message: 'The %label% is required.' }

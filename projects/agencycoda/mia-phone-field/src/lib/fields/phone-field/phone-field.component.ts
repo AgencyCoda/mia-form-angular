@@ -1,15 +1,32 @@
-import { Component, OnInit } from '@angular/core';
+import { MiaBaseFieldComponent } from '@agencycoda/mia-form';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { SearchCountryField, CountryISO, PhoneNumberFormat, NgxIntlTelInputComponent } from 'ngx-intl-tel-input';
 
 @Component({
-  selector: 'lib-phone-field',
+  selector: 'mia-phone-field',
   templateUrl: './phone-field.component.html',
   styleUrls: ['./phone-field.component.css']
 })
-export class PhoneFieldComponent implements OnInit {
+export class PhoneFieldComponent extends MiaBaseFieldComponent {
 
-  constructor() { }
+  @ViewChild("phoneInput") phoneInput!: NgxIntlTelInputComponent;
 
-  ngOnInit(): void {
+  CountryISO = CountryISO;
+
+  constructor() {
+    super();
   }
 
+  ngAfterViewInit(): void {
+    //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
+    //Add 'implements AfterViewInit' to the class.
+  }
+
+  createFormControl() {
+    // Create Control
+    this.input = new FormControl();
+    // Add in Group
+    this.group.addControl(this.field.key, this.input);
+  }
 }
