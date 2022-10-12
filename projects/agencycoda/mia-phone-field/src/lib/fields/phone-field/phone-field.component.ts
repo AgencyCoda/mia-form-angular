@@ -26,6 +26,10 @@ export class PhoneFieldComponent extends MiaBaseFieldComponent {
   createFormControl() {
     // Create Control
     this.input = new FormControl();
+    // Config validators
+    if(this.field.validators != undefined && this.field.validators.length > 0){
+      this.input.addValidators(this.field.validators);
+    }
     // Add in Group
     this.group.addControl(this.field.key, this.input);
   }
