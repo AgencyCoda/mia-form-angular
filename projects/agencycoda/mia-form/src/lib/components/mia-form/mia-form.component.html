@@ -3,7 +3,7 @@
         <mia-print-fields class="mia-print-main" [fields]="config.fields" [group]="group"></mia-print-fields>
     </div>
 
-    <div *ngIf="!group.valid" class="message-error">
+    <div *ngIf="!group.valid && !isFirstStart" class="message-error">
         <p *ngFor="let error of getErrors()">
             {{ error }}
         </p>

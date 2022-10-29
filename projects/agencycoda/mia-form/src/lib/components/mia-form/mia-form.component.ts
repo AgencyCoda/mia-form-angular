@@ -19,6 +19,8 @@ export class MiaFormComponent implements OnInit, AfterViewInit {
 
   group: FormGroup = new FormGroup({});
 
+  isFirstStart = true;
+
   constructor(
     protected changeDetector: ChangeDetectorRef,
     protected miaFormService: MiaFormService
@@ -51,6 +53,7 @@ export class MiaFormComponent implements OnInit, AfterViewInit {
   }
 
   submit(): Observable<any> {
+    this.isFirstStart = false;
     if(!this.group.valid){
       return of();
     }
