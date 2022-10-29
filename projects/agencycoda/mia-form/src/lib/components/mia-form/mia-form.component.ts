@@ -53,7 +53,11 @@ export class MiaFormComponent implements OnInit, AfterViewInit {
   }
 
   submit(): Observable<any> {
-    this.isFirstStart = false;
+    if(this.isFirstStart){
+      this.isFirstStart = false;
+      this.changeDetector.detectChanges();
+    }
+    
     if(!this.group.valid){
       return of();
     }
