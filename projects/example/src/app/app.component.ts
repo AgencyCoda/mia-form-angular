@@ -2,6 +2,7 @@ import { MiaQuery } from '@agencycoda/mia-core';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
+import { CurrencyFieldComponent } from 'projects/agencycoda/mia-currency-field/src/public-api';
 import { GooglePlacesFieldComponent } from 'projects/agencycoda/mia-form-google-places-field/src/public-api';
 import { FilesFieldComponent } from 'projects/agencycoda/mia-form/src/lib/fields/files-field/files-field.component';
 import { ImagesFieldComponent } from 'projects/agencycoda/mia-form/src/lib/fields/images-field/images-field.component';
@@ -258,6 +259,7 @@ export class AppComponent implements OnInit {
          { title: 'Marca de agua', val: '<strong>Client</strong> <a href="">(download)</a>' },
        ] } },
        { key: 'phone_custom', type: MiaField.TYPE_CUSTOM, label: 'Phone', extra: { component: PhoneFieldComponent } },
+       { key: 'salary_min', type: MiaField.TYPE_CUSTOM, label: 'Salario minimo', placeholder: '', caption: '', extra: { component: CurrencyFieldComponent, appearance: 'outline', currencyOptions: { thousands: ',', decimal: '.', precision: 0 } } },
     ];
     this.config.errorMessages = [
       { key: 'required', message: 'The %label% is required.' }

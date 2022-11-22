@@ -20,6 +20,10 @@
       "dom"
     ],
     "paths": {
+      "@agencycoda/mia-currency-field": [
+        "dist/agencycoda/mia-currency-field/agencycoda-mia-currency-field",
+        "dist/agencycoda/mia-currency-field"
+      ],
       "@agencycoda/mia-form": [
         "dist/agencycoda/mia-form/agencycoda-mia-form",
         "dist/agencycoda/mia-form"

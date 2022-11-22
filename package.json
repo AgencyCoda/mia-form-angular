@@ -10,6 +10,7 @@
     "build2": "ng build --prod --project=@agencycoda/mia-form && cd dist/agencycoda/mia-form && npm publish",
     "build-google-places-field": "ng build --prod --project=@agencycoda/mia-form-google-places-field && cd dist/agencycoda/mia-form-google-places-field/ && npm publish --access public",
     "build-phone-field": "ng build --prod --project=@agencycoda/mia-phone-field && cd dist/agencycoda/mia-phone-field/ && npm publish --access public",
+    "build-currency-field": "ng build --prod --project=@agencycoda/mia-currency-field && cd dist/agencycoda/mia-currency-field/ && npm publish --access public",
     "e2e": "ng e2e"
   },
   "private": true,
@@ -31,6 +32,7 @@
     "google-libphonenumber": "^3.2.30",
     "intl-tel-input": "^17.0.3",
     "moment": "^2.29.1",
+    "ng2-currency-mask": "^13.0.3",
     "ngx-google-places-autocomplete": "^2.0.5",
     "ngx-intl-tel-input": "^3.2.0",
     "ngx-quill": "^16.1.1",
