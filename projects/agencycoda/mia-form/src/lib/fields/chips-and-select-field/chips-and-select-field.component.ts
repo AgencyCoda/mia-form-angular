@@ -87,6 +87,9 @@ export class ChipsAndSelectFieldComponent extends MiaBaseFieldComponent implemen
     this.input = new FormControl();
     // Create Control
     this.inputList = new FormArray([]);
+    if(this.field.validators != undefined && this.field.validators.length > 0){
+      this.inputList.setValidators(this.field.validators);
+    }
     // Add in Group
     this.group.addControl(this.field.key, this.inputList);
   }
