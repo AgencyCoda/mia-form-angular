@@ -39,6 +39,7 @@
  export * from './lib/fields/color-selector-field/color-selector-field.component';
  export * from './lib/fields/position-field/position-field.component';
  export * from './lib/fields/images-field/images-field.component';
+ export * from './lib/fields/slider-field/slider-field.component';
 
  /**
   * Elements
