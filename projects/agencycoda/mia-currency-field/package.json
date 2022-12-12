@@ -1,10 +1,10 @@
 {
   "name": "@agencycoda/mia-currency-field",
-  "version": "13.1.2",
+  "version": "14.2.0",
   "peerDependencies": {
-    "@angular/common": "^13.1.0",
-    "@angular/core": "^13.1.0",
-    "ng2-currency-mask": "^13.0.3"
+    "@angular/common": "^14.2.0",
+    "@angular/core": "^14.2.0",
+    "ng2-currency-mask": "^14.2.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"

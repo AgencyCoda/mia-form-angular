@@ -1,9 +1,9 @@
 {
   "name": "@agencycoda/mia-phone-field",
-  "version": "13.1.2",
+  "version": "14.2.0",
   "peerDependencies": {
-    "@angular/common": "^13.1.0",
-    "@angular/core": "^13.1.0",
+    "@angular/common": "^14.2.0",
+    "@angular/core": "^14.2.0",
     "google-libphonenumber": "^3.2.30",
     "intl-tel-input": "^17.0.3",
     "ngx-intl-tel-input": "^3.2.0"
