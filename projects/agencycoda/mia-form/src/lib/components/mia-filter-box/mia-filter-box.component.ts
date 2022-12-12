@@ -1,7 +1,7 @@
 import { MiaBaseCrudHttpService, MiaQuery } from '@agencycoda/mia-core';
 import { Component, EventEmitter, Input, OnInit, Output, QueryList, ViewChild, ViewChildren } from '@angular/core';
-import { MatMenuTrigger } from '@angular/material/menu';
-import { MatSelectChange } from '@angular/material/select';
+import { MatLegacyMenuTrigger as MatMenuTrigger } from '@angular/material/legacy-menu';
+import { MatLegacySelectChange as MatSelectChange } from '@angular/material/legacy-select';
 import { MiaFilterBoxConfig } from '../../entities/mia-filter-box-config';
 import { MiaFilterSelected, MiaFilterType } from '../../entities/mia-filter-type';
 import * as moment from 'moment';

@@ -9,7 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { QuillModule } from 'ngx-quill';
 import { ExampleCustomFieldComponent } from './fields/example-custom-field/example-custom-field.component';
 import { MIA_GOOGLE_STORAGE_PROVIDER } from '@agencycoda/mia-core';
-import { MatButtonModule } from '@angular/material/button';
+import { MatLegacyButtonModule as MatButtonModule } from '@angular/material/legacy-button';
 import { MiaFormGooglePlacesFieldModule } from 'projects/agencycoda/mia-form-google-places-field/src/public-api';
 import { GooglePlaceModule } from 'ngx-google-places-autocomplete';
 import { MiaPhoneFieldModule } from 'projects/agencycoda/mia-phone-field/src/public-api';

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 import { Observable } from 'rxjs';
 import { MiaFormModalV3Config, MiaFormModalV3Interaction, MiaFormModalV3Component } from '../modals/mia-form-modal-v3/mia-form-modal-v3.component';
 import { MiaFormWizardComponent, MiaFormWizardConfig, MiaFormWizardInteraction } from '../modals/mia-form-wizard/mia-form-wizard.component';

@@ -1,7 +1,7 @@
 import { MiaQuery } from '@agencycoda/mia-core';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Validators } from '@angular/forms';
-import { MatDialog } from '@angular/material/dialog';
+import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 import { CurrencyFieldComponent } from 'projects/agencycoda/mia-currency-field/src/public-api';
 import { GooglePlacesFieldComponent } from 'projects/agencycoda/mia-form-google-places-field/src/public-api';
 import { FilesFieldComponent } from 'projects/agencycoda/mia-form/src/lib/fields/files-field/files-field.component';
