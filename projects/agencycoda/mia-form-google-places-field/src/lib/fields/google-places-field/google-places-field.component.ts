@@ -1,6 +1,6 @@
 import { MiaBaseFieldComponent, MiaField } from '@agencycoda/mia-form';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { GooglePlaceDirective } from 'ngx-google-places-autocomplete';
 import { Address } from 'ngx-google-places-autocomplete/objects/address';
 
@@ -13,9 +13,9 @@ export class GooglePlacesFieldComponent extends MiaBaseFieldComponent {
 
   @ViewChild("placesRef") placesRef!: GooglePlaceDirective;
 
-  inputMaps: FormControl = new FormControl();
-  inputLatitude!: FormControl;
-  inputLongitude!: FormControl;
+  inputMaps: UntypedFormControl = new UntypedFormControl();
+  inputLatitude!: UntypedFormControl;
+  inputLongitude!: UntypedFormControl;
 
   constructor() {
     super();
@@ -29,7 +29,7 @@ export class GooglePlacesFieldComponent extends MiaBaseFieldComponent {
 
   createFormControl() {
     // Create Control
-    this.input = new FormControl();
+    this.input = new UntypedFormControl();
     // Config validators
     if(this.field.validators != undefined && this.field.validators.length > 0){
         this.input.setValidators(this.field.validators);
@@ -41,20 +41,20 @@ export class GooglePlacesFieldComponent extends MiaBaseFieldComponent {
     // Add in Group
     this.group.addControl(this.field.key, this.input);
 
-    this.inputLatitude = new FormControl({ value: '', disabled: true});
+    this.inputLatitude = new UntypedFormControl({ value: '', disabled: true});
     this.group.addControl(this.field.extra.key_latitude, this.inputLatitude);
 
-    this.inputLongitude = new FormControl({ value: '', disabled: true});
+    this.inputLongitude = new UntypedFormControl({ value: '', disabled: true});
     this.group.addControl(this.field.extra.key_longitude, this.inputLongitude);
 }
 
-  static updateValuesByItem(group: FormGroup, item: any, field: MiaField) {
+  static updateValuesByItem(group: UntypedFormGroup, item: any, field: MiaField) {
     group.get(field.key)?.setValue(item[field.key]);
     group.get(field.extra.key_latitude)?.setValue(item[field.extra.key_latitude]);
     group.get(field.extra.key_longitude)?.setValue(item[field.extra.key_longitude]);
   }
 
-  static updateItemByFormField(group: FormGroup, item: any, field: MiaField) {
+  static updateItemByFormField(group: UntypedFormGroup, item: any, field: MiaField) {
     item[field.key] = group.get(field.key)?.value;
     item[field.extra.key_latitude] = group.get(field.extra.key_latitude)?.value;
     item[field.extra.key_longitude] = group.get(field.extra.key_longitude)?.value;

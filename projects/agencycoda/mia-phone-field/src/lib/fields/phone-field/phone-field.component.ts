@@ -1,6 +1,6 @@
 import { MiaBaseFieldComponent } from '@agencycoda/mia-form';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { SearchCountryField, CountryISO, PhoneNumberFormat, NgxIntlTelInputComponent } from 'ngx-intl-tel-input';
 
 @Component({
@@ -25,7 +25,7 @@ export class PhoneFieldComponent extends MiaBaseFieldComponent {
 
   createFormControl() {
     // Create Control
-    this.input = new FormControl();
+    this.input = new UntypedFormControl();
     // Config validators
     if(this.field.validators != undefined && this.field.validators.length > 0){
       this.input.addValidators(this.field.validators);

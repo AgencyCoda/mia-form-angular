@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FormArray, FormControl, FormGroup } from '@angular/forms';
+import { UntypedFormArray, UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { MiaField } from './entities/mia-field';
 import { MiaFormConfig } from './entities/mia-form-config';
 import * as moment from 'moment';
@@ -11,17 +11,17 @@ export class MiaFormService {
 
   constructor() { }
 
-  updateValuesByItem(config: MiaFormConfig, group: FormGroup, item: any) {
+  updateValuesByItem(config: MiaFormConfig, group: UntypedFormGroup, item: any) {
     this.updateValuesByItemFields(config.fields, group, item);
   }
 
-  private updateValuesByItemFields(fields: Array<MiaField>, group: FormGroup, item: any) {
+  private updateValuesByItemFields(fields: Array<MiaField>, group: UntypedFormGroup, item: any) {
     for (const field of fields) {
       this.updateValuesByItemField(field, group, item);
     }
   }
 
-  private updateValuesByItemField(field: MiaField, group: FormGroup, item: any) {
+  private updateValuesByItemField(field: MiaField, group: UntypedFormGroup, item: any) {
     if(field.type == 'label'){
       return;
     }
@@ -36,7 +36,7 @@ export class MiaFormService {
     if(control == undefined || item[field.key] == undefined){
       return;
     }
-    if(control instanceof FormArray){
+    if(control instanceof UntypedFormArray){
       this.updateValuesByItemInFormArray(control, field.key, item);
       return;
     }
@@ -55,18 +55,18 @@ export class MiaFormService {
     }
   }
 
-  updateItemByForm(config: MiaFormConfig, group: FormGroup, item: any): any {
+  updateItemByForm(config: MiaFormConfig, group: UntypedFormGroup, item: any): any {
     this.updateItemByFormFields(config.fields, group, item);
     return item;
   }
 
-  private updateItemByFormFields(fields: Array<MiaField>, group: FormGroup, item: any) {
+  private updateItemByFormFields(fields: Array<MiaField>, group: UntypedFormGroup, item: any) {
     for (const field of fields) {
         this.updateItemByFormField(field, group, item);
     }
   }
 
-  private updateItemByFormField(field: MiaField, group: FormGroup, item: any) {
+  private updateItemByFormField(field: MiaField, group: UntypedFormGroup, item: any) {
     if(field.type == 'label'){
       return;
     }
@@ -103,21 +103,21 @@ export class MiaFormService {
     }
   }
 
-  updateValuesByItemInFormArray(group: FormArray, key: string, item: any) {
+  updateValuesByItemInFormArray(group: UntypedFormArray, key: string, item: any) {
     for (const it of item[key]) {
       this.createFormControlAndAdd(it, group);
     }
   }
 
-  createFormControlAndAdd(item: any, group: FormArray) {
+  createFormControlAndAdd(item: any, group: UntypedFormArray) {
     // Create Control
-    let input = new FormControl();
+    let input = new UntypedFormControl();
     input.setValue(item);
     // Add in Group
     group.push(input);
   }
 
-  getErrors(config: MiaFormConfig, group: FormGroup): Array<string> {
+  getErrors(config: MiaFormConfig, group: UntypedFormGroup): Array<string> {
     let errors: Array<string> = [];
 
     for (const field of config.fields) {

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { UntypedFormGroup } from '@angular/forms';
 import { MiaField } from '../../entities/mia-field';
 import { MiaBaseFieldComponent } from '../base-field.component';
 
@@ -18,11 +18,11 @@ export class RowFieldComponent extends MiaBaseFieldComponent implements OnInit {
     
   }
 
-  static updateValuesByItem(group: FormGroup, item: any, field: MiaField) {
+  static updateValuesByItem(group: UntypedFormGroup, item: any, field: MiaField) {
     MiaBaseFieldComponent.updateValuesByItemFieldsOld(field.extra.fields, group, item);
   }
 
-  static updateItemByFormField(group: FormGroup, item: any, field: MiaField) {
+  static updateItemByFormField(group: UntypedFormGroup, item: any, field: MiaField) {
     MiaBaseFieldComponent.updateItemByFormFieldsOld(field.extra.fields, group, item);
   }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { MiaField } from '../../entities/mia-field';
 import { MiaBaseFieldComponent } from '../base-field.component';
 
@@ -10,7 +10,7 @@ import { MiaBaseFieldComponent } from '../base-field.component';
 })
 export class SizeRadioFieldComponent extends MiaBaseFieldComponent implements OnInit {
 
-  inputCustom!: FormControl;
+  inputCustom!: UntypedFormControl;
 
   constructor() {
     super();
@@ -31,7 +31,7 @@ export class SizeRadioFieldComponent extends MiaBaseFieldComponent implements On
 
   createFormControl() {
     // Create Control
-    this.input = new FormControl();
+    this.input = new UntypedFormControl();
     // Config validators
     if(this.field.validators != undefined && this.field.validators.length > 0){
         this.input.setValidators(this.field.validators);
@@ -40,12 +40,12 @@ export class SizeRadioFieldComponent extends MiaBaseFieldComponent implements On
     this.group.addControl(this.field.key, this.input);
 
     // Create Control
-    this.inputCustom = new FormControl();
+    this.inputCustom = new UntypedFormControl();
     // Add in Group
     this.group.addControl(this.field.extra.key_custom, this.inputCustom);
   }
 
-  static updateValuesByItem(group: FormGroup, item: any, field: MiaField) {
+  static updateValuesByItem(group: UntypedFormGroup, item: any, field: MiaField) {
     if(item[field.key] == undefined && field.extra && field.extra.default_value){
       group.get(field.key)?.setValue(field.extra.default_value);
     } else {
@@ -55,7 +55,7 @@ export class SizeRadioFieldComponent extends MiaBaseFieldComponent implements On
     group.get(field.extra.key_custom)?.setValue(item[field.extra.key_custom]);
   }
 
-  static updateItemByFormField(group: FormGroup, item: any, field: MiaField) {
+  static updateItemByFormField(group: UntypedFormGroup, item: any, field: MiaField) {
     item[field.key] = group.get(field.key)?.value;
     item[field.extra.key_custom] = group.get(field.extra.key_custom)?.value;
   }

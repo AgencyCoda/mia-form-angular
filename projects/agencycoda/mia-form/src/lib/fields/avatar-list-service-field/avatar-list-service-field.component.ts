@@ -1,6 +1,6 @@
 import { MiaBaseCrudHttpService, MiaQuery } from '@agencycoda/mia-core';
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { FormArray, FormControl } from '@angular/forms';
+import { UntypedFormArray, UntypedFormControl } from '@angular/forms';
 import { SelectServiceFieldComponent } from '../select-service-field/select-service-field.component';
 
 @Component({
@@ -10,7 +10,7 @@ import { SelectServiceFieldComponent } from '../select-service-field/select-serv
 })
 export class AvatarListServiceFieldComponent extends SelectServiceFieldComponent implements OnInit {
 
-  inputList!: FormArray;
+  inputList!: UntypedFormArray;
 
   itemsFiltered: Array<any> = [];
 
@@ -43,7 +43,7 @@ export class AvatarListServiceFieldComponent extends SelectServiceFieldComponent
   }
 
   onClickAdd(item: any) {
-    let control = new FormControl();
+    let control = new UntypedFormControl();
     control.setValue(item);
     this.inputList.push(control);
     this.input.setValue('');
@@ -77,9 +77,9 @@ export class AvatarListServiceFieldComponent extends SelectServiceFieldComponent
 
   createFormControl() {
     // Create Control
-    this.input = new FormControl();
+    this.input = new UntypedFormControl();
     // Create Control
-    this.inputList = new FormArray([]);
+    this.inputList = new UntypedFormArray([]);
     // Add in Group
     this.group.addControl(this.field.key, this.inputList);
   }

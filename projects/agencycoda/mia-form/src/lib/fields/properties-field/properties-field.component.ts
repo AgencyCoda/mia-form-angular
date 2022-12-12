@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { MiaBaseFieldComponent } from '../base-field.component';
 import { MiaField } from '../../entities/mia-field';
 
@@ -16,12 +16,12 @@ export class PropertiesFieldComponent extends MiaBaseFieldComponent {
 
   createFormControl() {
     // Create Control
-    this.input = new FormControl();
+    this.input = new UntypedFormControl();
     // Add in Group
     this.group.addControl(this.field.key, this.input);
   }
 
-  static updateValuesByItem(group: FormGroup, item: any, field: MiaField) {
+  static updateValuesByItem(group: UntypedFormGroup, item: any, field: MiaField) {
     let elements = (group.get(field.key)?.value == undefined || group.get(field.key)?.value.length == 0) ? field.extra.elements : group.get(field.key)?.value;
     if(elements.length <= 0){
       return;
@@ -40,7 +40,7 @@ export class PropertiesFieldComponent extends MiaBaseFieldComponent {
     element.val = values.find(i => i.type == element.type)?.val ?? '';
   }
 
-  static updateItemByFormField(group: FormGroup, item: any, field: MiaField) {
+  static updateItemByFormField(group: UntypedFormGroup, item: any, field: MiaField) {
     item[field.key] = group.get(field.key)?.value;
   }
 }

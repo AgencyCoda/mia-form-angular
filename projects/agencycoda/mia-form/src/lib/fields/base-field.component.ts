@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from "@angular/core";
-import { FormControl, FormGroup } from "@angular/forms";
+import { UntypedFormControl, UntypedFormGroup } from "@angular/forms";
 import { MiaField } from "../entities/mia-field";
 import * as moment from 'moment';
-import { FormArray } from "@angular/forms";
+import { UntypedFormArray } from "@angular/forms";
 
 @Component({
     selector: 'mia-base-field',
@@ -10,12 +10,12 @@ import { FormArray } from "@angular/forms";
 })
 export class MiaBaseFieldComponent implements OnInit {
 
-    @Input() group!: FormGroup;
+    @Input() group!: UntypedFormGroup;
     @Input() field!: MiaField;
     //@Input() column: MiaColumn = new MiaColumn();
     //@Input() item: any;
 
-    input!: FormControl;
+    input!: UntypedFormControl;
 
     constructor() {
         
@@ -27,7 +27,7 @@ export class MiaBaseFieldComponent implements OnInit {
 
     createFormControl() {
         // Create Control
-        this.input = new FormControl();
+        this.input = new UntypedFormControl();
         // Config validators
         if(this.field.validators != undefined && this.field.validators.length > 0){
             this.input.setValidators(this.field.validators);
@@ -67,17 +67,17 @@ export class MiaBaseFieldComponent implements OnInit {
         return 'standard';
       }
 
-  static updateValuesByItem(group: FormGroup, item: any, field: MiaField) {
+  static updateValuesByItem(group: UntypedFormGroup, item: any, field: MiaField) {
     group.get(field.key)?.setValue(item[field.key]);
   }
 
-  static updateValuesByItemFieldsOld(fields: Array<MiaField>, group: FormGroup, item: any) {
+  static updateValuesByItemFieldsOld(fields: Array<MiaField>, group: UntypedFormGroup, item: any) {
     for (const field of fields) {
       MiaBaseFieldComponent.updateValuesByItemFieldOld(field, group, item);
     }
   }
 
-  static updateValuesByItemFieldOld(field: MiaField, group: FormGroup, item: any) {
+  static updateValuesByItemFieldOld(field: MiaField, group: UntypedFormGroup, item: any) {
     if(field.type == 'label'){
       return;
     }
@@ -92,7 +92,7 @@ export class MiaBaseFieldComponent implements OnInit {
     if(control == undefined || item[field.key] == undefined){
       return;
     }
-    if(control instanceof FormArray){
+    if(control instanceof UntypedFormArray){
       MiaBaseFieldComponent.updateValuesByItemInFormArrayOld(control, field.key, item);
       return;
     }
@@ -111,31 +111,31 @@ export class MiaBaseFieldComponent implements OnInit {
     }
   }
 
-  static updateValuesByItemInFormArrayOld(group: FormArray, key: string, item: any) {
+  static updateValuesByItemInFormArrayOld(group: UntypedFormArray, key: string, item: any) {
     for (const it of item[key]) {
       MiaBaseFieldComponent.createFormControlAndAddOld(it, group);
     }
   }
 
-  static createFormControlAndAddOld(item: any, group: FormArray) {
+  static createFormControlAndAddOld(item: any, group: UntypedFormArray) {
     // Create Control
-    let input = new FormControl();
+    let input = new UntypedFormControl();
     input.setValue(item);
     // Add in Group
     group.push(input);
   }
 
-  static updateItemByFormField(group: FormGroup, item: any, field: MiaField) {
+  static updateItemByFormField(group: UntypedFormGroup, item: any, field: MiaField) {
     item[field.key] = group.get(field.key)?.value;
   }
 
-  static updateItemByFormFieldsOld(fields: Array<MiaField>, group: FormGroup, item: any) {
+  static updateItemByFormFieldsOld(fields: Array<MiaField>, group: UntypedFormGroup, item: any) {
     for (const field of fields) {
       MiaBaseFieldComponent.updateItemByFormFieldOld(group, item, field);
     }
   }
 
-  static updateItemByFormFieldOld(group: FormGroup, item: any, field: MiaField) {
+  static updateItemByFormFieldOld(group: UntypedFormGroup, item: any, field: MiaField) {
     if(field.type == 'label'){
       return;
     }

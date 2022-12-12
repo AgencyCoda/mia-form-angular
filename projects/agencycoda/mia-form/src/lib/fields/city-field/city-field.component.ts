@@ -1,6 +1,6 @@
 import { MiaBaseHttpService } from '@agencycoda/mia-core';
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { MiaBaseFieldComponent } from '../base-field.component';
 
 @Component({
@@ -12,10 +12,10 @@ export class CityFieldComponent extends MiaBaseFieldComponent implements OnInit 
 
   data = new Array<any>();
 
-  country!: FormControl;
+  country!: UntypedFormControl;
   countrySelected: any;
 
-  state!: FormControl;
+  state!: UntypedFormControl;
   stateSelected: any;
 
   constructor(
@@ -32,8 +32,8 @@ export class CityFieldComponent extends MiaBaseFieldComponent implements OnInit 
 
   createLocationControls() {
     // Create Control
-    this.country = new FormControl();
-    this.state = new FormControl();
+    this.country = new UntypedFormControl();
+    this.state = new UntypedFormControl();
 
     this.country.valueChanges.subscribe(result => this.countrySelected = result);
     this.state.valueChanges.subscribe(result => this.stateSelected = result);

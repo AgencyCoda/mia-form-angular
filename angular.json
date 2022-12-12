@@ -247,6 +247,5 @@
     }},
   "cli": {
     "analytics": "96483828-2ce5-4766-b76f-bb78064aec76"
-  },
-  "defaultProject": "@agencycoda/mia-form"
+  }
 }

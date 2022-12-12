@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EmailValidator, FormControl, Validators } from '@angular/forms';
+import { EmailValidator, UntypedFormControl, Validators } from '@angular/forms';
 import { MiaBaseFieldComponent } from '../base-field.component';
 
 @Component({
@@ -15,7 +15,7 @@ export class EmailFieldComponent extends MiaBaseFieldComponent implements OnInit
 
   createFormControl() {
     // Create Control
-    this.input = new FormControl();
+    this.input = new UntypedFormControl();
     // Config validator
     this.input.setValidators([Validators.email]);
     // If include default value

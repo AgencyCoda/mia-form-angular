@@ -1,6 +1,6 @@
 import { nil } from '@agencycoda/mia-core';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormArray, FormControl } from '@angular/forms';
+import { UntypedFormArray, UntypedFormControl } from '@angular/forms';
 import { MatSelectionList, MatSelectionListChange } from '@angular/material/list';
 import { Subject } from 'rxjs';
 import { MiaBaseFieldComponent } from '../base-field.component';
@@ -14,7 +14,7 @@ export class ChipsAndSelectFieldComponent extends MiaBaseFieldComponent implemen
 
   @ViewChild('selectionList') selectionList!: MatSelectionList;
 
-  inputList!: FormArray;
+  inputList!: UntypedFormArray;
 
   optionsFiltered = new Array<any>();
 
@@ -56,7 +56,7 @@ export class ChipsAndSelectFieldComponent extends MiaBaseFieldComponent implemen
         continue;
       }
 
-      let control = new FormControl();
+      let control = new UntypedFormControl();
       control.setValue(opt);
       this.inputList.push(control);
 
@@ -84,9 +84,9 @@ export class ChipsAndSelectFieldComponent extends MiaBaseFieldComponent implemen
 
   createFormControl() {
     // Create Control
-    this.input = new FormControl();
+    this.input = new UntypedFormControl();
     // Create Control
-    this.inputList = new FormArray([]);
+    this.inputList = new UntypedFormArray([]);
     // Add in Group
     this.group.addControl(this.field.key, this.inputList);
   }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MiaBaseFieldComponent } from '../base-field.component';
-import { FormGroup } from '@angular/forms';
+import { UntypedFormGroup } from '@angular/forms';
 import { MiaField } from '../../entities/mia-field';
 
 @Component({
@@ -18,13 +18,13 @@ export class TabsFieldComponent extends MiaBaseFieldComponent implements OnInit 
     
   }
 
-  static updateValuesByItem(group: FormGroup, item: any, field: MiaField) {
+  static updateValuesByItem(group: UntypedFormGroup, item: any, field: MiaField) {
     for (const tab of field.extra.tabs) {
       MiaBaseFieldComponent.updateValuesByItemFieldsOld(tab.fields, group, item);
     }
   }
 
-  static updateItemByFormField(group: FormGroup, item: any, field: MiaField) {
+  static updateItemByFormField(group: UntypedFormGroup, item: any, field: MiaField) {
     for (const tab of field.extra.tabs) {
       MiaBaseFieldComponent.updateItemByFormFieldsOld(tab.fields, group, item);
     }

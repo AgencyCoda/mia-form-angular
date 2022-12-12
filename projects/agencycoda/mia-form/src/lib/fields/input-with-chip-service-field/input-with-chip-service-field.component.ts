@@ -5,7 +5,7 @@ import { map, startWith, switchMap } from 'rxjs/operators';
 import { MiaBaseFieldComponent } from '../base-field.component';
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
 import { MatChipInputEvent } from '@angular/material/chips';
-import { FormArray, FormControl } from '@angular/forms';
+import { UntypedFormArray, UntypedFormControl } from '@angular/forms';
 import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 
 @Component({
@@ -19,7 +19,7 @@ export class InputWithChipServiceFieldComponent extends MiaBaseFieldComponent im
 
   separatorKeysCodes: number[] = [ENTER, COMMA];
 
-  inputList!: FormArray;
+  inputList!: UntypedFormArray;
 
   @ViewChild('chipInput') chipInput!: ElementRef<HTMLInputElement>;
 
@@ -91,9 +91,9 @@ export class InputWithChipServiceFieldComponent extends MiaBaseFieldComponent im
 
   createFormControl() {
     // Create Control
-    this.input = new FormControl();
+    this.input = new UntypedFormControl();
     // Create Control
-    this.inputList = new FormArray([]);
+    this.inputList = new UntypedFormArray([]);
     // Add in Group
     this.group.addControl(this.field.key, this.inputList);
   }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { UntypedFormGroup } from '@angular/forms';
 import { MiaField } from '../../entities/mia-field';
 import { MiaBaseFieldComponent } from '../base-field.component';
 
@@ -14,11 +14,11 @@ export class SwitchFieldComponent extends MiaBaseFieldComponent implements OnIni
     super();
   }
 
-  static updateValuesByItem(group: FormGroup, item: any, field: MiaField) {
+  static updateValuesByItem(group: UntypedFormGroup, item: any, field: MiaField) {
     group.get(field.key)?.setValue(item[field.key] == 1 ? true : false);
   }
 
-  static updateItemByFormField(group: FormGroup, item: any, field: MiaField) {
+  static updateItemByFormField(group: UntypedFormGroup, item: any, field: MiaField) {
     item[field.key] = group.get(field.key)?.value == true ? 1 : 0;
   }
 }

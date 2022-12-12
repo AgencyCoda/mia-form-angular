@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { UntypedFormGroup } from '@angular/forms';
 import { MiaField } from '../../entities/mia-field';
 
 @Component({
@@ -10,7 +10,7 @@ import { MiaField } from '../../entities/mia-field';
 export class MiaPrintFieldsComponent implements OnInit {
 
   @Input() fields: Array<MiaField> = [];
-  @Input() group!: FormGroup;
+  @Input() group!: UntypedFormGroup;
 
   constructor() { }
 

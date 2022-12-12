@@ -5,7 +5,7 @@ import { MatSelectChange } from '@angular/material/select';
 import { MiaFilterBoxConfig } from '../../entities/mia-filter-box-config';
 import { MiaFilterSelected, MiaFilterType } from '../../entities/mia-filter-type';
 import * as moment from 'moment';
-import { FormControl, FormGroup } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 
 @Component({
   selector: 'mia-filter-box',
@@ -36,9 +36,9 @@ export class MiaFilterBoxComponent implements OnInit {
    */
   hasChange = false;
 
-  range = new FormGroup({
-    start: new FormControl(),
-    end: new FormControl()
+  range = new UntypedFormGroup({
+    start: new UntypedFormControl(),
+    end: new UntypedFormControl()
   });
 
   constructor() { }
