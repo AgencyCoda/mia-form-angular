@@ -1,9 +1,9 @@
 {
   "name": "@agencycoda/mia-form-google-places-field",
-  "version": "14.2.0",
+  "version": "15.0.0",
   "peerDependencies": {
-    "@angular/common": "^14.2.0",
-    "@angular/core": "^14.2.0"
+    "@angular/common": "^15.0.0",
+    "@angular/core": "^15.0.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"
