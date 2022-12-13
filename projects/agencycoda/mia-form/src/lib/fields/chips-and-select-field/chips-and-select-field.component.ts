@@ -1,7 +1,7 @@
 import { nil } from '@agencycoda/mia-core';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { UntypedFormArray, UntypedFormControl } from '@angular/forms';
-import { MatLegacySelectionList as MatSelectionList, MatLegacySelectionListChange as MatSelectionListChange } from '@angular/material/legacy-list';
+import { MatSelectionList, MatSelectionListChange } from '@angular/material/list';
 import { Subject } from 'rxjs';
 import { MiaBaseFieldComponent } from '../base-field.component';
 

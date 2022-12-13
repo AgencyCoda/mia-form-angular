@@ -1,5 +1,5 @@
 import { ValidatorFn } from "@angular/forms";
-import { MatLegacyFormFieldAppearance as MatFormFieldAppearance } from "@angular/material/legacy-form-field";
+import { MatFormFieldAppearance } from "@angular/material/form-field";
 
 export class MiaField {
 

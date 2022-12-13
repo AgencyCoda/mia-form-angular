@@ -3,7 +3,7 @@ import { MiaField } from '../../entities/mia-field';
 import { MiaFormComponent } from '../../components/mia-form/mia-form.component';
 import { Subject } from 'rxjs';
 import { MiaFormConfig } from '../../entities/mia-form-config';
-import { MatLegacyDialogRef as MatDialogRef, MAT_LEGACY_DIALOG_DATA as MAT_DIALOG_DATA } from '@angular/material/legacy-dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 export class MiaFormWizardConfig {
   service: any;
