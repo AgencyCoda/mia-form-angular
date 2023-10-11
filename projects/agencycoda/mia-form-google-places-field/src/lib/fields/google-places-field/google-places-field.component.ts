@@ -1,8 +1,8 @@
-import { MiaBaseFieldComponent, MiaField } from '@agencycoda/mia-form';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { MiaBaseFieldComponent } from 'projects/agencycoda/mia-form/src/lib/fields/base-field.component'
+import { Component, ViewChild } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
-import { GooglePlaceDirective } from 'ngx-google-places-autocomplete';
-import { Address } from 'ngx-google-places-autocomplete/objects/address';
+import { MiaField } from 'projects/agencycoda/mia-form/src/public-api';
+import { NgxGpAutocompleteDirective } from '@angular-magic/ngx-gp-autocomplete';
 
 @Component({
   selector: 'mia-google-places-field',
@@ -11,7 +11,7 @@ import { Address } from 'ngx-google-places-autocomplete/objects/address';
 })
 export class GooglePlacesFieldComponent extends MiaBaseFieldComponent {
 
-  @ViewChild("placesRef") placesRef!: GooglePlaceDirective;
+  @ViewChild('ngxPlaces') placesRef!: NgxGpAutocompleteDirective;
 
   inputMaps: UntypedFormControl = new UntypedFormControl();
   inputLatitude!: UntypedFormControl;
@@ -21,11 +21,14 @@ export class GooglePlacesFieldComponent extends MiaBaseFieldComponent {
     super();
   }
 
-  handleAddressChange(address: Address) {
-    this.input.setValue(address.name);
-    this.inputLatitude.setValue(address.geometry.location.lat());
-    this.inputLongitude.setValue(address.geometry.location.lng());
-  }
+  handleAddressChange(place: google.maps.places.PlaceResult) {
+    this.input.setValue(place.name);
+
+    if (place.geometry && place.geometry.location) {
+        this.inputLatitude.setValue(place.geometry.location.lat());
+        this.inputLongitude.setValue(place.geometry.location.lng());
+    }
+}
 
   createFormControl() {
     // Create Control

@@ -11,9 +11,10 @@ import { ExampleCustomFieldComponent } from './fields/example-custom-field/examp
 import { MIA_GOOGLE_STORAGE_PROVIDER } from '@agencycoda/mia-core';
 import { MatButtonModule } from '@angular/material/button';
 import { MiaFormGooglePlacesFieldModule } from 'projects/agencycoda/mia-form-google-places-field/src/public-api';
-import { GooglePlaceModule } from 'ngx-google-places-autocomplete';
 import { MiaPhoneFieldModule } from 'projects/agencycoda/mia-phone-field/src/public-api';
 import { MiaCurrencyFieldModule } from 'projects/agencycoda/mia-currency-field/src/public-api';
+import { NgxGpAutocompleteModule } from '@angular-magic/ngx-gp-autocomplete';
+import { Loader } from '@googlemaps/js-api-loader';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { MiaCurrencyFieldModule } from 'projects/agencycoda/mia-currency-field/s
     HttpClientModule,
     MiaFormModule,
     MiaFormGooglePlacesFieldModule,
+    NgxGpAutocompleteModule,
     QuillModule.forRoot(),
     BrowserAnimationsModule,
     MatButtonModule,
@@ -38,7 +40,14 @@ import { MiaCurrencyFieldModule } from 'projects/agencycoda/mia-currency-field/s
       useValue: {
         bucket: 'yoypr-files'
       }
-    }
+    },
+    {
+      provide: Loader,
+      useValue: new Loader({
+        apiKey: 'putYourApiKeyHere',
+        libraries: ['places']
+      })
+    },
   ],
   bootstrap: [AppComponent]
 })

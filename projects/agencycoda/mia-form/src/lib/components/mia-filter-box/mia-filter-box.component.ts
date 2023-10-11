@@ -28,7 +28,7 @@ export class MiaFilterBoxComponent implements OnInit {
   /**
    * andOrType: 0 = AND, 1 = OR
    * conditional: 0 = Is, 1 = Is not, 2 = Is set (Si tiene valor), 3 = Is not Set (si no tiene valor)
-   * 
+   *
    */
   actives: Array<MiaFilterSelected> = [];
   /**
@@ -44,7 +44,7 @@ export class MiaFilterBoxComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    
+
   }
 
   onApplyFilters() {
@@ -131,7 +131,7 @@ export class MiaFilterBoxComponent implements OnInit {
     }
 
     let service: MiaBaseCrudHttpService<any> = filter.extra.service;
-    service.listOb(filter.extra.query).subscribe(result => {
+    service.list(filter.extra.query).subscribe(result => {
       filter.options = result.data;
     });
   }
@@ -200,7 +200,7 @@ export class MiaFilterBoxComponent implements OnInit {
       field.value.end = undefined;
       return;
     }
-    
+
     this.onFilterRange(field, this.range.value.start, this.range.value.end);
   }
 

@@ -39,7 +39,7 @@ export class ChipsAndSelectServiceFieldComponent extends ChipsAndSelectFieldComp
 
   configOptions() {
     let service: MiaBaseCrudHttpService<any> = this.field.extra.service;
-    service.listOb(this.field.extra.query).subscribe(result => {
+    service.list(this.field.extra.query).subscribe(result => {
       this.processOptions(result.data);
     });
   }

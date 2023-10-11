@@ -68,7 +68,7 @@ export class AvatarListServiceFieldComponent extends SelectServiceFieldComponent
     let query: MiaQuery = this.field.extra.query;
     query.itemPerPage = 5000;
     let service: MiaBaseCrudHttpService<any> = this.field.extra.service;
-    service.list(query).then(result => {
+    service.list(query).subscribe(result => {
       this.items = result.data;
       this.itemsFiltered = result.data;
       this.changeDetector.detectChanges();

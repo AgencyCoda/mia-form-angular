@@ -20,7 +20,7 @@ export class CityFieldComponent extends MiaBaseFieldComponent implements OnInit 
 
   constructor(
     protected baseService: MiaBaseHttpService
-  ) { 
+  ) {
     super();
   }
 
@@ -67,7 +67,7 @@ export class CityFieldComponent extends MiaBaseFieldComponent implements OnInit 
   }
 
   loadData() {
-    this.baseService.get<Array<any>>(this.field.extra.basePath + 'mia-location/all-data').then(result => {
+    this.baseService.get<Array<any>>(this.field.extra.basePath + 'mia-location/all-data').subscribe(result => {
       this.data = result;
       this.processInitValue();
     });

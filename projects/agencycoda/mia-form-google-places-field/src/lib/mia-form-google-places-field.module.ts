@@ -3,8 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { GooglePlaceModule } from 'ngx-google-places-autocomplete';
 import { GooglePlacesFieldComponent } from './fields/google-places-field/google-places-field.component';
+import { NgxGpAutocompleteModule } from '@angular-magic/ngx-gp-autocomplete';
 
 
 
@@ -16,14 +16,14 @@ import { GooglePlacesFieldComponent } from './fields/google-places-field/google-
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    GooglePlaceModule,
+    NgxGpAutocompleteModule,
     /** MATERIAL */
     MatFormFieldModule,
     MatInputModule,
   ],
   exports: [
     GooglePlacesFieldComponent,
-    GooglePlaceModule
+    NgxGpAutocompleteModule,
   ]
 })
 export class MiaFormGooglePlacesFieldModule { }

@@ -39,7 +39,7 @@ export class InputWithChipServiceFieldComponent extends MiaBaseFieldComponent im
         let query: MiaQuery = this.field.extra.query;
         query.search = value;
         let service: MiaBaseCrudHttpService<any> = this.field.extra.service;
-        return service.listOb(query);
+        return service.list(query);
       }),
       map(result => {
         return result.data;

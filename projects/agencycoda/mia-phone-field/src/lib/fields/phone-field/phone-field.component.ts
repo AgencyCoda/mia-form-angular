@@ -1,4 +1,4 @@
-import { MiaBaseFieldComponent } from '@agencycoda/mia-form';
+import { MiaBaseFieldComponent } from 'projects/agencycoda/mia-form/src/lib/fields/base-field.component'
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { UntypedFormControl } from '@angular/forms';
 import { SearchCountryField, CountryISO, PhoneNumberFormat, NgxIntlTelInputComponent } from 'ngx-intl-tel-input';

@@ -33,7 +33,7 @@ export class SelectServiceFieldComponent extends SelectFieldComponent implements
     let query: MiaQuery = this.field.extra.query;
     query.itemPerPage = 5000;
     let service: MiaBaseCrudHttpService<any> = this.field.extra.service;
-    service.listWithExtras(query, extraParams).then(result => {
+    service.listWithExtras(query, extraParams).subscribe(result => {
       this.items = result.data;
       this.changeDetector.detectChanges();
     });

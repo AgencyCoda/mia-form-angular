@@ -1,6 +1,6 @@
 <mat-form-field *ngIf="input" class="{{ field.classes }}" [appearance]="getAppearance()">
     <mat-label>{{ (field.extra.lang && field.extra.lang == 'es') ? 'Buscar información en Google Maps' : 'Search info in Google Maps' }}</mat-label>
-    <input matInput #placesRef="ngx-places" ngx-google-places-autocomplete type="text" (onAddressChange)="handleAddressChange($event)" [formControl]="inputMaps" [disabled]="field.isDisabled ? field.isDisabled : false" autocomplete="off" />
+    <input matInput #ngxPlaces="ngx-places" ngx-gp-autocomplete type="text" (onAddressChange)="handleAddressChange($event)" [formControl]="inputMaps" [disabled]="field.isDisabled ? field.isDisabled : false" autocomplete="off" />
 </mat-form-field>
 
 <mat-form-field *ngIf="input" class="{{ field.classes }}" [appearance]="getAppearance()">
