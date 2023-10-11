@@ -1,7 +1,6 @@
-import { MiaBaseFieldComponent } from 'projects/agencycoda/mia-form/src/lib/fields/base-field.component'
+import { MiaBaseFieldComponent, MiaField } from '@agencycoda/mia-form';
 import { Component, ViewChild } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
-import { MiaField } from 'projects/agencycoda/mia-form/src/public-api';
 import { NgxGpAutocompleteDirective } from '@angular-magic/ngx-gp-autocomplete';
 
 @Component({

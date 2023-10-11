@@ -1,4 +1,4 @@
-import { MiaBaseFieldComponent } from 'projects/agencycoda/mia-form/src/lib/fields/base-field.component'
+import { MiaBaseFieldComponent } from '@agencycoda/mia-form';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
