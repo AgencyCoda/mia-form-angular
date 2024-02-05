@@ -1,7 +1,6 @@
-import { MiaBaseCrudHttpService } from '@agencycoda/mia-core';
 import { Component, Inject, OnInit, ViewChild } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { Observable, Subject } from 'rxjs';
+import { Observable, Subject, take } from 'rxjs';
 import { MiaFormComponent } from '../../components/mia-form/mia-form.component';
 import { MiaFormConfig } from '../../entities/mia-form-config';
 
@@ -51,11 +50,13 @@ export class MiaFormModalComponent implements OnInit {
   }
 
   processWithBaseService(item: any) {
-    let serviceSave: Promise<any> = this.data.service.save(item);
-    serviceSave.then(result => {
+    let serviceSave = this.data.service.save(item);
+    serviceSave.pipe(
+      take(1)
+    ).subscribe((result: any) => {
       this.dialogRef.close(result);
       this.isSending = false;
-    }).catch(error => {
+    }, (error: any) => {
       if(error.error && error.error.message){
         this.errorMessage = error.error.message;
       } else if (error.message) {

@@ -9,17 +9,10 @@ import { UntypedFormArray } from "@angular/forms";
     template: ''
 })
 export class MiaBaseFieldComponent implements OnInit {
-
     @Input() group!: UntypedFormGroup;
     @Input() field!: MiaField;
-    //@Input() column: MiaColumn = new MiaColumn();
-    //@Input() item: any;
 
     input!: UntypedFormControl;
-
-    constructor() {
-        
-    }
 
     ngOnInit(): void {
         this.createFormControl();
@@ -44,11 +37,11 @@ export class MiaBaseFieldComponent implements OnInit {
         if(key == undefined){
           return '';
         }
-  
+
         if (typeof key == 'string' && item[key] != undefined) {
           return item[key];
         }
-  
+
         let valueFinal = item;
         for (const keyObj of key!) {
           if(valueFinal[keyObj] == undefined){
@@ -63,8 +56,8 @@ export class MiaBaseFieldComponent implements OnInit {
         if(this.field.extra && this.field.extra.appearance){
           return this.field.extra.appearance;
         }
-    
-        return 'standard';
+
+        return 'outline';
       }
 
   static updateValuesByItem(group: UntypedFormGroup, item: any, field: MiaField) {
@@ -88,7 +81,7 @@ export class MiaBaseFieldComponent implements OnInit {
         field.extra.component.updateValuesByItem(group, item, field);
       }
       return;
-    } 
+    }
     if(control == undefined || item[field.key] == undefined){
       return;
     }
@@ -147,7 +140,7 @@ export class MiaBaseFieldComponent implements OnInit {
         field.extra.component.updateItemByFormField(group, item, field);
       }
       return;
-    } 
+    }
     if(control == undefined){
       return;
     }
