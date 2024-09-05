@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { MiaBaseFieldComponent } from '../base-field.component';
 import * as moment from 'moment';
 
@@ -13,14 +13,14 @@ export class EventFieldComponent extends MiaBaseFieldComponent implements OnInit
   isFirstLoad = true;
   isFirstLoadEnd = true;
 
-  internalStartDate = new FormControl(moment());
-  internalStartHour = new FormControl('00:00');
-  internalEndDate = new FormControl();
-  internalEndHour = new FormControl('00:00');
+  internalStartDate = new UntypedFormControl(moment());
+  internalStartHour = new UntypedFormControl('00:00');
+  internalEndDate = new UntypedFormControl();
+  internalEndHour = new UntypedFormControl('00:00');
 
   hours = new Array<any>();
 
-  inputEnd = new FormControl();
+  inputEnd = new UntypedFormControl();
 
   hour:string[] = [moment().format('HH'), moment().format('mm')];
 
@@ -35,7 +35,7 @@ export class EventFieldComponent extends MiaBaseFieldComponent implements OnInit
 
   createFormControl() {
     // Create Control
-    this.input = new FormControl();
+    this.input = new UntypedFormControl();
     // Add in Group
     this.group.addControl(this.field.key, this.input);
     // Add in Group

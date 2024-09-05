@@ -1,5 +1,5 @@
 import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { UntypedFormGroup } from '@angular/forms';
 import { Observable, of } from 'rxjs';
 import { MiaFormConfig } from '../../entities/mia-form-config';
 import { MiaFormService } from '../../mia-form.service';
@@ -17,7 +17,7 @@ export class MiaFormComponent implements OnInit, AfterViewInit {
 
   @Output() save = new EventEmitter<any>();
 
-  group: FormGroup = new FormGroup({});
+  group: UntypedFormGroup = new UntypedFormGroup({});
 
   constructor(
     protected changeDetector: ChangeDetectorRef,

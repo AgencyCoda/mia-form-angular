@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormControl } from '@angular/forms';
+import { UntypedFormArray, UntypedFormControl } from '@angular/forms';
 import { MiaBaseFieldComponent } from '../base-field.component';
 
 @Component({
@@ -9,20 +9,20 @@ import { MiaBaseFieldComponent } from '../base-field.component';
 })
 export class ListStringFieldComponent extends MiaBaseFieldComponent implements OnInit {
 
-  inputList!: FormArray;
+  inputList!: UntypedFormArray;
 
   constructor() {
     super();
   }
 
   onClickAdd() {
-    let control = new FormControl();
+    let control = new UntypedFormControl();
     control.setValue('');
     this.inputList.push(control);
   }
 
-  getControlByIndex(index: number): FormControl {
-    return this.inputList.controls[index] as FormControl;
+  getControlByIndex(index: number): UntypedFormControl {
+    return this.inputList.controls[index] as UntypedFormControl;
   }
 
   onClickRemove(index: number) {
@@ -31,9 +31,9 @@ export class ListStringFieldComponent extends MiaBaseFieldComponent implements O
 
   createFormControl() {
     // Create Control
-    this.input = new FormControl();
+    this.input = new UntypedFormControl();
     // Create Control
-    this.inputList = new FormArray([]);
+    this.inputList = new UntypedFormArray([]);
     // Add in Group
     this.group.addControl(this.field.key, this.inputList);
   }

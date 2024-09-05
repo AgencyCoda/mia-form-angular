@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { MiaField } from '../../entities/mia-field';
 import { MiaBaseFieldComponent } from '../base-field.component';
 
@@ -10,12 +10,12 @@ import { MiaBaseFieldComponent } from '../base-field.component';
 })
 export class PositionFieldComponent extends MiaBaseFieldComponent implements OnInit {
 
-  inputGroup!: FormGroup;
+  inputGroup!: UntypedFormGroup;
 
-  inputTop!: FormControl;
-  inputRight!: FormControl;
-  inputBottom!: FormControl;
-  inputLeft!: FormControl;
+  inputTop!: UntypedFormControl;
+  inputRight!: UntypedFormControl;
+  inputBottom!: UntypedFormControl;
+  inputLeft!: UntypedFormControl;
 
   constructor() {
     super();
@@ -23,13 +23,13 @@ export class PositionFieldComponent extends MiaBaseFieldComponent implements OnI
 
   createFormControl() {
     // Create inputs
-    this.inputTop = new FormControl();
-    this.inputRight = new FormControl();
-    this.inputBottom = new FormControl();
-    this.inputLeft = new FormControl();
+    this.inputTop = new UntypedFormControl();
+    this.inputRight = new UntypedFormControl();
+    this.inputBottom = new UntypedFormControl();
+    this.inputLeft = new UntypedFormControl();
 
     // Create Group
-    this.inputGroup = new FormGroup({
+    this.inputGroup = new UntypedFormGroup({
       'top': this.inputTop,
       'right': this.inputRight,
       'bottom': this.inputBottom,
@@ -39,11 +39,11 @@ export class PositionFieldComponent extends MiaBaseFieldComponent implements OnI
     this.group.addControl(this.field.key, this.inputGroup);
   }
 
-  static updateValuesByItem(group: FormGroup, item: any, field: MiaField) {
+  static updateValuesByItem(group: UntypedFormGroup, item: any, field: MiaField) {
     group.get(field.key)?.setValue(item[field.key]);
   }
 
-  static updateItemByFormField(group: FormGroup, item: any, field: MiaField) {
+  static updateItemByFormField(group: UntypedFormGroup, item: any, field: MiaField) {
     item[field.key] = group.get(field.key)?.value;
   }
 }

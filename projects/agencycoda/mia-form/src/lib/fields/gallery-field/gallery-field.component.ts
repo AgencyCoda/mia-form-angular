@@ -1,6 +1,6 @@
 import { MiaFile } from '@agencycoda/mia-core';
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormControl } from '@angular/forms';
+import { UntypedFormArray, UntypedFormControl } from '@angular/forms';
 import { MiaBaseFieldComponent } from '../base-field.component';
 
 @Component({
@@ -10,7 +10,7 @@ import { MiaBaseFieldComponent } from '../base-field.component';
 })
 export class GalleryFieldComponent extends MiaBaseFieldComponent implements OnInit {
 
-  inputList!: FormArray;
+  inputList!: UntypedFormArray;
 
   isUploading = false;
 
@@ -19,13 +19,13 @@ export class GalleryFieldComponent extends MiaBaseFieldComponent implements OnIn
   }
 
   onUploadFile(file: MiaFile | any): void {
-    let control = new FormControl();
+    let control = new UntypedFormControl();
     control.setValue({ url: file.url, alt: '', caption: '', name: file.name, size: file.size });
     this.inputList.push(control);
   }
 
-  getControlByIndex(index: number): FormControl {
-    return this.inputList.controls[index] as FormControl;
+  getControlByIndex(index: number): UntypedFormControl {
+    return this.inputList.controls[index] as UntypedFormControl;
   }
 
   onClickRemove(index: number) {
@@ -34,7 +34,7 @@ export class GalleryFieldComponent extends MiaBaseFieldComponent implements OnIn
 
   createFormControl() {
     // Create Control
-    this.inputList = new FormArray([]);
+    this.inputList = new UntypedFormArray([]);
     // Add in Group
     this.group.addControl(this.field.key, this.inputList);
   }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { MiaBaseFieldComponent } from '../base-field.component';
 
 @Component({
@@ -9,8 +9,8 @@ import { MiaBaseFieldComponent } from '../base-field.component';
 })
 export class StringWithColorFieldComponent extends MiaBaseFieldComponent implements OnInit {
 
-  inputColor!: FormControl;
-  inputCustomColor!: FormControl;
+  inputColor!: UntypedFormControl;
+  inputCustomColor!: UntypedFormControl;
 
   colors = ['#ffbdbd', '#f1e3c3', '#fcf8c3', '#daf0bc', '#cdf7cd', '#ccf8e6', '#cee2f8', '#cfc4f7', '#f8d4f8', '#d8d8d8', '#a7a7a7'];
 
@@ -24,7 +24,7 @@ export class StringWithColorFieldComponent extends MiaBaseFieldComponent impleme
 
   createFormControl() {
     // Create Control
-    this.input = new FormControl();
+    this.input = new UntypedFormControl();
     // Config validators
     if(this.field.validators != undefined && this.field.validators.length > 0){
         this.input.setValidators(this.field.validators);
@@ -32,11 +32,11 @@ export class StringWithColorFieldComponent extends MiaBaseFieldComponent impleme
     // Add in Group
     this.group.addControl(this.field.key, this.input);
     // Create control color
-    this.inputColor = new FormControl();
+    this.inputColor = new UntypedFormControl();
     // Add in Group
     this.group.addControl(this.field.extra.key_color, this.inputColor);
     // Create control custom color
-    this.inputCustomColor = new FormControl();
+    this.inputCustomColor = new UntypedFormControl();
     this.inputCustomColor.valueChanges.subscribe(result => {
       if(result){
         this.applyColor(result);

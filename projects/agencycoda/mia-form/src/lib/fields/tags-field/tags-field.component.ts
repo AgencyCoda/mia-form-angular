@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { MatChipInputEvent } from '@angular/material/chips';
 import { MiaBaseFieldComponent } from '../base-field.component';
 
@@ -16,7 +16,7 @@ export class TagsFieldComponent extends MiaBaseFieldComponent implements OnInit 
 
   createFormControl() {
     // Create Control
-    this.input = new FormControl([]);
+    this.input = new UntypedFormControl([]);
     // Config validators
     if(this.field.validators != undefined && this.field.validators.length > 0){
         this.input.setValidators(this.field.validators);

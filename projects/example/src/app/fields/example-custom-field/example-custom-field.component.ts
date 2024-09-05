@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { UntypedFormGroup } from '@angular/forms';
 import { MiaBaseFieldComponent, MiaField } from 'projects/agencycoda/mia-form/src/public-api';
 
 @Component({
@@ -16,12 +16,12 @@ export class ExampleCustomFieldComponent extends MiaBaseFieldComponent implement
   ngOnInit(): void {
   }
 
-  static updateValuesByItem(group: FormGroup, item: any, field: MiaField) {
+  static updateValuesByItem(group: UntypedFormGroup, item: any, field: MiaField) {
     //group.setValue();
     console.log('llego aqui2');
   }
 
-  static updateItemByFormField(group: FormGroup, item: any, field: MiaField) {
+  static updateItemByFormField(group: UntypedFormGroup, item: any, field: MiaField) {
     item['custom_var'] = 'example';
     console.log('llego aqui');
   }
