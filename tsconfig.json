@@ -23,6 +23,13 @@
       "@agencycoda/mia-form": [
         "dist/agencycoda/mia-form/agencycoda-mia-form",
         "dist/agencycoda/mia-form"
+      ],
+      "@angular/*": ["node_modules/@angular/*"],
+      "rxjs": [
+        "node_modules/rxjs"
+      ],
+      "rxjs/*": [
+        "node_modules/rxjs/*"
       ]
     }
   },
