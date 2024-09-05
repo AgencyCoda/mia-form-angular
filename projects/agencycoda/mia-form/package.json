@@ -7,7 +7,6 @@
     "@angular/forms": ">=11.0.9",
     "@angular/material": ">=11.2.9",
     "@angular/material-moment-adapter": ">=11.2.9",
-    "@agencycoda/mia-core": ">=11.0.12",
     "@angular/flex-layout": ">=11.0.0-beta.33 || >=12.0.0-beta.34",
     "moment": "^2.29.1",
     "ngx-quill": "^14.1.2",
