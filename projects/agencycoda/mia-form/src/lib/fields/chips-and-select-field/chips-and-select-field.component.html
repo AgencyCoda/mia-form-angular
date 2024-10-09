@@ -1,13 +1,13 @@
 <div class="add-to-lists-component">
     <h5 *ngIf="field.extra.title"><b> {{ field.extra.title }} </b></h5>
-    <mat-chip-list>
-        <mat-chip *ngFor="let itList of inputList.value; let i = index">
+    <mat-chip-listbox>
+        <mat-chip-option *ngFor="let itList of inputList.value; let i = index">
 
             {{ getFieldValueByKey(itList, field.extra.field_display) }}
             <mat-icon matChipRemove matTooltip="Remove" (click)="onClickRemove(i)">cancel</mat-icon>
-        </mat-chip>
+        </mat-chip-option>
         <button *ngIf="hasOneOption()" mat-button color="primary" [matMenuTriggerFor]="lists">+ Select</button>
-    </mat-chip-list>
+    </mat-chip-listbox>
 </div>
 
 <mat-menu #lists="matMenu" class="mat-menu-list">

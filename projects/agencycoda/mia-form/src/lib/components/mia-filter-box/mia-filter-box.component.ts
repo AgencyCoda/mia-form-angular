@@ -1,6 +1,6 @@
 import { MiaQuery } from '@agencycoda/mia-core';
 import { Component, EventEmitter, Input, OnInit, Output, QueryList, ViewChild, ViewChildren } from '@angular/core';
-import { MatLegacyMenuTrigger as MatMenuTrigger } from '@angular/material/legacy-menu';
+import { MatMenuTrigger } from '@angular/material/menu';
 import { MiaFilterBoxConfig } from '../../entities/mia-filter-box-config';
 import { MiaFilterSelected, MiaFilterType } from '../../entities/mia-filter-type';
 

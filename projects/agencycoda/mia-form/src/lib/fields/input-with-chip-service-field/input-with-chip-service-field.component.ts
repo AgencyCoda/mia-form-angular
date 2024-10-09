@@ -4,9 +4,9 @@ import { Observable } from 'rxjs';
 import { map, startWith, switchMap } from 'rxjs/operators';
 import { MiaBaseFieldComponent } from '../base-field.component';
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
-import { MatLegacyChipInputEvent as MatChipInputEvent } from '@angular/material/legacy-chips';
+import { MatChipInputEvent } from '@angular/material/chips';
 import { UntypedFormArray, UntypedFormControl } from '@angular/forms';
-import { MatLegacyAutocompleteSelectedEvent as MatAutocompleteSelectedEvent } from '@angular/material/legacy-autocomplete';
+import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 
 @Component({
   selector: 'mia-input-with-chip-service-field',

@@ -1,9 +1,9 @@
 import { MiaBaseCrudHttpService } from '@agencycoda/mia-core';
 import { Component, Inject, OnInit, ViewChild } from '@angular/core';
-import { MatLegacyDialogRef as MatDialogRef, MAT_LEGACY_DIALOG_DATA as MAT_DIALOG_DATA } from '@angular/material/legacy-dialog';
 import { Observable, Subject } from 'rxjs';
 import { MiaFormComponent } from '../../components/mia-form/mia-form.component';
 import { MiaFormConfig } from '../../entities/mia-form-config';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 export class MiaFormModalConfig {
   service: any;

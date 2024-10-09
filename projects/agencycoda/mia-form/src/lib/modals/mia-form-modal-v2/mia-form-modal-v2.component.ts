@@ -1,8 +1,8 @@
 import { Component, Inject, OnInit, ViewChild } from '@angular/core';
-import { MatLegacyDialogRef as MatDialogRef, MAT_LEGACY_DIALOG_DATA as MAT_DIALOG_DATA } from '@angular/material/legacy-dialog';
 import { MiaFormConfig } from '../../entities/mia-form-config';
 import { MiaFormComponent } from '../../components/mia-form/mia-form.component';
 import { Subject } from 'rxjs';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 export class MiaFormModalV2Config {
   service: any;
