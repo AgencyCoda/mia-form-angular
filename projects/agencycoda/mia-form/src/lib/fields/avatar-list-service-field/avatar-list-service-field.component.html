@@ -2,20 +2,22 @@
     <mat-label *ngIf="field.label"> {{ field.label }} </mat-label>
 
     <div class="avatar-items-selected">
-        <button *ngFor="let itSel of inputList.value; let index = index" mat-flat-button class="button-avatar-item" (click)="onClickRemove(index)">
+        <button *ngFor="let itSel of inputList.value; let index = index" mat-mini-fab class="button-avatar-item" (click)="onClickRemove(index)">
             <img *ngIf="getAvatar(itSel) != ''" [src]="getAvatar(itSel)" />
-            <span *ngIf="getAvatar(itSel) == ''">{{ getInitials(itSel) }}</span>
+            <span *ngIf="getAvatar(itSel) == ''">{{ getInitials(itSel) }}</span>
         </button>
-        <button mat-flat-button class="add-button-avatar" [matMenuTriggerFor]="addNewAvatar">+</button>
+        <button mat-icon-button class="add-button-avatar" [matMenuTriggerFor]="addNewAvatar">
+            <mat-icon>add</mat-icon>
+        </button>
     </div>
     
 
-    <mat-menu #addNewAvatar="matMenu" class="mat-menu-avatar-list-service" [hasBackdrop]="true" [overlapTrigger]="true">
+    <mat-menu #addNewAvatar="matMenu" class="mat-menu-avatar-list-service">
         <mat-form-field *ngIf="input" (click)="$event.stopPropagation();" (keyup)="applySearch()">
             <input matInput type="text" [formControl]="input" [placeholder]="'Search'" />
         </mat-form-field>
         <div class="items">
-            <div *ngFor="let item of itemsFiltered" class="item" (click)="onClickAdd(item)">
+            <div mat-menu-item *ngFor="let item of itemsFiltered" (click)="onClickAdd(item)">
                 {{ getFieldValueByKey(item, field.extra.field_display) }}
             </div>
         </div>
