@@ -7,9 +7,12 @@ import { MiaBaseFieldComponent } from '../base-field.component';
   styleUrls: ['./string-field.component.scss']
 })
 export class StringFieldComponent extends MiaBaseFieldComponent implements OnInit {
-
   constructor() {
     super();
+
+    if (this.field && this.field.isDisabled) {
+      this.input.disable();
+    }
   }
 
 }
