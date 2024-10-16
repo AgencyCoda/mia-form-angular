@@ -31,7 +31,7 @@ export class HtmlFieldComponent extends MiaBaseFieldComponent implements OnInit 
   }
 
   loadConfig() {
-    if(this.field.extra.height != undefined){
+    if (this.field && this.field.extra && this.field.extra.height != undefined){
       this.heightEditor = this.field.extra.height;
     }
   }

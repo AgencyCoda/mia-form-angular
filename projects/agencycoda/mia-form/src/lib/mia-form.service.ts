@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { UntypedFormArray, UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { MiaField } from './entities/mia-field';
 import { MiaFormConfig } from './entities/mia-form-config';
-import * as moment from 'moment';
 
 @Injectable({
   providedIn: 'root'
@@ -30,35 +29,35 @@ export class MiaFormService {
   }
 
   private updateValuesByItemField(field: MiaField, group: UntypedFormGroup, item: any) {
-    if(field.type == 'label'){
+    if (field.type == 'label') {
       return;
     }
 
     let control = group.controls[field.key];
-    if(field.type == MiaField.TYPE_CUSTOM){
-      if(field.extra.component.updateValuesByItem){
+    if (field.type == MiaField.TYPE_CUSTOM) {
+      if (field.extra.component.updateValuesByItem) {
         field.extra.component.updateValuesByItem(group, item, field);
       }
       return;
-    } 
-    if(control == undefined || item[field.key] == undefined){
+    }
+    if (control == undefined || item[field.key] == undefined) {
       return;
     }
-    if(control instanceof UntypedFormArray){
+    if (control instanceof UntypedFormArray) {
       this.updateValuesByItemInFormArray(control, field.key, item);
       return;
     }
-    if(field.type == 'date'){
-      control.setValue(moment(item[field.key], 'YYYY-MM-DD HH:mm:ss'));
-    } else if(field.type == 'event'){
-      control.setValue(moment(item[field.key], 'YYYY-MM-DD HH:mm:ss'));
-      let controlEnd = group.controls[field.extra.field_end_key];
-      controlEnd.setValue(moment(item[field.extra.field_end_key], 'YYYY-MM-DD HH:mm:ss'));
-    } else if(field.type == MiaField.TYPE_STRING_WITH_COLOR){
+    if (field.type == 'date') {
+      control.setValue(new Date(item[field.key]).toISOString());
+    } else if (field.type == 'event') {
+      control.setValue(new Date(item[field.key]).toISOString());
+      const controlEnd = group.controls[field.extra.field_end_key];
+      controlEnd.setValue(new Date(item[field.extra.field_end_key]).toISOString());
+    } else if (field.type == MiaField.TYPE_STRING_WITH_COLOR) {
       control.setValue(item[field.key]);
-      let controlColor = group.controls[field.extra.key_color];
+      const controlColor = group.controls[field.extra.key_color];
       controlColor.setValue(item[field.extra.key_color]);
-    } else {
+    } else {
       control.setValue(item[field.key]);
     }
   }
@@ -94,7 +93,7 @@ export class MiaFormService {
         field.extra.component.updateItemByFormField(group, item, field);
       }
       return;
-    } 
+    }
     if(control == undefined){
       return;
     }
