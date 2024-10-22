@@ -30,6 +30,7 @@ export class TagsFieldComponent extends MiaBaseFieldComponent implements OnInit 
       let tags = this.input.value;
       tags.push(event.value);
       this.input.setValue(tags);
+      this.input.markAsDirty();
       event.input!.value = '';
     }
   }
@@ -42,5 +43,6 @@ export class TagsFieldComponent extends MiaBaseFieldComponent implements OnInit 
     }
     
     this.input.setValue(tags);
+    this.input.markAsDirty();
   }
 }

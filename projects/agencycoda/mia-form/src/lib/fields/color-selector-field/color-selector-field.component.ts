@@ -14,5 +14,6 @@ export class ColorSelectorFieldComponent  extends MiaBaseFieldComponent implemen
 
   onClickColor(color: string) {
     this.input.setValue(color);
+    this.input.markAsDirty();
   }
 }

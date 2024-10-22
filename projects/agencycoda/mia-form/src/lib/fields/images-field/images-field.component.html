@@ -10,3 +10,5 @@
 
     <input #inputFile type="file" accept="image/png, image/jpeg" style="display: none;" miaFileGoogle (fileUploaded)="onUploadFile($event)" (startUpload)="isUploading = true" (endUpload)="isUploading = false">
 </div>
+
+<mat-error *ngIf="showError">{{ getErrorMessage() }}</mat-error>

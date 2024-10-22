@@ -131,37 +131,4 @@ export class MiaFormService {
     // Add in Group
     group.push(input);
   }
-
-  getErrors(config: MiaFormConfig, group: UntypedFormGroup): Array<string> {
-    let errors: Array<string> = [];
-
-    for (const field of config.fields) {
-      if(field.type == 'label'){
-        continue;
-      }
-
-      let control = group.controls[field.key];
-
-      if(control == undefined || control.errors == undefined){
-        continue;
-      }
-
-      let types = Object.keys(control.errors);
-      for (const type of types) {
-        errors.push(this.getErrorMessage(config, field, type));
-      }
-    }
-
-    return errors;
-  }
-
-  getErrorMessage(config: MiaFormConfig, field: MiaField, key: string): string {
-    for (const error of config.errorMessages!) {
-      if(error.key == key){
-        return error.message.replace('%label%', field.label!);
-      }
-    }
-
-    return '';
-  }
 }

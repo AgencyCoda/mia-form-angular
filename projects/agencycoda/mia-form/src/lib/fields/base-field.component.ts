@@ -57,6 +57,43 @@ export class MiaBaseFieldComponent implements OnInit {
         return valueFinal;
       }
 
+  protected get showError() : boolean {
+    return this.input.invalid && (this.input.dirty || this.input.touched);
+  }
+  protected getErrorMessage() {
+    let errorKey = Object.keys(this.input.errors!)[0];
+
+    switch (errorKey) {
+      case "required" :
+      case "requiredtrue" : {
+        return "Required";
+      }
+      case "minlength" : {
+        const minLength = this.input.errors!.minlength.requiredLength;
+        return `Min ${minLength} ${minLength == 1 ? "character" : "characters"}`;
+      }
+      case "maxlength" : {
+        const maxLength = this.input.errors!.maxlength.requiredLength;
+        return `Max ${maxLength} ${maxLength == 1 ? "character" : "characters"}`;
+      }
+      case "pattern" : {
+        return "Invalid";
+      }
+      case "min" : {
+        return "Min" + this.input.errors!.min.min;
+      }
+      case "max" : {
+        return "Max" + this.input.errors!.max.max;
+      }
+      case "email" : {
+        return "Invalid email";
+      }
+    }
+
+    // Generic failsafe message
+    return "Invalid";
+  }
+
   static updateValuesByItem(group: UntypedFormGroup, item: any, field: MiaField) {
     group.get(field.key)?.setValue(item[field.key]);
   }

@@ -5,4 +5,5 @@
       <input placeholder="New tag..." [matChipInputFor]="chipList" (matChipInputTokenEnd)="addTagFromInput($event)">
     </mat-chip-grid>
     <mat-hint *ngIf="field.caption" [align]="'end'"> {{ field.caption }} </mat-hint>
-  </mat-form-field>
+    <mat-error *ngIf="showError">{{ getErrorMessage() }}</mat-error>
+</mat-form-field>

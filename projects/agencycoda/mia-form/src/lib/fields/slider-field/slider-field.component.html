@@ -9,3 +9,5 @@
         [formControl]="input"><input matSliderThumb />
     </mat-slider>
   </mat-card-content>
+
+<mat-error *ngIf="showError">{{ getErrorMessage() }}</mat-error>

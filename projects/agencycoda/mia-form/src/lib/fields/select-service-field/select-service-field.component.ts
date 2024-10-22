@@ -36,6 +36,7 @@ export class SelectServiceFieldComponent extends SelectFieldComponent implements
       this.items = result.data;
       if(this.items.length > 0 && this.input.value == undefined){
         this.input.setValue(this.items[0].id);
+        this.input.markAsDirty();
       }
       this.changeDetector.detectChanges();
     });
@@ -51,6 +52,7 @@ export class SelectServiceFieldComponent extends SelectFieldComponent implements
       let obj: any = res;
       this.items.push(res);
       this.input.setValue(obj.id);
+      this.input.markAsDirty();
       this.changeDetector.detectChanges();
     });
 

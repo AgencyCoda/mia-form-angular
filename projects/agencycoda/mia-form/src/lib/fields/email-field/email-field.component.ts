@@ -21,6 +21,7 @@ export class EmailFieldComponent extends MiaBaseFieldComponent implements OnInit
     // If include default value
     if(this.field.extra && this.field.extra.default_value){
       this.input.setValue(this.field.extra.default_value);
+      this.input.markAsDirty();
     }
     // Add in Group
     this.group.addControl(this.field.key, this.input);

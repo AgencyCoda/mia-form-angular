@@ -15,6 +15,7 @@
     <mat-menu #addNewAvatar="matMenu" class="mat-menu-avatar-list-service">
         <mat-form-field *ngIf="input" (click)="$event.stopPropagation();" (keyup)="applySearch()">
             <input matInput type="text" [formControl]="input" [placeholder]="'Search'" />
+            <mat-error *ngIf="showError">{{ getErrorMessage() }}</mat-error>
         </mat-form-field>
         <div class="items">
             <div mat-menu-item *ngFor="let item of itemsFiltered" (click)="onClickAdd(item)">

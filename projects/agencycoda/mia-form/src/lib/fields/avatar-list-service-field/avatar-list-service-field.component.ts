@@ -47,6 +47,7 @@ export class AvatarListServiceFieldComponent extends SelectServiceFieldComponent
     control.setValue(item);
     this.inputList.push(control);
     this.input.setValue('');
+    this.input.markAsDirty();
     this.applySearch();
   }
 

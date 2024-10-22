@@ -17,6 +17,7 @@ export class PhotoFieldComponent extends MiaBaseFieldComponent implements OnInit
 
   onUploadFile(file: MiaFile | any): void {
     this.input.setValue(file.url);
+    this.input.markAsDirty();
     this.isUploading = false;
   }
 }

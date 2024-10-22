@@ -42,10 +42,6 @@ export class MiaFormComponent implements OnInit, AfterViewInit {
     this.miaFormService.updateItemByForm(this.config, this.group, this.item)
   }
 
-  getErrors() {
-    return this.miaFormService.getErrors(this.config, this.group);
-  }
-
   send() {
     this.onSubmit();
   }

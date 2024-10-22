@@ -10,6 +10,7 @@
             <mat-form-field>
                 <input matInput type="text" name="list_string_{{ i }}" [formControl]="getControlByIndex(i)" [placeholder]="field.placeholder ? field.placeholder : ''" [disabled]="field.isDisabled ? field.isDisabled : false">
                 <button mat-icon-button matSuffix color="warn" matTooltip="Remove" type="button" (click)="onClickRemove(i)"><mat-icon>close</mat-icon></button>
+                <mat-error *ngIf="showError">{{ getErrorMessage() }}</mat-error>
             </mat-form-field>
 
         </ng-container>

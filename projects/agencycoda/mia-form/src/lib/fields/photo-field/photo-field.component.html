@@ -12,3 +12,5 @@
     </div>
     <button *ngIf="input.value != '' && !isUploading" mat-icon-button matTooltip="Delete Image" class="btn-delete" color="warn" (click)="input.setValue('')"><mat-icon>delete</mat-icon></button>
 </div>
+
+<mat-error *ngIf="showError">{{ getErrorMessage() }}</mat-error>

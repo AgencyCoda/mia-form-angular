@@ -12,3 +12,5 @@
     <mat-spinner *ngIf="isUploading"></mat-spinner>
     <button *ngIf="input.value != undefined && !isUploading" type="button" mat-icon-button matTooltip="Remove Image" class="btn-remove" color="warn" (click)="input.setValue(undefined)"><mat-icon>delete</mat-icon></button>
 </button>
+
+<mat-error *ngIf="showError">{{ getErrorMessage() }}</mat-error>

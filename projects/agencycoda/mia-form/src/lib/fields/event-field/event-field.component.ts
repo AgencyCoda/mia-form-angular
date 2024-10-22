@@ -114,6 +114,7 @@ export class EventFieldComponent extends MiaBaseFieldComponent implements OnInit
       dateFull.hour(parseInt(data[0]));
       dateFull.minutes(parseInt(data[1]));
       this.input.setValue(dateFull);
+      this.input.markAsDirty();
     }
 	}
 

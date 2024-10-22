@@ -4,6 +4,7 @@
     <mat-select [formControl]="country">
         <mat-option *ngFor="let c of data" [value]="c"> {{ c.title }} </mat-option>
     </mat-select>
+    <mat-error *ngIf="showError">{{ getErrorMessage() }}</mat-error>
 </mat-form-field>
 
 <mat-form-field *ngIf="input && countrySelected" class="{{ field.classes }}">
@@ -12,6 +13,7 @@
     <mat-select [formControl]="state">
         <mat-option *ngFor="let s of countrySelected.states" [value]="s"> {{ s.title }} </mat-option>
     </mat-select>
+    <mat-error *ngIf="showError">{{ getErrorMessage() }}</mat-error>
 </mat-form-field>
 
 <mat-form-field *ngIf="input && stateSelected" class="{{ field.classes }}">
@@ -20,4 +22,5 @@
     <mat-select [formControl]="input">
         <mat-option *ngFor="let c of stateSelected.cities" [value]="c.id"> {{ c.title }} </mat-option>
     </mat-select>
+    <mat-error *ngIf="showError">{{ getErrorMessage() }}</mat-error>
 </mat-form-field>

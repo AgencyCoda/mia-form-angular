@@ -23,6 +23,7 @@ export class ImagesFieldComponent extends MiaBaseFieldComponent implements OnIni
     let data: Array<any> = this.input.value;
     data.splice(index, 1);
     this.input.setValue(data);
+    this.input.markAsDirty();
   }
 
   getPhotoByIndex(index: number): any {
@@ -53,6 +54,7 @@ export class ImagesFieldComponent extends MiaBaseFieldComponent implements OnIni
     let data: Array<any> = this.input.value;
     data.push(file);
     this.input.setValue(data);
+    this.input.markAsDirty();
     this.isUploading = false;
   }
 

@@ -21,6 +21,7 @@
           </mat-option>
         </mat-autocomplete>
         <mat-hint *ngIf="field.caption" [align]="'end'"> {{ field.caption }} </mat-hint>
+        <mat-error *ngIf="showError">{{ getErrorMessage() }}</mat-error>
     </mat-form-field>
 
     <button mat-stroked-button color="primary" class="btn-add-item" type="button" (click)="onClickAdd()">+ ADD</button>

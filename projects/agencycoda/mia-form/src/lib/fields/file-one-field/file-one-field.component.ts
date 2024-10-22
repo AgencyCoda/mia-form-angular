@@ -17,6 +17,7 @@ export class FileOneFieldComponent extends MiaBaseFieldComponent implements OnIn
 
   onUploadFile(file: MiaFile | any): void {
     this.input.setValue(file);
+    this.input.markAsDirty();
     this.isUploading = false;
   }
 }

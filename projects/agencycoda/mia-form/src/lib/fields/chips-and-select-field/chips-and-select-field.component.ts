@@ -65,6 +65,7 @@ export class ChipsAndSelectFieldComponent extends MiaBaseFieldComponent implemen
     }
 
     this.input.setValue('');
+    this.input.markAsDirty();
     this.cleanOptions();
   }
 

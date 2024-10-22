@@ -87,6 +87,7 @@ export class InputWithChipServiceFieldComponent extends MiaBaseFieldComponent im
     this.inputList.value.push(valItem);
     this.chipInput.nativeElement.value = '';
     this.input.setValue(null);
+    this.input.markAsDirty();
   }
 
   createFormControl() {
