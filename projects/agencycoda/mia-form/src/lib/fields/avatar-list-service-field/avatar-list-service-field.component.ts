@@ -20,6 +20,11 @@ export class AvatarListServiceFieldComponent extends SelectServiceFieldComponent
     super(changeDetector);
   }
 
+  onImageError(event: Event): void {
+    const target = event.target as HTMLImageElement;
+    target.src = '/assets/icons/icon-user.svg';
+  }
+
   applySearch() {
     let query: string = this.input.value;
     this.itemsFiltered = this.items.filter(it => {

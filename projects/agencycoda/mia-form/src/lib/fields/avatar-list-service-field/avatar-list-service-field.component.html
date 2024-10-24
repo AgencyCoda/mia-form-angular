@@ -10,7 +10,7 @@
             <mat-icon>add</mat-icon>
         </button>
     </div>
-    
+
 
     <mat-menu #addNewAvatar="matMenu" class="mat-menu-avatar-list-service">
         <mat-form-field *ngIf="input" (click)="$event.stopPropagation();" (keyup)="applySearch()">
@@ -19,6 +19,7 @@
         </mat-form-field>
         <div class="items">
             <div mat-menu-item *ngFor="let item of itemsFiltered" (click)="onClickAdd(item)">
+              <img *ngIf="field.extra.show_image" [src]="item[field.extra.image_field]" (error)="onImageError($event)" class="item-image" />
                 {{ getFieldValueByKey(item, field.extra.field_display) }}
             </div>
         </div>
