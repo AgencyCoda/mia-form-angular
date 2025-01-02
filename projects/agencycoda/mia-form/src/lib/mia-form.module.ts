@@ -51,9 +51,7 @@ import { PhotoFieldComponent } from './fields/photo-field/photo-field.component'
 import { AvatarListServiceFieldComponent } from './fields/avatar-list-service-field/avatar-list-service-field.component';
 import { ChipsAndSelectFieldComponent } from './fields/chips-and-select-field/chips-and-select-field.component';
 import { StringWithColorFieldComponent } from './fields/string-with-color-field/string-with-color-field.component';
-import { RowFieldComponent } from './fields/row-field/row-field.component';
 import { LabelFieldComponent } from './fields/label-field/label-field.component';
-import { BoxFieldComponent } from './fields/box-field/box-field.component';
 import { CityFieldComponent } from './fields/city-field/city-field.component';
 import { TagsFieldComponent } from './fields/tags-field/tags-field.component';
 import { EventFieldComponent } from './fields/event-field/event-field.component';
@@ -68,7 +66,6 @@ import { MiaFilterBoxComponent } from './components/mia-filter-box/mia-filter-bo
 import { EmailFieldComponent } from './fields/email-field/email-field.component';
 import { PasswordFieldComponent } from './fields/password-field/password-field.component';
 import { FileOneFieldComponent } from './fields/file-one-field/file-one-field.component';
-import { TabsFieldComponent } from './fields/tabs-field/tabs-field.component';
 import { PositionFieldComponent } from './fields/position-field/position-field.component';
 import { GalleryFieldComponent } from './fields/gallery-field/gallery-field.component';
 import { SwitchFieldComponent } from './fields/switch-field/switch-field.component';
@@ -114,9 +111,7 @@ import { MiaFormWizardComponent } from './modals/mia-form-wizard/mia-form-wizard
         AvatarListServiceFieldComponent,
         ChipsAndSelectFieldComponent,
         StringWithColorFieldComponent,
-        RowFieldComponent,
         LabelFieldComponent,
-        BoxFieldComponent,
         CityFieldComponent,
         TagsFieldComponent,
         ChipsAndSelectServiceFieldComponent,
@@ -130,7 +125,6 @@ import { MiaFormWizardComponent } from './modals/mia-form-wizard/mia-form-wizard
         PasswordFieldComponent,
         FileOneFieldComponent,
         InputWithChipServiceFieldComponent,
-        TabsFieldComponent,
         PositionFieldComponent,
         GalleryFieldComponent,
         SwitchFieldComponent,
