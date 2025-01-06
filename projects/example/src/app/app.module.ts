@@ -8,7 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { QuillModule } from 'ngx-quill';
 import { ExampleCustomFieldComponent } from './fields/example-custom-field/example-custom-field.component';
-import { MIA_GOOGLE_STORAGE_PROVIDER } from '@agencycoda/mia-core';
+import { MIA_GOOGLE_STORAGE_PROVIDER } from '@agencycoda/mia-core-jv';
 
 @NgModule({
   declarations: [

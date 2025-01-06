@@ -1,4 +1,4 @@
-import { MiaQuery } from '@agencycoda/mia-core';
+import { MiaQuery } from '@agencycoda/mia-core-jv';
 import { Component, EventEmitter, Input, OnInit, Output, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { MatMenuTrigger } from '@angular/material/menu';
 import { MiaFilterBoxConfig } from '../../entities/mia-filter-box-config';

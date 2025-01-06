@@ -1,4 +1,4 @@
-import { MiaBaseCrudHttpService, MiaQuery } from '@agencycoda/mia-core';
+import { MiaBaseCrudHttpService, MiaQuery } from '@agencycoda/mia-core-jv';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map, startWith, switchMap } from 'rxjs/operators';

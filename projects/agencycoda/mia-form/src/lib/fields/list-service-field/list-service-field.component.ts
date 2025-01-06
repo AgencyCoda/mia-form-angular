@@ -1,4 +1,4 @@
-import { MiaBaseCrudHttpService, MiaPagination } from '@agencycoda/mia-core';
+import { MiaBaseCrudHttpService, MiaPagination } from '@agencycoda/mia-core-jv';
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormArray, UntypedFormControl } from '@angular/forms';
 import { AutocompleteServiceFieldComponent } from '../autocomplete-service-field/autocomplete-service-field.component';

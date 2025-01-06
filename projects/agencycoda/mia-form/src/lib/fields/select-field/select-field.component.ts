@@ -1,4 +1,4 @@
-import { nil } from '@agencycoda/mia-core';
+import { nil } from '@agencycoda/mia-core-jv';
 import { Component, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
 import { MiaBaseFieldComponent } from '../base-field.component';

@@ -1,4 +1,4 @@
-import { MiaBaseCrudHttpService, MiaQuery, nil } from '@agencycoda/mia-core';
+import { MiaBaseCrudHttpService, MiaQuery, nil } from '@agencycoda/mia-core-jv';
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
 import { SelectFieldComponent } from '../select-field/select-field.component';

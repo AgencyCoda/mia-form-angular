@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { MiaBaseFieldComponent } from '../base-field.component';
 import { map, startWith, switchMap } from 'rxjs/operators';
-import { MiaBaseCrudHttpService, MiaQuery } from '@agencycoda/mia-core';
+import { MiaBaseCrudHttpService, MiaQuery } from '@agencycoda/mia-core-jv';
 
 @Component({
   selector: 'mia-autocomplete-service-field',

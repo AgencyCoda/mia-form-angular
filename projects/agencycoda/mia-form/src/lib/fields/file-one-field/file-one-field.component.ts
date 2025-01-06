@@ -1,4 +1,4 @@
-import { MiaFile } from '@agencycoda/mia-core';
+import { MiaFile } from '@agencycoda/mia-core-jv';
 import { Component, OnInit } from '@angular/core';
 import { MiaBaseFieldComponent } from '../base-field.component';
 

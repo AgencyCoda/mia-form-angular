@@ -1,4 +1,4 @@
-import { MiaBaseCrudHttpService, MiaPagination, MiaQuery } from '@agencycoda/mia-core';
+import { MiaBaseCrudHttpService, MiaPagination, MiaQuery } from '@agencycoda/mia-core-jv';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';

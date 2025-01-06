@@ -1,4 +1,4 @@
-import { MiaBaseCrudHttpService, MiaQuery } from '@agencycoda/mia-core';
+import { MiaBaseCrudHttpService, MiaQuery } from '@agencycoda/mia-core-jv';
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { UntypedFormArray, UntypedFormControl } from '@angular/forms';
 import { SelectServiceFieldComponent } from '../select-service-field/select-service-field.component';

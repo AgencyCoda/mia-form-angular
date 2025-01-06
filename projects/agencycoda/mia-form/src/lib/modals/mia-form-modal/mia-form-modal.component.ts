@@ -1,4 +1,4 @@
-import { MiaBaseCrudHttpService } from '@agencycoda/mia-core';
+import { MiaBaseCrudHttpService } from '@agencycoda/mia-core-jv';
 import { Component, Inject, OnInit, ViewChild } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { MiaFormComponent } from '../../components/mia-form/mia-form.component';

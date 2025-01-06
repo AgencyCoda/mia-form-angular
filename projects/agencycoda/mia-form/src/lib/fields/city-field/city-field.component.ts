@@ -1,4 +1,4 @@
-import { MiaBaseHttpService } from '@agencycoda/mia-core';
+import { MiaBaseHttpService } from '@agencycoda/mia-core-jv';
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormControl } from '@angular/forms';
 import { MiaBaseFieldComponent } from '../base-field.component';

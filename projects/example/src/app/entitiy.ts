@@ -1,4 +1,4 @@
-import { MiaFile } from "@agencycoda/mia-core";
+import { MiaFile } from "@agencycoda/mia-core-jv";
 
 export class Entity {
     id = 0;

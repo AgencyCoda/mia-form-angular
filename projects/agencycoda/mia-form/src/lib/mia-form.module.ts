@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 /** AGENCY CODA */
-import { MiaCoreModule } from '@agencycoda/mia-core';
+import { MiaCoreModule } from '@agencycoda/mia-core-jv';
 
 /** ANGULAR MATERIAL */
 import { MatSelectModule } from '@angular/material/select';

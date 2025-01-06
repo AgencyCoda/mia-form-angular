@@ -1,4 +1,4 @@
-import { MiaBaseCrudHttpService } from '@agencycoda/mia-core';
+import { MiaBaseCrudHttpService } from '@agencycoda/mia-core-jv';
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { ChipsAndSelectFieldComponent } from '../chips-and-select-field/chips-and-select-field.component';
 

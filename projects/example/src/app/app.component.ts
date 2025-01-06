@@ -1,4 +1,4 @@
-import { MiaQuery } from '@agencycoda/mia-core';
+import { MiaQuery } from '@agencycoda/mia-core-jv';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
