@@ -10,15 +10,15 @@
  export * from './lib/entities/mia-field';
  export * from './lib/entities/mia-filter-box-config';
  export * from './lib/entities/mia-filter-type';
- 
+
  //export * from './lib/animations/table-animation';
- 
+
  /**
   * Services
   */
  export * from './lib/mia-form.service';
  export * from './lib/services/mia-form-modals.service';
- 
+
  /**
   * Fields
   */
@@ -40,12 +40,13 @@
  export * from './lib/fields/position-field/position-field.component';
  export * from './lib/fields/images-field/images-field.component';
  export * from './lib/fields/slider-field/slider-field.component';
+ export * from './lib/fields/row-field/row-field.component';
 
  /**
   * Elements
   */
   export * from './lib/elements/date-filter-range-button/date-filter-range-button.component';
- 
+
  /**
   * Components
   */
@@ -59,9 +60,9 @@
   export * from './lib/modals/mia-form-modal-v2/mia-form-modal-v2.component';
   export * from './lib/modals/mia-form-modal-v3/mia-form-modal-v3.component';
   export * from './lib/modals/mia-form-wizard/mia-form-wizard.component';
- 
+
  /**
   * Modules
   */
  export * from './lib/mia-form.module';
- 
+

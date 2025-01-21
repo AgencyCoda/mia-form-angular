@@ -80,6 +80,7 @@ import { MiaFormModalComponent } from './modals/mia-form-modal/mia-form-modal.co
 import { MiaFormModalV2Component } from './modals/mia-form-modal-v2/mia-form-modal-v2.component';
 import { MiaFormModalV3Component } from './modals/mia-form-modal-v3/mia-form-modal-v3.component';
 import { MiaFormWizardComponent } from './modals/mia-form-wizard/mia-form-wizard.component';
+import { RowFieldComponent } from './fields/row-field/row-field.component';
 
 
 @NgModule({
@@ -130,7 +131,8 @@ import { MiaFormWizardComponent } from './modals/mia-form-wizard/mia-form-wizard
         GalleryFieldComponent,
         SwitchFieldComponent,
         ColorSelectorFieldComponent,
-        SliderFieldComponent
+        SliderFieldComponent,
+        RowFieldComponent
     ],
     imports: [
         CommonModule,
@@ -189,7 +191,8 @@ import { MiaFormWizardComponent } from './modals/mia-form-wizard/mia-form-wizard
         SliderFieldComponent,
         ImagesFieldComponent,
         /** ELEMENTS */
-        DateFilterRangeButtonComponent
+        DateFilterRangeButtonComponent,
+        RowFieldComponent
     ],
     providers: [
         { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE, MAT_MOMENT_DATE_ADAPTER_OPTIONS] },
